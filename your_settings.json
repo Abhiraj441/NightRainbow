@@ -26,9 +26,17 @@
         "#3D3BBB",
         "#4634A7",
         "#4C2C96",
-        "#512888"
-        
-        
+        "#512888",
+        "#00d8ff",
+        "#00ff18",
+        "#ff00e1",
+        "#ff0000",
+        "#d0ff00",
+        "#2700a6",
+        "#ff0df0",
+        "#982900",
+        "#058600"
+      
     ],
     "messageresponse": {
         "missingperm": "I need permission 'manage_roles' to execute this action.",
