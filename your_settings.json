@@ -34,7 +34,7 @@
         "missingperm": "I need permission 'manage_roles' to execute this action.",
         "success": "Rainbow has started thanks to Cristi Petrut for that",
         "rainbowstop": "Rainbow has stopped.",
-        "rolenotfound": "I can't find the requested role"
+        "rolenotfound": "I can't find the requested role",
         "membernoperm": " You don't have the Administrator permission !"
     }
 }
