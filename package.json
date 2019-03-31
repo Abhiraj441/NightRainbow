@@ -1,9 +1,9 @@
 {
   "name": "nvidia",
   "version": "1.0.0",
-  "main": "start.bat",
+  "main": "bot.js",
   "scripts": {
-    "start": "node start.bat"
+    "start": "node bot.js"
   },
   "dependencies": {
     "discord.js": "11.3.0",
