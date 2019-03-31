@@ -1,0 +1,22 @@
+{
+    "token": "NTYxNzkxNDAzMjA2OTAxNzg4.XKBXrA.2Zpdwi8JG1sfVCsWM08zGos3hNE",
+    "prefix": "^",
+    "rainbowdelay": 100,
+    "rainbowcommand": "rainbow",
+    "rainbowstop": "stop",
+    "rainbowrole": [
+        "#000000",
+        "#404040",
+        "#606060",
+        "#808080",
+        "#A0A0A0",
+        "#E0E0E0",
+        "#FFFFFF"
+    ],
+    "messageresponse": {
+        "missingperm": "I need permission 'manage_roles' to execute this action.",
+        "success": "Rainbow has started thanks to Cristi Petrut for that",
+        "rainbowstop": "Rainbow has stopped.",
+        "rolenotfound": "I can't find the requested role"
+    }
+}
