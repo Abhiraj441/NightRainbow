@@ -50,6 +50,7 @@
         "#FFCE00"
     ],
     "messageresponse": {
+        "flagstop": "The Flag effect has been stopped",
         "flagstart": "The Flag effect has started",
         "rgbstart": "The RGB effect has started",
         "missingperm": "I need permission 'manage_roles' to execute this action.",
