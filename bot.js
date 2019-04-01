@@ -132,7 +132,7 @@ bot.on('message', message => {
 .addField("^stop and ^rgbs", "Stops the Rainbow and RGB effect.", true)
 .addField("^ros and ^germs ", "Stops the Romanian and Germany flag effect.", true)
 
-        message.channel.send(embed);
+message.channel.send(embed);
     }
 });
 bot.login(settings.token).catch(err=> console.log("Incorrect Token was provided"))
