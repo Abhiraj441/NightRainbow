@@ -69,8 +69,8 @@
         "rolenotfound": "I can't find the requested role",
         "membernoperm": " You don't have the Administrator permission !",
         "rgbstart": "Rgb has started ! Good Luck in life!",
-        "fstart": "Flag Rainbow has started ! ",
-        "fstop": "Flag rainbow has stopped ! ",
+        "fstart": "Flag Rainbow has started !",
+        "fstop": "Flag rainbow has stopped !",
         "rgbstop": "Rgb has been stopped succesfully!"
     }
 }
