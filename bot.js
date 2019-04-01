@@ -152,9 +152,6 @@ bot.on('message', message => {
    */
 .addField(`" ^ros and ^germs "`)
     "Stops the Romanian and Germany flag effect.")
-/*
-   * Inline fields may not display as inline if the thumbnail and/or image is too big.
-   */
 
 message.channel.send(embed);
     }
