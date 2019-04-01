@@ -3,7 +3,7 @@
     "prefix": "^",
     "rainbowdelay": 1500,
     "rocommad": "Romania",
-    "rostop": "Ros"
+    "rostop": "Ros",
     "rainbowcommand": "color",
     "rgbcommand": "rgb",
     "rgbstop": "srgb",
@@ -52,11 +52,14 @@
          "#002B7F",
          "#FCD116",
          "#CE1126"
+    
     ],
     "gm": [
          "#000000",
          "#DD0000",
          "#FFCE00",
+        
+    ],
     "messageresponse": {
         "missingperm": "I need permission 'manage_roles' to execute this action.",
         "success": "Rainbow has started thanks to Cristi Petrut for that!",
