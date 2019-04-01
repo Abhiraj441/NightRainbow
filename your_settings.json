@@ -4,7 +4,7 @@
     "rainbowdelay": 1500,
     "rainbowcommand": "color",
     "rgbcommand": "rgb",
-    "rgbstop": "srgb"
+    "rgbstop": "srgb",
     "rainbowstop": "stop",
     "rainbowrole": [
         "#FF0000",
@@ -51,8 +51,8 @@
         "success": "Rainbow has started thanks to Cristi Petrut for that!",
         "rainbowstop": "Rainbow has stopped.",
         "rolenotfound": "I can't find the requested role",
-        "membernoperm": " You don't have the Administrator permission !"
-        "rgbstart": "Rgb has started ! Good Luck in life!"
+        "membernoperm": " You don't have the Administrator permission !",
+        "rgbstart": "Rgb has started ! Good Luck in life!",
         "rgbstop": "Rgb has been stopped succesfully!"
     }
 }
