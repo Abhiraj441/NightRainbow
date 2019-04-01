@@ -2,6 +2,7 @@
     "token": "NTYxODA2ODU2NzU5Mjc5NjMy.XKHIbw.opZCVTCycRaHAMTMx-1Lt-HRlJ0",
     "prefix": "^",
     "rainbowdelay": 1500,
+    "helpcommand": "help",
     "rainbowcommand": "color",
     "rainbowstop": "stop",
     "romaniancommand": "roc",
