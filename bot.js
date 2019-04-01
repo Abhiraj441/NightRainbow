@@ -120,9 +120,9 @@ bot.on('message', message => {
     if(command === settings.prefix + settings.helpcommand) {
         let embed = new Discord.RichEmbed()  
         
-.setAuthor(bot.user.username, bot.user.avatarURL)
+.setAuthor(bot.user.tag)
 .setColor("#DCA741")
-.setDescription("Here you can see the commands for " + client.user.username + "!")
+.setDescription("Here you can see the commands for " + bot.user.username + "!")
 .addField(` ^color time @rolename - This command apply a rainbow effect on the specified role"`)
 .addField(` ^rgb time @rolename - This commmand aplly a RGB effect on the specified role"`)
 .addField(` ^roc time @rolename - This command apply a Romanian flag effect on the specified role"`)
