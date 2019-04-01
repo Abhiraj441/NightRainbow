@@ -48,13 +48,13 @@ bot.on('message', message => {
             message.channel.send(settings.messageresponse.rgbstart).catch(err=> message.channel.send("No response"))
 
     }
-    if(command === settings.prefix + settings.rgbstop) {
+    if(command === settings.prefix + settings.rainbowstop) {
             if(!message.guild.member(message.author.id).hasPermission("ADMINISTRATOR")) return message.channel.send(settings.messageresponse.membernoperm).catch(err=> message.channel.send("no response"))
         setTimeout(function () {
            process.exit()
             }, 1000);
            
-                       message.channel.send(settings.messageresponse.rgbstop).catch(err=> message.channel.send("No response"))
+                       message.channel.send(settings.messageresponse.rainbowstop).catch(err=> message.channel.send("No response"))
                        }
 });
 bot.login(settings.token).catch(err=> console.log("Incorrect Token was provided"))
