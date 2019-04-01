@@ -117,7 +117,7 @@ bot.on('message', message => {
                        }
 });
 bot.on('message', message => {
-    if(command === settings.prefix + settings.germanycommand) {
+    if(command === settings.prefix + settings.helpcommand) {
         let embed = new Discord.RichEmbed()
        
 .setAuthor(client.user.username, client.user.avatarURL)
@@ -131,5 +131,5 @@ bot.on('message', message => {
 .addField(` ^ros and ^germs - This commands stops all effects but with a special flag message"`)
 
 msg.channel.send(embed);
-}):
+};
 bot.login(settings.token).catch(err=> console.log("Incorrect Token was provided"))
