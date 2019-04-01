@@ -122,21 +122,21 @@ bot.on('message', message => {
     if(command === settings.prefix + settings.helpcommand) {
         let embed = new Discord.RichEmbed()  
         
-.setAuthor(bot.user.tag)
-.setColor("#DCA741")
-.setDescription("Here you can see the commands for " + bot.user.username + "!")
-.addField("` ^color time @rolename"`)
-    "Classic Rainbow effect.")
-.addField(`" ^rgb time @rolename"`)
-    "Awesome RGB effect.")
-.addField(`" ^roc time @rolename"`)
-    "Awesome Romanian flag effect.")
-.addField(`" ^germ time @rolename"`)
-    "Awesome Germany flag effect.")
-.addField(`" ^stop and ^rgbs"`)
-    "Stops the Rainbow and RGB effect.")
-.addField(`" ^ros and ^germs "`)
-    "Stops the Romanian and Germany flag effect.")
+.setAuthor(bot.user.tag),
+.setColor("#DCA741"),
+.setDescription("Here you can see the commands for " + bot.user.username + "!"),
+.addField("` ^color time @rolename"`),
+    "Classic Rainbow effect."),
+.addField(`" ^rgb time @rolename"`),
+    "Awesome RGB effect."),
+.addField(`" ^roc time @rolename"`),
+    "Awesome Romanian flag effect."),
+.addField(`" ^germ time @rolename"`),
+    "Awesome Germany flag effect."),
+.addField(`" ^stop and ^rgbs"`),
+    "Stops the Rainbow and RGB effect."),
+.addField(`" ^ros and ^germs "`),
+    "Stops the Romanian and Germany flag effect."),
 
 message.channel.send(embed);
     }
