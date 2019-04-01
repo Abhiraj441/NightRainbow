@@ -38,6 +38,12 @@
         "#058600"
       
     ],
+    "rgb": [
+        "#ff0000",
+        "#00ff18",
+        "#00d8ff"
+        
+    ],
     "messageresponse": {
         "missingperm": "I need permission 'manage_roles' to execute this action.",
         "success": "Rainbow has started thanks to Cristi Petrut for that",
