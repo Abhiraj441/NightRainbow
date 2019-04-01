@@ -14,6 +14,7 @@ bot.on('message', message => {
         if(!rolez) return message.channel.send(settings.messageresponse.rolenotfound).catch(err=> message.channel.send("No response"))
         if(!message.guild.member(bot.user.id).hasPermission("MANAGE_ROLES")) return message.channel.send(settings.messageresponse.missingperm).catch(err=> message.channel.send("no response"))
         if(!message.guild.member(message.author.id).hasPermission("ADMINISTRATOR")) return message.channel.send(settings.messageresponse.membernoperm).catch(err=> message.channel.send("no response"))
+        if(delay < 1400) return message.reply('Please input a number higher than 1400.')
         var colors = settings.rainbowrole
         var rolestart = setInterval(function() {
             var colorsz = colors[Math.floor(Math.random() * colors.length)];
