@@ -2,6 +2,8 @@
     "token": "NTYxODA2ODU2NzU5Mjc5NjMy.XKBqhQ.obvKxoVcMh8Qis9RZddldvuh1Ow",
     "prefix": "^",
     "rainbowdelay": 1500,
+    "rocommad": "Romania",
+    "rostop": "Ros"
     "rainbowcommand": "color",
     "rgbcommand": "rgb",
     "rgbstop": "srgb",
@@ -46,6 +48,15 @@
         "#00d8ff"
         
     ],
+    "ro": [
+         "#002B7F",
+         "#FCD116",
+         "#CE1126"
+    ],
+    "gm": [
+         "#000000",
+         "#DD0000",
+         "#FFCE00",
     "messageresponse": {
         "missingperm": "I need permission 'manage_roles' to execute this action.",
         "success": "Rainbow has started thanks to Cristi Petrut for that!",
@@ -53,6 +64,8 @@
         "rolenotfound": "I can't find the requested role",
         "membernoperm": " You don't have the Administrator permission !",
         "rgbstart": "Rgb has started ! Good Luck in life!",
+        "fstart": "Flag Rainbow has started ! ",
+        "fstop": "Flag rainbow has stopped ! ",
         "rgbstop": "Rgb has been stopped succesfully!"
     }
 }
