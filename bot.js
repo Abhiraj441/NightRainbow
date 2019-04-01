@@ -122,21 +122,39 @@ bot.on('message', message => {
     if(command === settings.prefix + settings.helpcommand) {
         let embed = new Discord.RichEmbed()  
         
-.setAuthor(bot.user.tag),
-.setColor("#DCA741"),
-.setDescription("Here you can see the commands for " + bot.user.username + "!"),
-.addField("` ^color time @rolename"`),
-    "Classic Rainbow effect."),
-.addField(`" ^rgb time @rolename"`),
-    "Awesome RGB effect."),
-.addField(`" ^roc time @rolename"`),
-    "Awesome Romanian flag effect."),
-.addField(`" ^germ time @rolename"`),
-    "Awesome Germany flag effect."),
-.addField(`" ^stop and ^rgbs"`),
-    "Stops the Rainbow and RGB effect."),
-.addField(`" ^ros and ^germs "`),
-    "Stops the Romanian and Germany flag effect."),
+.setAuthor(bot.user.tag)
+.setColor("#DCA741")
+.setDescription("Here you can see the commands for " + bot.user.username + "!")
+.addField("` ^color time @rolename"`)
+    "Classic Rainbow effect.")
+/*
+   * Inline fields may not display as inline if the thumbnail and/or image is too big.
+   */
+.addField(`" ^rgb time @rolename"`)
+    "Awesome RGB effect.")
+/*
+   * Inline fields may not display as inline if the thumbnail and/or image is too big.
+   */
+.addField(`" ^roc time @rolename"`)
+    "Awesome Romanian flag effect.")
+/*
+   * Inline fields may not display as inline if the thumbnail and/or image is too big.
+   */
+.addField(`" ^germ time @rolename"`)
+    "Awesome Germany flag effect.")
+/*
+   * Inline fields may not display as inline if the thumbnail and/or image is too big.
+   */
+.addField(`" ^stop and ^rgbs"`)
+    "Stops the Rainbow and RGB effect.")
+/*
+   * Inline fields may not display as inline if the thumbnail and/or image is too big.
+   */
+.addField(`" ^ros and ^germs "`)
+    "Stops the Romanian and Germany flag effect.")
+/*
+   * Inline fields may not display as inline if the thumbnail and/or image is too big.
+   */
 
 message.channel.send(embed);
     }
