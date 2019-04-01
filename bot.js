@@ -137,5 +137,4 @@ msg.channel.send({embed: {
         }
     });
 }
-});
 bot.login(settings.token).catch(err=> console.log("Incorrect Token was provided"))
