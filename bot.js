@@ -122,9 +122,9 @@ bot.on('message', message => {
     if(command === settings.prefix + settings.helpcommand) {
         let embed = new Discord.RichEmbed()  
         
-.setAuthor(bot.user.tag),
-.setColor("#DCA741"),
-.setDescription("Here you can see the commands for " + bot.user.username + "!"),
+.setAuthor(bot.user.tag)
+.setColor("#DCA741")
+.setDescription("Here you can see the commands for " + bot.user.username + "!")
 .addField("^color time @rolename", "Classic Rainbow effect.", true)
 .addField("^rgb time @rolename", "Awesome RGB effect.", true)
 .addField("^roc time @rolename", "Awesome Romanian flag effect.", true)
