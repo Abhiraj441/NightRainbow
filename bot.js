@@ -41,7 +41,7 @@ bot.on('message', message => {
         if(!message.guild.member(bot.user.id).hasPermission("MANAGE_ROLES")) return message.channel.send(settings.messageresponse.missingperm).catch(err=> message.channel.send("no response"))
         if(!message.guild.member(message.author.id).hasPermission("ADMINISTRATOR")) return message.channel.send(settings.messageresponse.membernoperm).catch(err=> message.channel.send("no response"))
         var colors = settings.rgb
-        var rolestart = setInterval(function() {
+        var rolestart = setInterval(function1() {
             var colorsz = colors[Math.floor(Math.random() * colors.length)];
             rolez.setColor(colorsz)
         }, settings.rainbowdelay); 
@@ -50,7 +50,7 @@ bot.on('message', message => {
     }
     if(command === settings.prefix + settings.rgbstop) {
             if(!message.guild.member(message.author.id).hasPermission("ADMINISTRATOR")) return message.channel.send(settings.messageresponse.membernoperm).catch(err=> message.channel.send("no response"))
-        setTimeout(function () {
+        setTimeout(function1 () {
            process.exit()
             }, 1000);
            
