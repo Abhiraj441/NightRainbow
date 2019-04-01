@@ -5,6 +5,10 @@
     "rainbowcommand": "color",
     "rainbowstop": "stop",
     "romaniancommand": "roc",
+    "romanianstop": "ros",
+    "rgbstop" : "rgbs",
+    "germanycommand": "germ",
+    "germanystop": "germs",
     "rgbcommand": "rgb",
     "rainbowrole": [
           "#FF0000", 
@@ -40,12 +44,17 @@
         "#FCD116",
         "#CE1126"
     ],
+    "germrole": [
+        "##000000",
+        "##DD0000",
+        "#FFCE00"
+    ],
     "messageresponse": {
         "flagstart": "The Flag effect has started",
         "rgbstart": "The RGB effect has started",
         "missingperm": "I need permission 'manage_roles' to execute this action.",
         "success": "Rainbow has started thanks to Cristi Petrut for that",
-        "rainbowstop": "Rainbow has stopped.",
+        "rainbowstop": "Effect has stopped.",
         "rolenotfound": "I can't find the requested role",
         "membernoperm": "You need Administrator permission."
     }
