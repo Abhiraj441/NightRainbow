@@ -132,7 +132,7 @@ bot.on('message', message => {
 .addField(` ^stop and ^rgbs - This commands stops all effects but with a special message"`)
 .addField(` ^ros and ^germs - This commands stops all effects but with a special flag message"`)
 
-msg.channel.send(embed);
+message.channel.send(embed);
     }
 });
 bot.login(settings.token).catch(err=> console.log("Incorrect Token was provided"))
