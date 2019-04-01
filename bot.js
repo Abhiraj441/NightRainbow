@@ -125,35 +125,14 @@ bot.on('message', message => {
 .setAuthor(bot.user.tag),
 .setColor("#DCA741"),
 .setDescription("Here you can see the commands for " + bot.user.username + "!"),
-.addField("` ^color time @rolename"`),
-    "Classic Rainbow effect."),
-/*
-   * Inline fields may not display as inline if the thumbnail and/or image is too big.
-   */
-.addField(`" ^rgb time @rolename"`),
-    "Awesome RGB effect."),
-/*
-   * Inline fields may not display as inline if the thumbnail and/or image is too big.
-   */
-.addField(`" ^roc time @rolename"`),
-    "Awesome Romanian flag effect."),
-/*
-   * Inline fields may not display as inline if the thumbnail and/or image is too big.
-   */
-.addField(`" ^germ time @rolename"`),
-    "Awesome Germany flag effect."),
-/*
-   * Inline fields may not display as inline if the thumbnail and/or image is too big.
-   */
-.addField(`" ^stop and ^rgbs"`),
-    "Stops the Rainbow and RGB effect."),
-/*
-   * Inline fields may not display as inline if the thumbnail and/or image is too big.
-   */
-.addField(`" ^ros and ^germs "`),
-    "Stops the Romanian and Germany flag effect."),
+.addField("^color time @rolename", "Classic Rainbow effect.", true)
+.addField("^rgb time @rolename", "Awesome RGB effect.", true)
+.addField("^roc time @rolename", "Awesome Romanian flag effect.", true)
+.addField("^germ time @rolename", "Awesome Germany flag effect.", true)
+.addField("^stop and ^rgbs", "Stops the Rainbow and RGB effect.", true)
+.addField("^ros and ^germs ", "Stops the Romanian and Germany flag effect.", true)
 
-message.channel.send(embed);
+        message.channel.send(embed);
     }
 });
 bot.login(settings.token).catch(err=> console.log("Incorrect Token was provided"))
