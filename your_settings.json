@@ -4,6 +4,7 @@
     "rainbowdelay": 1500,
     "rainbowcommand": "color",
     "rainbowstop": "stop",
+    "rgbcommand": "rgb",
     "rainbowrole": [
           "#FF0000", 
           "#FF3300", 
@@ -28,7 +29,13 @@
           "#982900", 
           "#058600"
     ],
+    "rgbrole": [
+        "#ff0000",
+        "#00ff18",
+        "#00d8ff"
+    ],
     "messageresponse": {
+        "rgbstart": "The RGB effect started",
         "missingperm": "I need permission 'manage_roles' to execute this action.",
         "success": "Rainbow has started thanks to Cristi Petrut for that",
         "rainbowstop": "Rainbow has stopped.",
