@@ -30,7 +30,6 @@ bot.on('message', message => {
                        message.channel.send(settings.messageresponse.rainbowstop).catch(err=> message.channel.send("No response"))
                        }
 });
-
 bot.on('message', message => {
     let messageArray = message.content.split(" ");
     let command = messageArray[0];
