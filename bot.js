@@ -118,8 +118,7 @@ bot.on('message', message => {
 });
 bot.on('message', message => {
     if(command === settings.prefix + settings.helpcommand) {
-        let embed = new Discord.RichEmbed()
-       
+        let embed = new Discord.RichEmbed()   
 .setAuthor(client.user.username, client.user.avatarURL)
 .setColor("#DCA741")
 .setDescription("Here you can see the commands for " + client.user.username + "!")
