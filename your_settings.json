@@ -4,6 +4,7 @@
     "rainbowdelay": 1500,
     "rainbowcommand": "color",
     "rainbowstop": "stop",
+    "romaniancommand": "roc",
     "rgbcommand": "rgb",
     "rainbowrole": [
           "#FF0000", 
@@ -34,8 +35,14 @@
         "#00ff18",
         "#00d8ff"
     ],
+    "romrole": [
+        "#002B7F",
+        "#FCD116",
+        "#CE1126"
+    ],
     "messageresponse": {
-        "rgbstart": "The RGB effect started",
+        "flagstart": "The Flag effect has started",
+        "rgbstart": "The RGB effect has started",
         "missingperm": "I need permission 'manage_roles' to execute this action.",
         "success": "Rainbow has started thanks to Cristi Petrut for that",
         "rainbowstop": "Rainbow has stopped.",
