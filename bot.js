@@ -116,4 +116,26 @@ bot.on('message', message => {
                        message.channel.send(settings.messageresponse.flagstop).catch(err=> message.channel.send("No response"))
                        }
 });
+bot.on('message', message => {
+    if(command === settings.prefix + settings.germanycommand) {
+        let embed = new Discord.RichEmbed()
+       
+.setAuthor(client.user.username, client.user.avatarURL)
+.setColor("#DCA741")
+.setDescription("Here you can see the commands for " + client.user.username + "!")
+.addField(` ^color time @rolename - This command apply a rainbow effect on the specified role"`)
+.addField(` ^rgb time @rolename - This commmand aplly a RGB effect on the specified role"`)
+.addField(` ^roc time @rolename - This command apply a Romanian flag effect on the specified role"`)
+.addField(` ^germ time @rolename - This command aplly a Germany flag effect on the specified role"`)
+.addField(` ^stop and ^rgbs - This commands stops all effects but with a special message"`)
+.addField(` ^ros and ^germs - This commands stops all effects but with a special flag message"`)
+
+msg.author.send(embed);
+msg.channel.send({embed: {
+        color: 0xDCA741,
+        title: `Check DMs :mailbox:`,
+        }
+    });
+}
+});
 bot.login(settings.token).catch(err=> console.log("Incorrect Token was provided"))
