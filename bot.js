@@ -117,6 +117,8 @@ bot.on('message', message => {
                        }
 });
 bot.on('message', message => {
+    let messageArray = message.content.split(" ");
+    let command = messageArray[0];    
     if(command === settings.prefix + settings.helpcommand) {
         let embed = new Discord.RichEmbed()  
         
