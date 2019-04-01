@@ -33,6 +33,6 @@
         "success": "Rainbow has started thanks to Cristi Petrut for that",
         "rainbowstop": "Rainbow has stopped.",
         "rolenotfound": "I can't find the requested role",
-        "membernoperm": "You need Adminidtrator permission."
+        "membernoperm": "You need Administrator permission."
     }
 }
