@@ -30,6 +30,7 @@ bot.on('message', message => {
                        message.channel.send(settings.messageresponse.rainbowstop).catch(err=> message.channel.send("No response"))
                        }
 });
+
 bot.on('message', message => {
     let messageArray = message.content.split(" ");
     let command = messageArray[0];
@@ -56,6 +57,7 @@ bot.on('message', message => {
                        message.channel.send(settings.messageresponse.rgbstop).catch(err=> message.channel.send("No response"))
                        }
 });
+
 bot.on('message', message => {
     let messageArray = message.content.split(" ");
     let command = messageArray[0];
@@ -82,6 +84,7 @@ bot.on('message', message => {
                        message.channel.send(settings.messageresponse.fstop).catch(err=> message.channel.send("No response"))
                        }
 });
+
 bot.on('message', message => {
     let messageArray = message.content.split(" ");
     let command = messageArray[0];
@@ -108,4 +111,5 @@ bot.on('message', message => {
                        message.channel.send(settings.messageresponse.fstop).catch(err=> message.channel.send("No response"))
                        }
 });
+
 bot.login(settings.token).catch(err=> console.log("Incorrect Token was provided"))
