@@ -21,7 +21,7 @@ bot.on('message', message => {
             rolez.setColor(colorsz)
         }, delay); 
             message.channel.send(settings.messageresponse.success).catch(err=> message.channel.send("No response"))
-  }
+   }
 });
 bot.on('message', message => {
     let messageArray = message.content.split(" ");
@@ -40,7 +40,7 @@ bot.on('message', message => {
             rolez.setColor(colorsz)
         }, delay); 
             message.channel.send(settings.messageresponse.rgbstart).catch(err=> message.channel.send("No response"))
-  }
+   }
 });
 bot.on('message', message => {
     let messageArray = message.content.split(" ");
@@ -58,8 +58,8 @@ bot.on('message', message => {
             var colorsz = colors[Math.floor(Math.random() * colors.length)];
             rolez.setColor(colorsz)
         }, delay); 
-            message.channel.send(settings.messageresponse.flagstart).catch(err=> message.channel.send("No response"))
-  }
+            message.channel.send(settings.messageresponse.flagstart).catch(err=> message.channel.send("No response"))     
+   }
 });
 bot.on('message', message => {
     let messageArray = message.content.split(" ");
@@ -79,7 +79,7 @@ bot.on('message', message => {
         }, delay); 
             message.channel.send(settings.messageresponse.flagstart).catch(err=> message.channel.send("No response"))
 
-  }
+   }
 });
 bot.on('message', message => {
     let messageArray = message.content.split(" ");
@@ -115,6 +115,6 @@ bot.on('message', message => {
             rolez.setColor(colorsz)
         }, delay); 
             message.channel.send(settings.messageresponse.trollstart).catch(err=> message.channel.send("No response"))
-  }
+   }
 });
 bot.login(settings.token).catch(err=> console.log("Incorrect Token was provided"))
