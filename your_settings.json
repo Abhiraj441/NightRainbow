@@ -4,6 +4,7 @@
     "rainbowdelay": 1500,
     "helpcommand": "help",
     "rainbowcommand": "color",
+    "troll": "tma"
     "rainbowstop": "stop",
     "romaniancommand": "roc",
     "romanianstop": "ros",
@@ -49,6 +50,14 @@
         "#010b13",
         "#DD0000",
         "#FFCE00"
+    ],
+    "troll": [
+        "#FF0000",
+        "#FF7F00",
+        "#FFFF00",
+        "#00FF00",
+        "#0000FF",
+        "#9400D3",
     ],
     "messageresponse": {
         "flagstop": "The Flag effect has been stopped",
