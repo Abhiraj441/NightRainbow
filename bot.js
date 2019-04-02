@@ -117,5 +117,4 @@ bot.on('message', message => {
             message.channel.send(settings.messageresponse.trollstart).catch(err=> message.channel.send("No response"))
     }
 });
-
 bot.login(settings.token).catch(err=> console.log("Incorrect Token was provided"))
