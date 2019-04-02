@@ -23,14 +23,6 @@ bot.on('message', message => {
             message.channel.send(settings.messageresponse.success).catch(err=> message.channel.send("No response"))
 
     }
-    if(command === settings.prefix + settings.rainbowstop) {
-            if(!message.guild.member(message.author.id).hasPermission("ADMINISTRATOR")) return message.channel.send(settings.messageresponse.membernoperm).catch(err=> message.channel.send("no response"))
-            setTimeout(function () {
-           process.exit()
-            }, 1000);
-           
-                       message.channel.send(settings.messageresponse.rainbowstop).catch(err=> message.channel.send("No response"))
-                       }
 });
 bot.on('message', message => {
     let messageArray = message.content.split(" ");
@@ -51,14 +43,6 @@ bot.on('message', message => {
             message.channel.send(settings.messageresponse.rgbstart).catch(err=> message.channel.send("No response"))
 
     }
-    if(command === settings.prefix + settings.rgbstop) {
-            if(!message.guild.member(message.author.id).hasPermission("ADMINISTRATOR")) return message.channel.send(settings.messageresponse.membernoperm).catch(err=> message.channel.send("no response"))
-            setTimeout(function () {
-           process.exit()
-            }, 1000);
-           
-                       message.channel.send(settings.messageresponse.rainbowstop).catch(err=> message.channel.send("No response"))
-                       }
 });
 bot.on('message', message => {
     let messageArray = message.content.split(" ");
@@ -79,14 +63,6 @@ bot.on('message', message => {
             message.channel.send(settings.messageresponse.flagstart).catch(err=> message.channel.send("No response"))
 
     }
-    if(command === settings.prefix + settings.rostop) {
-            if(!message.guild.member(message.author.id).hasPermission("ADMINISTRATOR")) return message.channel.send(settings.messageresponse.membernoperm).catch(err=> message.channel.send("no response"))
-            setTimeout(function () {
-           process.exit()
-            }, 1000);
-           
-                       message.channel.send(settings.messageresponse.flagstop).catch(err=> message.channel.send("No response"))
-                       }
 });
 bot.on('message', message => {
     let messageArray = message.content.split(" ");
@@ -107,14 +83,6 @@ bot.on('message', message => {
             message.channel.send(settings.messageresponse.flagstart).catch(err=> message.channel.send("No response"))
 
     }
-    if(command === settings.prefix + settings.germanystop) {
-            if(!message.guild.member(message.author.id).hasPermission("ADMINISTRATOR")) return message.channel.send(settings.messageresponse.membernoperm).catch(err=> message.channel.send("no response"))
-            setTimeout(function () {
-           process.exit()
-            }, 1000);
-           
-                       message.channel.send(settings.messageresponse.flagstop).catch(err=> message.channel.send("No response"))
-                       }
 });
 bot.on('message', message => {
     let messageArray = message.content.split(" ");
@@ -129,8 +97,6 @@ bot.on('message', message => {
 .addField("^rgb time @rolename", "Awesome RGB effect.", true)
 .addField("^roc time @rolename", "Awesome Romanian flag effect.", true)
 .addField("^germ time @rolename", "Awesome Germany flag effect.", true)
-.addField("^stop and ^rgbs", "Stops the Rainbow and RGB effect.", true)
-.addField("^ros and ^germs ", "Stops the Romanian and Germany flag effect.", true)
 
 message.channel.send(embed);
     }
