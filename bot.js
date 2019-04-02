@@ -101,7 +101,6 @@ bot.on('message', message => {
 message.channel.send(embed);
     }
 });
-
 bot.on('message', message => {
     let messageArray = message.content.split(" ");
     let command = messageArray[0];
