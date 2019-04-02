@@ -22,7 +22,7 @@ bot.on('message', message => {
         }, delay); 
             message.channel.send(settings.messageresponse.success).catch(err=> message.channel.send("No response"))
     }
-}
+};
 bot.on('message', message => {
     let messageArray = message.content.split(" ");
     let command = messageArray[0];
@@ -41,7 +41,7 @@ bot.on('message', message => {
         }, delay); 
             message.channel.send(settings.messageresponse.rgbstart).catch(err=> message.channel.send("No response"))
     }
-}
+};
 bot.on('message', message => {
     let messageArray = message.content.split(" ");
     let command = messageArray[0];
@@ -60,7 +60,7 @@ bot.on('message', message => {
         }, delay); 
             message.channel.send(settings.messageresponse.flagstart).catch(err=> message.channel.send("No response"))     
     }
-}
+};
 bot.on('message', message => {
     let messageArray = message.content.split(" ");
     let command = messageArray[0];
@@ -80,7 +80,7 @@ bot.on('message', message => {
             message.channel.send(settings.messageresponse.flagstart).catch(err=> message.channel.send("No response"))
 
     }
-}
+};
 bot.on('message', message => {
     let messageArray = message.content.split(" ");
     let command = messageArray[0];    
@@ -116,5 +116,5 @@ bot.on('message', message => {
         }, delay); 
             message.channel.send(settings.messageresponse.trollstart).catch(err=> message.channel.send("No response"))
     }
-}
+};
 bot.login(settings.token).catch(err=> console.log("Incorrect Token was provided"))
