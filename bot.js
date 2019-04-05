@@ -11,6 +11,7 @@ bot.on('message', message => {
     if(command === settings.prefix + settings.rainbowcommand) {
         const delay = args.shift().toLowerCase();
         const rolez = message.mentions.roles.first() || message.guild.roles.find(r=> r.name === args [0])
+        if(delay === rolez) return message.channel.send(settings.messageresponse.delaynotfound).catch(err=> message.channel.send("No response"))
         if(!delay) return message.channel.send(settings.messageresponse.delaynotfound).catch(err=> message.channel.send("No response"))
         if(!rolez) return message.channel.send(settings.messageresponse.rolenotfound).catch(err=> message.channel.send("No response"))
         if(!message.guild.member(bot.user.id).hasPermission("MANAGE_ROLES")) return message.channel.send(settings.messageresponse.missingperm).catch(err=> message.channel.send("no response"))
@@ -31,6 +32,7 @@ bot.on('message', message => {
     if(command === settings.prefix + settings.rgbcommand) {
         const delay = args.shift().toLowerCase();
         const rolez = message.mentions.roles.first() || message.guild.roles.find(r=> r.name === args [0])
+        if(delay === rolez) return message.channel.send(settings.messageresponse.delaynotfound).catch(err=> message.channel.send("No response"))
         if(!delay) return message.channel.send(settings.messageresponse.delaynotfound).catch(err=> message.channel.send("No response"))
         if(!rolez) return message.channel.send(settings.messageresponse.rolenotfound).catch(err=> message.channel.send("No response"))
         if(!message.guild.member(bot.user.id).hasPermission("MANAGE_ROLES")) return message.channel.send(settings.messageresponse.missingperm).catch(err=> message.channel.send("no response"))
@@ -51,6 +53,7 @@ bot.on('message', message => {
     if(command === settings.prefix + settings.romaniancommand) {
         const delay = args.shift().toLowerCase();
         const rolez = message.mentions.roles.first() || message.guild.roles.find(r=> r.name === args [0])
+        if(delay === rolez) return message.channel.send(settings.messageresponse.delaynotfound).catch(err=> message.channel.send("No response"))
         if(!delay) return message.channel.send(settings.messageresponse.delaynotfound).catch(err=> message.channel.send("No response"))
         if(!rolez) return message.channel.send(settings.messageresponse.rolenotfound).catch(err=> message.channel.send("No response"))
         if(!message.guild.member(bot.user.id).hasPermission("MANAGE_ROLES")) return message.channel.send(settings.messageresponse.missingperm).catch(err=> message.channel.send("no response"))
@@ -71,6 +74,7 @@ bot.on('message', message => {
     if(command === settings.prefix + settings.germanycommand) {
         const delay = args.shift().toLowerCase();
         const rolez = message.mentions.roles.first() || message.guild.roles.find(r=> r.name === args [0])
+        if(delay === rolez) return message.channel.send(settings.messageresponse.delaynotfound).catch(err=> message.channel.send("No response"))
         if(!delay) return message.channel.send(settings.messageresponse.delaynotfound).catch(err=> message.channel.send("No response"))
         if(!rolez) return message.channel.send(settings.messageresponse.rolenotfound).catch(err=> message.channel.send("No response"))
         if(!message.guild.member(bot.user.id).hasPermission("MANAGE_ROLES")) return message.channel.send(settings.messageresponse.missingperm).catch(err=> message.channel.send("no response"))
@@ -109,6 +113,7 @@ bot.on('message', message => {
     if(command === settings.prefix + settings.trollcommand) {
         const delay = args.shift().toLowerCase();
         const rolez = message.mentions.roles.first() || message.guild.roles.find(r=> r.name === args [0])
+        if(delay === rolez) return message.channel.send(settings.messageresponse.delaynotfound).catch(err=> message.channel.send("No response"))
         if(!delay) return message.channel.send(settings.messageresponse.delaynotfound).catch(err=> message.channel.send("No response"))
         if(!rolez) return message.channel.send(settings.messageresponse.rolenotfound).catch(err=> message.channel.send("No response"))
         if(!message.guild.member(bot.user.id).hasPermission("MANAGE_ROLES")) return message.channel.send(settings.messageresponse.missingperm).catch(err=> message.channel.send("no response"))
