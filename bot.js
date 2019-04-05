@@ -122,6 +122,7 @@ bot.on('message', message => {
             message.channel.send(settings.messageresponse.trollstart).catch(err=> message.channel.send("No response"))
     }
     if(command === settings.prefix + settings.rainbowstop) {
+       if(!message.guild.member(message.author.id).hasPermission("ADMINISTRATOR")) return message.channel.send(settings.messageresponse.membernoperm).catch(err=> message.channel.send("no response"))
             setTimeout(function () {
            process.exit()
             }, 1000);
