@@ -60,6 +60,7 @@
         "#9400D3"
     ],
     "messageresponse": {
+        "delaynotfound": "Please input a randomize delay",
         "trollstart": "Troll has started",
         "flagstop": "The Flag effect has been stopped",
         "flagstart": "The Flag effect has started",
