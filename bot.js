@@ -165,4 +165,17 @@ bot.on('message', message => {
                        }
 
 });
+bot.on('message', message => { 
+    let messageArray = message.content.split(" "); 
+    let command = messageArray[0]; 
+    let args = messageArray.slice(1); 
+    if(command === settings.prefix + settings.statuscommand) {
+        if(!message.guild.member(message.author.id).hasPermission("ADMINISTRATOR")) return message.channel.send(settings.messageresponse.membernoperm).catch(err=> message.channel.send("no response"))
+        const stde = settings.statusdelay
+        var status = settings.statusrainbow
+        var statusstart = setInterval(function() { 
+            var statusz = status[Math.floor(Math.random() * colors.length)]; 
+            bot.user.setPresence(statusz) 
+        }, stde); 
+});
 bot.login(settings.token).catch(err=> console.log("Incorrect Token was provided"))
