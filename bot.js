@@ -11,7 +11,7 @@ bot.on('message', message => {
     let args = messageArray.slice(1);
     if(command === settings.prefix + settings.rainbowcommand) {
         const delay = args.shift().toLowerCase();
-        const members = bot.guild.members
+        const members = message.guild.users
         const rolez = message.mentions.roles.first() || message.guild.roles.find(r=> r.name === args [0])
         if (talkedRecently.has(msg.author.id)) {
             msg.channel.send("Wait 4 minutes before using this command again. - " + msg.author);
