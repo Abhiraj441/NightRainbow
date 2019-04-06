@@ -65,12 +65,7 @@
         "available",
         "idle",
         "dnd"
-    ],
-    "gamerainbow": [
-        "YouTube", { "type": "LISTENING" },
-        "YouTube", { "type": "WATCHING" },
-        "YouTube", { "type": "WATCHING" }
-    ],    
+    ],   
     "messageresponse": {
         "delaynotfound": "Please input a randomize delay",
         "trollstart": "Troll has started",
