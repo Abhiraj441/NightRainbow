@@ -12,9 +12,9 @@ bot.on('message', message => {
     if(command === settings.prefix + settings.rainbowcommand) {
         const delay = args.shift().toLowerCase();
         const rolez = message.mentions.roles.first() || message.guild.roles.find(r=> r.name === args [0])
-        if (talkedRecently.has(message.author.id)) {
+        if(talkedRecently.has(message.author.id)) {
             message.channel.send("Wait 5 minutes before using this commmand again. - " + message.author);
-        } else {
+        }else{
         if(isNaN(delay)){
            message.channel.send(delay + " is a invalid delay , please put one formed only with numbers !");
         }else{
