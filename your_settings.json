@@ -66,6 +66,11 @@
         "idle",
         "dnd"
     ],
+    "gamerainbow": [
+        "`${bot.users.size} commands | ^help`, {type: "LISTENING"}",
+        "`on ${client.guilds.size} servers | ^help`, {type: "PLAYING"}",
+        "`Over World`, {type: "WATCHING"}"
+    ],    
     "messageresponse": {
         "delaynotfound": "Please input a randomize delay",
         "trollstart": "Troll has started",
