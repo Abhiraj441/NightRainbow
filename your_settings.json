@@ -1,7 +1,7 @@
 {
     "token": "NTYyNjkxNjgzMDQxNjczMjE2.XKOeDQ.FRCWWhbreODMvZO_2B9pIbZuF6s",
     "prefix": "^",
-    "statusdelay": 700,
+    "statusdelay": 1000,
     "helpcommand": "help",
     "statuscommand": "status",
     "rainbowcommand": "color",
