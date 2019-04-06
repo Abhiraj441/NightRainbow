@@ -3,6 +3,7 @@
     "prefix": "^",
     "statusdelay": 3000,
     "helpcommand": "help",
+    "statuscommand": "status",
     "rainbowcommand": "color",
     "trollcommand": "tma",
     "rainbowstop": "stop",
