@@ -1,7 +1,7 @@
 {
     "token": "NTYyNjkxNjgzMDQxNjczMjE2.XKOeDQ.FRCWWhbreODMvZO_2B9pIbZuF6s",
     "prefix": "^",
-    "rainbowdelay": 1500,
+    "statusdelay": 3000,
     "helpcommand": "help",
     "rainbowcommand": "color",
     "trollcommand": "tma",
@@ -58,6 +58,11 @@
         "#00FF00",
         "#0000FF",
         "#9400D3"
+    ],
+    "statusrainbow": [
+        "{ game: { name: 'with bot.guilds.size servers' }, status: 'online' }",
+        "{ game: { name: 'with bot.users.size users' }, status: 'idle' }",
+        "{ game: { name: 'with my creator ' }, status: 'do not disturb' }"
     ],
     "messageresponse": {
         "delaynotfound": "Please input a randomize delay",
