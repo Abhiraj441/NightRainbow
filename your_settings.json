@@ -67,8 +67,8 @@
         "dnd"
     ],
     "gamerainbow": [
-        '${bot.users.size} | ^help', { type: 'PLAYING' },
-        'on ${bot.guilds.size} | ^help', { type: 'LISTENING' },
+        '{bot.users.size} | ^help', { type: 'PLAYING' },
+        'on {bot.guilds.size} | ^help', { type: 'LISTENING' },
         'Over World', { type: 'WATCHING' }
     ],    
     "messageresponse": {
