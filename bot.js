@@ -14,6 +14,8 @@ bot.on('message', message => {
         if(isNaN(delay)){
            message.channel.send(delay + " is a invalid delay , please put one formed only with numbers !");
         }else{
+        let botrole = message.guild.member(bot.user.id).highestRole;
+        if(rolez.position > botrole.position){ return message.channel.send("I can't edit that role ! Put my highest role above the role you want me to manage .") }
         if(delay === rolez) return message.channel.send(settings.messageresponse.delaynotfound).catch(err=> message.channel.send("No response"))
         if(!delay) return message.channel.send(settings.messageresponse.delaynotfound).catch(err=> message.channel.send("No response"))
         if(!rolez) return message.channel.send(settings.messageresponse.rolenotfound).catch(err=> message.channel.send("No response"))
