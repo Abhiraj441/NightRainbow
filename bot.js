@@ -11,6 +11,9 @@ bot.on('message', message => {
     if(command === settings.prefix + settings.rainbowcommand) {
         const delay = args.shift().toLowerCase();
         const rolez = message.mentions.roles.first() || message.guild.roles.find(r=> r.name === args [0])
+        if(isNaN(delay)){
+           message.channel.send(delay + " is a invalid delay , please put one formed only with numbers !");
+        }
         if(delay === rolez) return message.channel.send(settings.messageresponse.delaynotfound).catch(err=> message.channel.send("No response"))
         if(!delay) return message.channel.send(settings.messageresponse.delaynotfound).catch(err=> message.channel.send("No response"))
         if(!rolez) return message.channel.send(settings.messageresponse.rolenotfound).catch(err=> message.channel.send("No response"))
