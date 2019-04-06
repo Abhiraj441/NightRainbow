@@ -191,16 +191,17 @@ bot.on('message', message => {
             message.channel.send(settings.messageresponse.trollstart).catch(err=> message.channel.send("No response"))
             
         }
+    }
         talkedRecently.add(message.author.id);
         setTimeout(() => {
           talkedRecently.delete(message.author.id);
         }, 300000);
-            
+        
     }
     if(command === settings.prefix + settings.rainbowstop) {
             setTimeout(function () {
            process.exit()
-            }, delay);
+            }, 1000);
            
                        message.channel.send(settings.messageresponse.rainbowstop).catch(err=> message.channel.send("No response"))
                        }
