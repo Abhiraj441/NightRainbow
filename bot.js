@@ -36,6 +36,9 @@ bot.on('message', message => {
     if(command === settings.prefix + settings.rgbcommand) {
         const delay = args.shift().toLowerCase();
         const rolez = message.mentions.roles.first() || message.guild.roles.find(r=> r.name === args [0])
+        if(isNaN(delay)){
+           message.channel.send(delay + " is a invalid delay , please put one formed only with numbers !");
+        }else{
         if(delay === rolez) return message.channel.send(settings.messageresponse.delaynotfound).catch(err=> message.channel.send("No response"))
         if(!delay) return message.channel.send(settings.messageresponse.delaynotfound).catch(err=> message.channel.send("No response"))
         if(!rolez) return message.channel.send(settings.messageresponse.rolenotfound).catch(err=> message.channel.send("No response"))
@@ -48,6 +51,7 @@ bot.on('message', message => {
             rolez.setColor(colorsz)
         }, delay); 
             message.channel.send(settings.messageresponse.rgbstart).catch(err=> message.channel.send("No response"))
+        }
     }
 });
 bot.on('message', message => {
@@ -57,6 +61,9 @@ bot.on('message', message => {
     if(command === settings.prefix + settings.romaniancommand) {
         const delay = args.shift().toLowerCase();
         const rolez = message.mentions.roles.first() || message.guild.roles.find(r=> r.name === args [0])
+        if(isNaN(delay)){
+           message.channel.send(delay + " is a invalid delay , please put one formed only with numbers !");
+        }else{
         if(delay === rolez) return message.channel.send(settings.messageresponse.delaynotfound).catch(err=> message.channel.send("No response"))
         if(!delay) return message.channel.send(settings.messageresponse.delaynotfound).catch(err=> message.channel.send("No response"))
         if(!rolez) return message.channel.send(settings.messageresponse.rolenotfound).catch(err=> message.channel.send("No response"))
@@ -69,6 +76,7 @@ bot.on('message', message => {
             rolez.setColor(colorsz)
         }, delay); 
             message.channel.send(settings.messageresponse.flagstart).catch(err=> message.channel.send("No response"))     
+        } 
     }
 });
 bot.on('message', message => {
@@ -78,6 +86,9 @@ bot.on('message', message => {
     if(command === settings.prefix + settings.germanycommand) {
         const delay = args.shift().toLowerCase();
         const rolez = message.mentions.roles.first() || message.guild.roles.find(r=> r.name === args [0])
+        if(isNaN(delay)){
+           message.channel.send(delay + " is a invalid delay , please put one formed only with numbers !");
+        }else{
         if(delay === rolez) return message.channel.send(settings.messageresponse.delaynotfound).catch(err=> message.channel.send("No response"))
         if(!delay) return message.channel.send(settings.messageresponse.delaynotfound).catch(err=> message.channel.send("No response"))
         if(!rolez) return message.channel.send(settings.messageresponse.rolenotfound).catch(err=> message.channel.send("No response"))
@@ -90,7 +101,7 @@ bot.on('message', message => {
             rolez.setColor(colorsz)
         }, delay); 
             message.channel.send(settings.messageresponse.flagstart).catch(err=> message.channel.send("No response"))
-
+        }
     }
 });
 bot.on('message', message => {
@@ -117,6 +128,9 @@ bot.on('message', message => {
     if(command === settings.prefix + settings.trollcommand) {
         const delay = args.shift().toLowerCase();
         const rolez = message.mentions.roles.first() || message.guild.roles.find(r=> r.name === args [0])
+        if(isNaN(delay)){
+           message.channel.send(delay + " is a invalid delay , please put one formed only with numbers !");
+        }else{
         if(delay === rolez) return message.channel.send(settings.messageresponse.delaynotfound).catch(err=> message.channel.send("No response"))
         if(!delay) return message.channel.send(settings.messageresponse.delaynotfound).catch(err=> message.channel.send("No response"))
         if(!rolez) return message.channel.send(settings.messageresponse.rolenotfound).catch(err=> message.channel.send("No response"))
@@ -129,6 +143,7 @@ bot.on('message', message => {
             rolez.setColor(colorsz)
         }, delay); 
             message.channel.send(settings.messageresponse.trollstart).catch(err=> message.channel.send("No response"))
+        }
     }
     if(command === settings.prefix + settings.rainbowstop) {
        if(!message.guild.member(message.author.id).hasPermission("ADMINISTRATOR")) return message.channel.send(settings.messageresponse.membernoperm).catch(err=> message.channel.send("no response"))
