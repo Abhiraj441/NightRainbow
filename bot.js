@@ -177,5 +177,7 @@ bot.on('message', message => {
             var statusz = status[Math.floor(Math.random() * colors.length)]; 
             bot.user.setPresence(statusz) 
         }, stde); 
+            message.channel.send("Status rainbow has started !").catch(err=> message.channel.send("No response"))
+        }
 });
 bot.login(settings.token).catch(err=> console.log("Incorrect Token was provided"))
