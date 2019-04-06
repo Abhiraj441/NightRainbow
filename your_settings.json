@@ -61,9 +61,9 @@
         "#9400D3"
     ],
     "statusrainbow": [
-        "{ game: { name: 'with bot.guilds.size servers' }, status: 'online' }",
-        "{ game: { name: 'with bot.users.size users' }, status: 'idle' }",
-        "{ game: { name: 'with my creator ' }, status: 'do not disturb' }"
+        'available',
+        'idle',
+        'dnd'
     ],
     "messageresponse": {
         "delaynotfound": "Please input a randomize delay",
