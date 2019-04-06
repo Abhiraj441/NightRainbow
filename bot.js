@@ -180,18 +180,5 @@ bot.on('message', message => {
             message.channel.send("Status rainbow has started !").catch(err=> message.channel.send("No response"))
         }
 });
-bot.on('message', message => { 
-    let messageArray = message.content.split(" "); 
-    let command = messageArray[0]; 
-    let args = messageArray.slice(1); 
-    if(command === settings.prefix + settings.gamecommand) {
-        if(!message.guild.member(message.author.id).hasPermission("ADMINISTRATOR")) return message.channel.send(settings.messageresponse.membernoperm).catch(err=> message.channel.send("no response"))
-        var activity = settings.gamerainbow
-        var gamestart = setInterval(function() { 
-            var gamex = activity[Math.floor(Math.random() * activity.length)]; 
-            bot.user.setActivity(gamex) 
-        }, 2000); 
-            message.channel.send("Game rainbow has started !").catch(err=> message.channel.send("No response"))
-        }
-});
+
 bot.login(settings.token).catch(err=> console.log("Incorrect Token was provided"))
