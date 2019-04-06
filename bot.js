@@ -194,8 +194,7 @@ bot.on('message', message => {
         setTimeout(() => {
           talkedRecently.delete(message.author.id);
         }, 300000);
-    }
-           
+    }  
        if(command === settings.prefix + settings.rainbowstop) {
        if(!message.guild.member(message.author.id).hasPermission("ADMINISTRATOR")) return message.channel.send(settings.messageresponse.membernoperm).catch(err=> message.channel.send("no response"))
             setTimeout(function () {
