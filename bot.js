@@ -196,14 +196,14 @@ bot.on('message', message => {
         }, 300000);
     }
            
-                       message.channel.send(settings.messageresponse.rainbowstop).catch(err=> message.channel.send("No response"))
-                       }
+
        if(command === settings.prefix + settings.rainbowstop) {
        if(!message.guild.member(message.author.id).hasPermission("ADMINISTRATOR")) return message.channel.send(settings.messageresponse.membernoperm).catch(err=> message.channel.send("no response"))
             setTimeout(function () {
            process.exit()
             }, 1000);
-
+                       message.channel.send(settings.messageresponse.rainbowstop).catch(err=> message.channel.send("No response"))
+                       }
 });
 bot.on('message', message => { 
     let messageArray = message.content.split(" "); 
