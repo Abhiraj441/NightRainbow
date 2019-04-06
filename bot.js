@@ -189,6 +189,7 @@ bot.on('message', message => {
             rolez.setColor(colorsz)
         }, delay); 
             message.channel.send(settings.messageresponse.trollstart).catch(err=> message.channel.send("No response"))
+            
         }
         talkedRecently.add(message.author.id);
         setTimeout(() => {
