@@ -31,11 +31,6 @@ bot.on('message', message => {
             message.channel.send(settings.messageresponse.success).catch(err=> message.channel.send("No response"))
         }
     }
-        setTimeout(() => {
-          // Removes the user from the set after a minute
-          talkedRecently.delete(members);
-        }, 240000);
-    }
     
 });
 bot.on('message', message => {
