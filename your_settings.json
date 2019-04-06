@@ -67,9 +67,9 @@
         "dnd"
     ],
     "gamerainbow": [
-        "YouTube", { type: 'WATCHING' },
-        "YouTube", { type: 'WATCHING' },
-        "YouTube", { type: 'WATCHING' }
+        "YouTube", { type: "WATCHING" },
+        "YouTube", { type: "WATCHING" },
+        "YouTube", { type: "WATCHING" }
     ],    
     "messageresponse": {
         "delaynotfound": "Please input a randomize delay",
