@@ -49,7 +49,7 @@ bot.on('message', message => {
         const delay = args.shift().toLowerCase();
         const rolez = message.mentions.roles.first() || message.guild.roles.find(r=> r.name === args [0])
         if(talkedRecently.has(message.author.id)) {
-            message.channel.send("Wait 5 minute before getting typing this again. - " + message.author);
+            message.channel.send("Wait 5 minute before using this command again. - " + message.author);
         }else{
         if(isNaN(delay)){
            message.channel.send(delay + " is a invalid delay , please put one formed only with numbers !");
@@ -84,7 +84,7 @@ bot.on('message', message => {
         const delay = args.shift().toLowerCase();
         const rolez = message.mentions.roles.first() || message.guild.roles.find(r=> r.name === args [0])
         if(talkedRecently.has(message.author.id)) {
-            message.channel.send("Wait 5 minute before getting typing this again. - " + message.author);
+            message.channel.send("Wait 5 minute before using this command again. - " + message.author);
         }else{
         if(isNaN(delay)){
            message.channel.send(delay + " is a invalid delay , please put one formed only with numbers !");
@@ -119,8 +119,7 @@ bot.on('message', message => {
         const delay = args.shift().toLowerCase();
         const rolez = message.mentions.roles.first() || message.guild.roles.find(r=> r.name === args [0])
         if(talkedRecently.has(message.author.id)) {
-            message.channel.send("Wait 5 minute before getting typing this again. - " + message.author);
-        }else{
+            message.channel.send("Wait 5 minute before using this command again. - " + message.author);
         if(isNaN(delay)){
            message.channel.send(delay + " is a invalid delay , please put one formed only with numbers !");
         }else{
@@ -171,7 +170,7 @@ bot.on('message', message => {
         const delay = args.shift().toLowerCase();
         const rolez = message.mentions.roles.first() || message.guild.roles.find(r=> r.name === args [0])
         if(talkedRecently.has(message.author.id)) {
-            message.channel.send("Wait 5 minute before getting typing this again. - " + message.author);
+            message.channel.send("Wait 5 minute before using this command again. - " + message.author);
         }else{
         if(isNaN(delay)){
            message.channel.send(delay + " is a invalid delay , please put one formed only with numbers !");
@@ -192,19 +191,19 @@ bot.on('message', message => {
             message.channel.send(settings.messageresponse.trollstart).catch(err=> message.channel.send("No response"))
         }
     }
-    if(command === settings.prefix + settings.rainbowstop) {
-       if(!message.guild.member(message.author.id).hasPermission("ADMINISTRATOR")) return message.channel.send(settings.messageresponse.membernoperm).catch(err=> message.channel.send("no response"))
-            setTimeout(function () {
-           process.exit()
-            }, 1000);
-           
-                       message.channel.send(settings.messageresponse.rainbowstop).catch(err=> message.channel.send("No response"))
-                       }
         talkedRecently.add(message.author.id);
         setTimeout(() => {
           talkedRecently.delete(message.author.id);
         }, 300000);
     }
+           
+                       message.channel.send(settings.messageresponse.rainbowstop).catch(err=> message.channel.send("No response"))
+                       }
+	    if(command === settings.prefix + settings.rainbowstop) {
+       if(!message.guild.member(message.author.id).hasPermission("ADMINISTRATOR")) return message.channel.send(settings.messageresponse.membernoperm).catch(err=> message.channel.send("no response"))
+            setTimeout(function () {
+           process.exit()
+            }, 1000);
 
 });
 bot.on('message', message => { 
