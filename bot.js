@@ -14,7 +14,7 @@ bot.on('message', message => {
         const members = message.guild.users
         const rolez = message.mentions.roles.first() || message.guild.roles.find(r=> r.name === args [0])
         if (talkedRecently.has(msg.author.id)) {
-            msg.channel.send("Wait 4 minutes before using this command again. - " + msg.author);
+            message.channel.send("Wait 4 minutes before using this command again. - " + message.author);
         } else {
         if(isNaN(delay)){
            message.channel.send(delay + " is a invalid delay , please put one formed only with numbers !");
