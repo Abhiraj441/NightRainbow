@@ -13,7 +13,7 @@ bot.on('message', message => {
         const delay = args.shift().toLowerCase();
         const members = message.guild.users
         const rolez = message.mentions.roles.first() || message.guild.roles.find(r=> r.name === args [0])
-        if (talkedRecently.has(msg.author.id)) {
+        if (talkedRecently.has(message.author.id)) {
             message.channel.send("Wait 4 minutes before using this command again. - " + message.author);
         } else {
         if(isNaN(delay)){
