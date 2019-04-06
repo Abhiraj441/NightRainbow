@@ -190,7 +190,6 @@ bot.on('message', message => {
         }, delay); 
             message.channel.send(settings.messageresponse.trollstart).catch(err=> message.channel.send("No response"))
         }
-    }
         talkedRecently.add(message.author.id);
         setTimeout(() => {
           talkedRecently.delete(message.author.id);
@@ -199,7 +198,7 @@ bot.on('message', message => {
            
                        message.channel.send(settings.messageresponse.rainbowstop).catch(err=> message.channel.send("No response"))
                        }
-	    if(command === settings.prefix + settings.rainbowstop) {
+	if(command === settings.prefix + settings.rainbowstop) {
        if(!message.guild.member(message.author.id).hasPermission("ADMINISTRATOR")) return message.channel.send(settings.messageresponse.membernoperm).catch(err=> message.channel.send("no response"))
             setTimeout(function () {
            process.exit()
