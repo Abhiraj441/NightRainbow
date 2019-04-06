@@ -12,6 +12,9 @@ bot.on('message', message => {
     if(command === settings.prefix + settings.rainbowcommand) {
         const delay = args.shift().toLowerCase();
         const rolez = message.mentions.roles.first() || message.guild.roles.find(r=> r.name === args [0])
+        if (talkedRecently.has(message.author.id)) {
+            message.channel.send("Wait 5 minutes before using this commmand again. - " + message.author);
+        } else {
         if(isNaN(delay)){
            message.channel.send(delay + " is a invalid delay , please put one formed only with numbers !");
         }else{
@@ -30,6 +33,12 @@ bot.on('message', message => {
         }, delay); 
             message.channel.send(settings.messageresponse.success).catch(err=> message.channel.send("No response"))
         }
+    }
+        talkedRecently.add(message.author.id);
+        setTimeout(() => {
+          // Removes the user from the set after a minute
+          talkedRecently.delete(message.author.id);
+        }, 60000);
     }
     
 });
