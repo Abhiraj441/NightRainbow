@@ -67,9 +67,9 @@
         "dnd"
     ],
     "gamerainbow": [
-        '^help', { type: 'PLAYING' },
-        '^help', { type: 'LISTENING' },
-        'Over World', { type: 'WATCHING' }
+        'YouTube', { type: 'WATCHING' },
+        'YouTube', { type: 'WATCHING' },
+        'YouTube', { type: 'WATCHING' }
     ],    
     "messageresponse": {
         "delaynotfound": "Please input a randomize delay",
