@@ -2,7 +2,6 @@ const Discord = require("discord.js")
 const settings = require("./your_settings.json")
 const bot = new Discord.Client()
 const talkedRecently = new Set();
-const members = guild.members
 bot.on('ready', async => {
 console.log("Rainbow bot is ready!" + "\n" + bot.user.tag + "\n" + "Server Count: "  + bot.guilds.size + "\n" + "Cached users: " + bot.users.size + "\n" + "Enjoy!")
 });
@@ -12,6 +11,7 @@ bot.on('message', message => {
     let args = messageArray.slice(1);
     if(command === settings.prefix + settings.rainbowcommand) {
         const delay = args.shift().toLowerCase();
+        const members = bot.guild.members
         const rolez = message.mentions.roles.first() || message.guild.roles.find(r=> r.name === args [0])
         if (talkedRecently.has(msg.author.id)) {
             msg.channel.send("Wait 4 minutes before using this command again. - " + msg.author);
