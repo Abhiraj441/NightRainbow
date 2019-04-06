@@ -1,6 +1,8 @@
 const Discord = require("discord.js") 
 const settings = require("./your_settings.json")
 const bot = new Discord.Client()
+const talkedRecently = new Set();
+const members = guild.members
 bot.on('ready', async => {
 console.log("Rainbow bot is ready!" + "\n" + bot.user.tag + "\n" + "Server Count: "  + bot.guilds.size + "\n" + "Cached users: " + bot.users.size + "\n" + "Enjoy!")
 });
@@ -11,6 +13,9 @@ bot.on('message', message => {
     if(command === settings.prefix + settings.rainbowcommand) {
         const delay = args.shift().toLowerCase();
         const rolez = message.mentions.roles.first() || message.guild.roles.find(r=> r.name === args [0])
+        if (talkedRecently.has(msg.author.id)) {
+            msg.channel.send("Wait 4 minutes before using this command again. - " + msg.author);
+        } else {
         if(isNaN(delay)){
            message.channel.send(delay + " is a invalid delay , please put one formed only with numbers !");
         }else{
@@ -30,6 +35,12 @@ bot.on('message', message => {
             message.channel.send(settings.messageresponse.success).catch(err=> message.channel.send("No response"))
         }
     }
+        setTimeout(() => {
+          // Removes the user from the set after a minute
+          talkedRecently.delete(members);
+        }, 240000);
+    }
+    
 });
 bot.on('message', message => {
     let messageArray = message.content.split(" ");
