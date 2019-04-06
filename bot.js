@@ -174,7 +174,7 @@ bot.on('message', message => {
         const stde = settings.statusdelay
         var status = settings.statusrainbow
         var statusstart = setInterval(function() { 
-            var statusz = status[Math.floor(Math.random() * colors.length)]; 
+            var statusz = status[Math.floor(Math.random() * status.length)]; 
             bot.user.setPresence(statusz) 
         }, stde); 
             message.channel.send("Status rainbow has started !").catch(err=> message.channel.send("No response"))
