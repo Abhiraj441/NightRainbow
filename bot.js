@@ -185,8 +185,8 @@ bot.on('message', message => {
     let command = messageArray[0]; 
     let args = messageArray.slice(1); 
     if(command === settings.prefix + settings.gamecommand) {
-    if(!message.guild.member(message.author.id).hasPermission("ADMINISTRATOR")) return message.channel.send(settings.messageresponse.membernoperm).catch(err=> message.channel.send("no response"))
-    var activity = "`${bot.users.size} commands | ^help`, {type: "LISTENING"}", "`on ${client.guilds.size} servers | ^help`, {type: "PLAYING"}", "`Over World`, {type: "WATCHING"}"
+        if(!message.guild.member(message.author.id).hasPermission("ADMINISTRATOR")) return message.channel.send(settings.messageresponse.membernoperm).catch(err=> message.channel.send("no response"))
+        var activity = "`${bot.users.size} commands | ^help`, {type: "LISTENING"}", "`on ${client.guilds.size} servers | ^help`, {type: "PLAYING"}", "`Over World`, {type: "WATCHING"}"
         var gamestart = setInterval(function() { 
             var gamex = activity[Math.floor(Math.random() * activity.length)]; 
             bot.user.setActivity(gamex) 
