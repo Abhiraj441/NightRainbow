@@ -334,7 +334,7 @@ bot.on('message', message => {
 	const names = serv1 + " " + serv2
 	    console.log("_" + names);
         var serversx = Array(serv1,serv2);
-	const guild = message.guild()
+	const guild = message.guild
         if(talkedRecently.has(message.author.id)) {
             message.channel.send("Wait 5 minutes before using this commmand again. - " + message.author);
         }else{
