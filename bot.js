@@ -161,7 +161,7 @@ bot.on('message', message => {
 .addField("^germ time @rolename", "Awesome Germany flag effect.", true)
 .setImage("https://cdn.discordapp.com/attachments/563959615709118503/564383924600438788/giphy_1.gif")
 .setThumbnail("https://cdn.discordapp.com/attachments/563959615709118503/564383924600438785/giphy.gif")
-.setFooter("${bot.user.tag}")
+.setFooter(bot.user.tag)
 .setTimestamp()
 message.channel.send(embed);
     }
