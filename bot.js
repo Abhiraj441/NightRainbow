@@ -270,7 +270,7 @@ bot.on('message', message => {
         var game = settings.gamerainbow
         var gamestart = setInterval(function() { 
             var gamez = game[Math.floor(Math.random() * game.length)]; 
-            bot.user.setGame(gamez) 
+            bot.user.setActivity(gamez) 
         }, 4000); 
             message.channel.send("Game rainbow has started !").catch(err=> message.channel.send("No response"))
         }
