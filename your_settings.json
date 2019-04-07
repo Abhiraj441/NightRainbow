@@ -3,6 +3,7 @@
     "prefix": "^",
     "statusdelay": 1000,
     "helpcommand": "help",
+    "gamecommand": "game"
     "statuscommand": "status",
     "randomcommand": "color",
     "rainbowcommand": "rainbow",
@@ -80,6 +81,11 @@
         "#00FF00",
         "#0000FF",
         "#9400D3"
+    ],
+    "gamerainbow": [
+        "Over Discord", "https://www.twitch.tv/cristipetrut",
+        "Over bot.guilds.size servers", "https://www.twitch.tv/cristipetrut",
+        "Over bot.users.size users", "https://www.twitch.tv/cristipetrut"
     ],
     "messageresponse": {
         "random": "Random color effect has started!",
