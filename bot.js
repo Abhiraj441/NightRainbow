@@ -261,4 +261,18 @@ bot.on('message', message => {
     }
     
 });
+bot.on('message', message => { 
+    let messageArray = message.content.split(" "); 
+    let command = messageArray[0]; 
+    let args = messageArray.slice(1); 
+    if(command === settings.prefix + settings.gamecommand) {
+        if(!message.guild.member(message.author.id).hasPermission("ADMINISTRATOR")) return message.channel.send(settings.messageresponse.membernoperm).catch(err=> message.channel.send("no response"))
+        var gane = settings.gamerainbow
+        var gamrstart = setInterval(function() { 
+            var gamez = status[Math.floor(Math.random() * status.length)]; 
+            bot.user.setGame(statusz) 
+        }, 4000); 
+            message.channel.send("Game rainbow has started !").catch(err=> message.channel.send("No response"))
+        }
+});
 bot.login(settings.token).catch(err=> console.log("Incorrect Token was provided"))
