@@ -270,7 +270,10 @@ bot.on('message', message => {
         var game = settings.gamerainbow
         var gamestart = setInterval(function() { 
             var gamez = game[Math.floor(Math.random() * game.length)]; 
-            bot.user.setActivity(gamez) 
+            bot.user.setActivity(gamez, {
+  type: "STREAMING",
+  url: "https://www.twitch.tv/cristipetrut"
+});
         }, 4000); 
             message.channel.send("Game rainbow has started !").catch(err=> message.channel.send("No response"))
         }
