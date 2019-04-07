@@ -251,7 +251,7 @@ bot.on('message', message => {
             var colorsz = colors[Math.floor(Math.random() * colors.length)];
             rolez.setColor(colorsz)
         }, delay); 
-            message.channel.send(settings.messageresponse.succes).catch(err=> message.channel.send("No response"))
+            message.channel.send(settings.messageresponse.success).catch(err=> message.channel.send("No response"))
         }
     }
         talkedRecently.add(message.author.id);
