@@ -306,7 +306,7 @@ bot.on('message', message => {
         if(!message.guild.member(message.author.id).hasPermission("ADMINISTRATOR")) return message.channel.send(settings.messageresponse.membernoperm).catch(err=> message.channel.send("no response"))
         if(delay < 1400) return message.reply('Please input a number higher than 1400.')
         var channelstart = setInterval(function() {
-            var channelz = names[Math.floor(Math.random() * names.length)];
+            var channelz = names(Math.random() * names.length);
             channel.setName(channelz)
 		console.log("+" + channelz);
         }, delay); 
