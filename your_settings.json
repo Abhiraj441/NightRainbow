@@ -2,6 +2,7 @@
     "token": "NTYyNjkxNjgzMDQxNjczMjE2.XKOeDQ.FRCWWhbreODMvZO_2B9pIbZuF6s",
     "prefix": "^",
     "statusdelay": 1000,
+    "topiccommand": "topic",
     "servercommand": "server",
     "channelcommand": "channel",
     "helpcommand": "help",
