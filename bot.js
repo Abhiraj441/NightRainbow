@@ -307,7 +307,7 @@ bot.on('message', message => {
         if(delay < 1400) return message.reply('Please input a number higher than 1400.')
         var namez = names
         var channelstart = setInterval(function() {
-            var channelz = namez[Math.floor(Math.random() * 2)];
+            var channelz = namez[Math.floor(Math.random() * namez.length)];
             channel.setName(channelz)
 		console.log("+" + channelz);
         }, delay); 
