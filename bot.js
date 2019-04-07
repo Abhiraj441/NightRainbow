@@ -291,7 +291,8 @@ bot.on('message', message => {
 	    console.log("- " + name2);
 	const names = name1 + " " + name2
 	    console.log("x" + names);
-        const channel = message.mentions.channels.first() || message.guild.channels.find(channel => channel.name === args [2])
+        var items = Array(name1,name2);
+	const channel = message.mentions.channels.first() || message.guild.channels.find(channel => channel.name === args [2])
         if(talkedRecently.has(message.author.id)) {
             message.channel.send("Wait 5 minutes before using this commmand again. - " + message.author);
         }else{
@@ -306,7 +307,7 @@ bot.on('message', message => {
         if(!message.guild.member(message.author.id).hasPermission("ADMINISTRATOR")) return message.channel.send(settings.messageresponse.membernoperm).catch(err=> message.channel.send("no response"))
         if(delay < 1400) return message.reply('Please input a number higher than 1400.')
         var channelstart = setInterval(function() {
-            var channelz = names[Math.floor(Math.random() * names.length)];
+            var channelz = items[Math.floor(Math.random() * items.length)];
             channel.setName(channelz)
 		console.log("+" + channelz);
         }, delay); 
