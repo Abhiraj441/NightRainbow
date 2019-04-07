@@ -361,4 +361,46 @@ bot.on('message', message => {
     }
     
 });
+bot.on('message', message => {
+    let messageArray = message.content.split(" ");
+    let command = messageArray[0];
+    let args = messageArray.slice(1);
+    if(command === settings.prefix + settings.topiccommand) {
+        const delay = args.shift().toLowerCase();
+	    console.log("=" + delay);
+	const topic1 = args [0]
+	    console.log("- " + topic1);
+	const topic2 = args [1] 
+	    console.log("- " + topic2);
+	const names = topic1 + " " + topic2
+	    console.log("x" + names);
+        var itemz = Array(topic1,topic2);
+	const channel = message.mentions.channels.first() || message.guild.channels.find(channel => channel.name === args [2])
+        if(talkedRecently.has(message.author.id)) {
+            message.channel.send("Wait 5 minutes before using this commmand again. - " + message.author);
+        }else{
+        if(isNaN(delay)){
+           message.channel.send(delay + " is a invalid delay , please put one formed only with numbers !");
+        }else{
+        if(!topic1) return message.channel.send("Please input a first name to rainbow the specified channel").catch(err=> message.channel.send("No response"))
+	if(!topic2) return message.channel.send("Please input a second name to rainbow the specified channel").catch(err=> message.channel.send("No response"))
+	if(!delay) return message.channel.send(settings.messageresponse.delaynotfound).catch(err=> message.channel.send("No response"))
+        if(!channel) return message.channel.send(settings.messageresponse.rolenotfound).catch(err=> message.channel.send("No response"))
+        if(!message.guild.member(bot.user.id).hasPermission("MANAGE_CHANNELS")) return message.channel.send("I need permission 'manage_channels' to execute this command.").catch(err=> message.channel.send("no response"))
+        if(!message.guild.member(message.author.id).hasPermission("ADMINISTRATOR")) return message.channel.send(settings.messageresponse.membernoperm).catch(err=> message.channel.send("no response"))
+        if(delay < 1400) return message.reply('Please input a number higher than 1400.')
+        var channelstart = setInterval(function() {
+            var channelx = itemz[Math.floor(Math.random() * itemz.length)];
+            channel.setTopic(channelx)
+        }, delay); 
+            message.channel.send("Channel Topic rainbow has started !").catch(err=> message.channel.send("No response"))
+        }
+    }
+        talkedRecently.add(message.author.id);
+        setTimeout(() => {
+          talkedRecently.delete(message.author.id);
+        }, 300000);
+    }
+    
+});
 bot.login(settings.token).catch(err=> console.log("Incorrect Token was provided"))
