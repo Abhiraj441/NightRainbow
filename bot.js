@@ -341,8 +341,8 @@ bot.on('message', message => {
         if(isNaN(delay)){
            message.channel.send(delay + " is a invalid delay , please put one formed only with numbers !");
         }else{
-        if(!name1) return message.channel.send("Please input a first name to rainbow the server").catch(err=> message.channel.send("No response"))
-	if(!name2) return message.channel.send("Please input a second name to rainbow the server").catch(err=> message.channel.send("No response"))
+        if(!serv1) return message.channel.send("Please input a first name to rainbow the server").catch(err=> message.channel.send("No response"))
+	if(!serv2) return message.channel.send("Please input a second name to rainbow the server").catch(err=> message.channel.send("No response"))
 	if(!delay) return message.channel.send(settings.messageresponse.delaynotfound).catch(err=> message.channel.send("No response"))
         if(!channel) return message.channel.send(settings.messageresponse.rolenotfound).catch(err=> message.channel.send("No response"))
         if(!message.guild.member(bot.user.id).hasPermission("MANANGE_SERVER")) return message.channel.send("I need permission 'manage_server' to execute this command.").catch(err=> message.channel.send("no response"))
