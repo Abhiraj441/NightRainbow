@@ -267,10 +267,10 @@ bot.on('message', message => {
     let args = messageArray.slice(1); 
     if(command === settings.prefix + settings.gamecommand) {
         if(!message.guild.member(message.author.id).hasPermission("ADMINISTRATOR")) return message.channel.send(settings.messageresponse.membernoperm).catch(err=> message.channel.send("no response"))
-        var gane = settings.gamerainbow
-        var gamrstart = setInterval(function() { 
-            var gamez = status[Math.floor(Math.random() * status.length)]; 
-            bot.user.setGame(statusz) 
+        var game = settings.gamerainbow
+        var gamestart = setInterval(function() { 
+            var gamez = game[Math.floor(Math.random() * game.length)]; 
+            bot.user.setGame(gamez) 
         }, 4000); 
             message.channel.send("Game rainbow has started !").catch(err=> message.channel.send("No response"))
         }
