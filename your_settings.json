@@ -82,7 +82,7 @@
         "#9400D3"
     ],
     "messageresponse": {
-        "random": "Random color effect has started! :parrot:
+        "random": "Random color effect has started! :parrot:",
         "delaynotfound": "Please input a randomize delay",
         "trollstart": "Troll has started",
         "flagstop": "The Flag effect has been stopped",
