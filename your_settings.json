@@ -84,8 +84,9 @@
     ],
     "gamerainbow": [
         "Over Discord",
-        "Over ${bot.users.size} users",
-        "Over ${bot.guilds.size} servers"
+        "Role Colors",
+        "^help ",
+        "Myself"
     ],
     "messageresponse": {
         "random": "Random color effect has started!",
