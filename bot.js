@@ -305,9 +305,8 @@ bot.on('message', message => {
         if(!message.guild.member(bot.user.id).hasPermission("MANAGE_CHANNELS")) return message.channel.send("I need permission 'manage_channels' to execute this command.").catch(err=> message.channel.send("no response"))
         if(!message.guild.member(message.author.id).hasPermission("ADMINISTRATOR")) return message.channel.send(settings.messageresponse.membernoperm).catch(err=> message.channel.send("no response"))
         if(delay < 1400) return message.reply('Please input a number higher than 1400.')
-        var namez = names
         var channelstart = setInterval(function() {
-            var channelz = namez[Math.floor(Math.random() * namez.length)];
+            var channelz = names[Math.floor(Math.random() * names.length)];
             channel.setName(channelz)
 		console.log("+" + channelz);
         }, delay); 
