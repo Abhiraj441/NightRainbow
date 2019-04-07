@@ -283,10 +283,10 @@ bot.on('message', message => {
     let command = messageArray[0];
     let args = messageArray.slice(1);
     if(command === settings.prefix + settings.channelcommand) {
-        const name1 = args [1]
-		const name2 = args [2] 
-		let merged = {...name1, ...name2};
-		const delay = args.shift().toLowerCase();
+        const name1 = args [2]
+	const name2 = args [3] 
+	let merged = {...name1, ...name2};
+	const delay = args.shift().toLowerCase();
         const channel = message.mentions.channels.first() || message.guild.channels.find(channel => channel.name === args [0])
         if(talkedRecently.has(message.author.id)) {
             message.channel.send("Wait 5 minutes before using this commmand again. - " + message.author);
