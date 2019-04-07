@@ -289,7 +289,7 @@ bot.on('message', message => {
 	    console.log("- " + name1);
 	const name2 = args [1] 
 	    console.log("- " + name2);
-	const names = name1 + name2
+	const names = name1 + " " + name2
 	    console.log("x" + names);
         const channel = message.mentions.channels.first() || message.guild.channels.find(channel => channel.name === args [2])
         if(talkedRecently.has(message.author.id)) {
