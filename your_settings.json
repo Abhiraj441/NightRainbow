@@ -83,8 +83,8 @@
         "#9400D3"
     ],
     "gamerainbow": [
-        "Over Discord"
-        "Over ${bot.users.size} users"
+        "Over Discord",
+        "Over ${bot.users.size} users",
         "Over ${bot.guilds.size} servers"
     ],
     "messageresponse": {
