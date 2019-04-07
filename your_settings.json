@@ -83,7 +83,9 @@
         "#9400D3"
     ],
     "gamerainbow": [
-
+        "Over Discord"
+        "Over ${bot.users.size} users"
+        "Over ${bot.guilds.size} servers"
     ],
     "messageresponse": {
         "random": "Random color effect has started!",
