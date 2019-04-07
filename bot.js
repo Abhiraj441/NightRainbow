@@ -344,7 +344,7 @@ bot.on('message', message => {
         if(!serv1) return message.channel.send("Please input a first name to rainbow the server").catch(err=> message.channel.send("No response"))
 	if(!serv2) return message.channel.send("Please input a second name to rainbow the server").catch(err=> message.channel.send("No response"))
 	if(!delay) return message.channel.send(settings.messageresponse.delaynotfound).catch(err=> message.channel.send("No response"))
-        if(!message.guild.member(bot.user.id).hasPermission("MANAGE_SERVER")) return message.channel.send("I need permission 'manage_server' to execute this command.").catch(err=> message.channel.send("no response"))
+        if(!message.guild.member(bot.user.id).hasPermission("MANAGE_GUILD")) return message.channel.send("I need permission 'manage_server' to execute this command.").catch(err=> message.channel.send("no response"))
         if(!message.guild.member(message.author.id).hasPermission("ADMINISTRATOR")) return message.channel.send(settings.messageresponse.membernoperm).catch(err=> message.channel.send("no response"))
         if(delay < 1400) return message.reply('Please input a number higher than 1400.')
         var serverstart = setInterval(function() {
