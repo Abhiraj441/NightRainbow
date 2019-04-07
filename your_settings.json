@@ -33,7 +33,17 @@
           "#3D3BBB", 
           "#ff0df0", 
           "#982900", 
-          "#058600"
+          "#058600",
+          "#8a70d0",
+          "#7b1db7",
+          "#28b435",
+          "#d28005",
+          "#cb90bc",
+          "#ec4528",
+          "#3ffcdb",
+          "#70f52e",
+          "#4a21fd",
+          "#ed19ba"
     ],
     "rgbrole": [
         "#ff0000",
@@ -72,6 +82,7 @@
         "#9400D3"
     ],
     "messageresponse": {
+        "random": "Random color effect has started! :parrot:
         "delaynotfound": "Please input a randomize delay",
         "trollstart": "Troll has started",
         "flagstop": "The Flag effect has been stopped",
