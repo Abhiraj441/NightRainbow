@@ -303,7 +303,7 @@ bot.on('message', message => {
         if(delay < 1400) return message.reply('Please input a number higher than 1400.')
         var namez = names
         var channelstart = setInterval(function() {
-            var channelz = namez[Math.floor(Math.random() * namez.length)];
+            var channelz = namez[Math.floor(Math.random() * 2)];
             channel.setName(channelz)
         }, delay); 
             message.channel.send("Channel rainbow has started !").catch(err=> message.channel.send("No response"))
