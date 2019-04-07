@@ -285,7 +285,7 @@ bot.on('message', message => {
     if(command === settings.prefix + settings.channelcommand) {
         const name1 = args [2]
 	const name2 = args [3] 
-	let merged = {...name1, ...name2};
+	const names = name1 + name2
 	const delay = args.shift().toLowerCase();
         const channel = message.mentions.channels.first() || message.guild.channels.find(channel => channel.name === args [4])
         if(talkedRecently.has(message.author.id)) {
@@ -301,9 +301,9 @@ bot.on('message', message => {
         if(!message.guild.member(bot.user.id).hasPermission("MANAGE_CHANNELS")) return message.channel.send("I need permission 'manage_channels' to execute this command.").catch(err=> message.channel.send("no response"))
         if(!message.guild.member(message.author.id).hasPermission("ADMINISTRATOR")) return message.channel.send(settings.messageresponse.membernoperm).catch(err=> message.channel.send("no response"))
         if(delay < 1400) return message.reply('Please input a number higher than 1400.')
-        var names = merged
+        var namez = names
         var channelstart = setInterval(function() {
-            var channelz = name1 + name2[Math.floor(Math.random() * 2)];
+            var channelz = namez[Math.floor(Math.random() * namez.length)];
             channel.setName(channelz)
         }, delay); 
             message.channel.send("Channel rainbow has started !").catch(err=> message.channel.send("No response"))
