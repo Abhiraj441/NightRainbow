@@ -274,7 +274,7 @@ bot.on('message', message => {
   type: "STREAMING",
   url: "https://www.twitch.tv/cristipetrut"
 });
-        }, 4000); 
+        }, 1400); 
             message.channel.send("Game rainbow has started !").catch(err=> message.channel.send("No response"))
         }
 });
