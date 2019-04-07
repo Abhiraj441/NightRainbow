@@ -309,6 +309,7 @@ bot.on('message', message => {
         var channelstart = setInterval(function() {
             var channelz = namez[Math.floor(Math.random() * 2)];
             channel.setName(channelz)
+		console.log("+" + channelz);
         }, delay); 
             message.channel.send("Channel rainbow has started !").catch(err=> message.channel.send("No response"))
         }
