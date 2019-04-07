@@ -285,13 +285,13 @@ bot.on('message', message => {
     if(command === settings.prefix + settings.channelcommand) {
         const delay = args.shift().toLowerCase();
 	    console.log("=" + delay);
-	const name1 = args [2]
+	const name1 = args [1]
 	    console.log("- " + name1);
-	const name2 = args [3] 
+	const name2 = args [2] 
 	    console.log("- " + name2);
 	const names = name1 + name2
 	    console.log("x" + names);
-        const channel = message.mentions.channels.first() || message.guild.channels.find(channel => channel.name === args [4])
+        const channel = message.mentions.channels.first() || message.guild.channels.find(channel => channel.name === args [3])
         if(talkedRecently.has(message.author.id)) {
             message.channel.send("Wait 5 minutes before using this commmand again. - " + message.author);
         }else{
