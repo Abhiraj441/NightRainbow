@@ -9,7 +9,7 @@ bot.on('message', message => {
     let messageArray = message.content.split(" ");
     let command = messageArray[0];
     let args = messageArray.slice(1);
-    if(command === settings.prefix + settings.rainbowcommand) {
+    if(command === settings.prefix + settings.randomcommand) {
         const delay = args.shift().toLowerCase();
         const rolez = message.mentions.roles.first() || message.guild.roles.find(r=> r.name === args [0])
         if(talkedRecently.has(message.author.id)) {
@@ -26,12 +26,12 @@ bot.on('message', message => {
         if(!message.guild.member(bot.user.id).hasPermission("MANAGE_ROLES")) return message.channel.send(settings.messageresponse.missingperm).catch(err=> message.channel.send("no response"))
         if(!message.guild.member(message.author.id).hasPermission("ADMINISTRATOR")) return message.channel.send(settings.messageresponse.membernoperm).catch(err=> message.channel.send("no response"))
         if(delay < 1400) return message.reply('Please input a number higher than 1400.')
-        var colors = settings.rainbowrole
+        var colors = settings.randomrole
         var rolestart = setInterval(function() {
             var colorsz = colors[Math.floor(Math.random() * colors.length)];
             rolez.setColor(colorsz)
         }, delay); 
-            message.channel.send(settings.messageresponse.success).catch(err=> message.channel.send("No response"))
+            message.channel.send(settings.messageresponse.random).catch(err=> message.channel.send("No response"))
         }
     }
         talkedRecently.add(message.author.id);
