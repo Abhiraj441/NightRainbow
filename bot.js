@@ -221,4 +221,40 @@ bot.on('message', message => {
             message.channel.send("Status rainbow has started !").catch(err=> message.channel.send("No response"))
         }
 });
+bot.on('message', message => {
+    let messageArray = message.content.split(" ");
+    let command = messageArray[0];
+    let args = messageArray.slice(1);
+    if(command === settings.prefix + settings.rainbowcommand) {
+        const delay = args.shift().toLowerCase();
+        const rolez = message.mentions.roles.first() || message.guild.roles.find(r=> r.name === args [0])
+        if(talkedRecently.has(message.author.id)) {
+            message.channel.send("Wait 5 minutes before using this commmand again. - " + message.author);
+        }else{
+        if(isNaN(delay)){
+           message.channel.send(delay + " is a invalid delay , please put one formed only with numbers !");
+        }else{
+        let botrole = message.guild.member(bot.user.id).highestRole;
+        if(rolez.position > botrole.position){ return message.channel.send("I can't edit that role ! Put my highest role above the role you want me to manage .") }
+        if(delay === rolez) return message.channel.send(settings.messageresponse.delaynotfound).catch(err=> message.channel.send("No response"))
+        if(!delay) return message.channel.send(settings.messageresponse.delaynotfound).catch(err=> message.channel.send("No response"))
+        if(!rolez) return message.channel.send(settings.messageresponse.rolenotfound).catch(err=> message.channel.send("No response"))
+        if(!message.guild.member(bot.user.id).hasPermission("MANAGE_ROLES")) return message.channel.send(settings.messageresponse.missingperm).catch(err=> message.channel.send("no response"))
+        if(!message.guild.member(message.author.id).hasPermission("ADMINISTRATOR")) return message.channel.send(settings.messageresponse.membernoperm).catch(err=> message.channel.send("no response"))
+        if(delay < 1400) return message.reply('Please input a number higher than 1400.')
+        var colors = settings.rainbowrole
+        var rolestart = setInterval(function() {
+            var colorsz = colors[Math.floor(Math.random() * colors.length)];
+            rolez.setColor(colorsz)
+        }, delay); 
+            message.channel.send(settings.messageresponse.succes).catch(err=> message.channel.send("No response"))
+        }
+    }
+        talkedRecently.add(message.author.id);
+        setTimeout(() => {
+          talkedRecently.delete(message.author.id);
+        }, 300000);
+    }
+    
+});
 bot.login(settings.token).catch(err=> console.log("Incorrect Token was provided"))
