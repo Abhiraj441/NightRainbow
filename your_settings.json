@@ -83,9 +83,18 @@
         "#9400D3"
     ],
     "gamerainbow": [
-        "Over Discord", "https://www.twitch.tv/cristipetrut",
-        "Over ${bot.guilds.size}  servers", "https://www.twitch.tv/cristipetrut",
-        "Over ${bot.users.size}  users", "https://www.twitch.tv/cristipetrut"
+        "Over ${bot.guilds.size} servers", {
+  type: "STREAMING",
+  url: "https://www.twitch.tv/cristipetrut"
+},
+        "Over ${bot.users.size} users", {
+  type: "STREAMING",
+  url: "https://www.twitch.tv/cristipetrut"
+},
+        "Over Discord", {
+  type: "STREAMING",
+  url: "https://www.twitch.tv/cristipetrut"
+} 
     ],
     "messageresponse": {
         "random": "Random color effect has started!",
