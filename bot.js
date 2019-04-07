@@ -159,8 +159,8 @@ bot.on('message', message => {
 .addField("^rgb time @rolename", "Awesome RGB effect.", true)
 .addField("^roc time @rolename", "Awesome Romanian flag effect.", true)
 .addField("^germ time @rolename", "Awesome Germany flag effect.", true)
-.setImage("https://giphy.com/gifs/jUcu93JhYpiPVG6rY4")
-.setThumbnail("https://giphy.com/gifs/MbAaACvRGl0MLISzXS")
+.setImage("https://cdn.discordapp.com/attachments/563959615709118503/564383924600438788/giphy_1.gif")
+.setThumbnail("https://cdn.discordapp.com/attachments/563959615709118503/564383924600438785/giphy.gif")
 message.channel.send(embed);
     }
 });
