@@ -187,7 +187,7 @@ message.channel.send(embed);
 .setFooter("Channel rainbow section")
 .setTimestamp();
     
-	message.react(':arrow_forward:').then(() => message.react(':track_next:'));
+message.react(':arrow_forward:').then(() => message.react(':track_next:'));
 
 const filter = (reaction, user) => {
     return [':arrow_forward:', ':track_next:'].includes(reaction.emoji.name) && user.id === message.author.id;
@@ -204,11 +204,11 @@ message.awaitReactions(filter, { max: 8, time: 300000, errors: ['time'] })
         if (reaction.emoji.name === ':track_next:') {
             message.edit(cembed);
 			message.react(':track_previous:');
-		}
-		if (reaction.emoji.name === ':arrow_backward:') {
+	}
+	if (reaction.emoji.name === ':arrow_backward:') {
             message.edit(rembed);
-		}
-		if (reaction.emoji.name === ':track_previous:') {
+	}
+	if (reaction.emoji.name === ':track_previous:') {
             message.edit(embed);
     })
     .catch(collected => {
