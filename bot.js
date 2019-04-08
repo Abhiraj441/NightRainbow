@@ -197,22 +197,22 @@ message.awaitReactions(filter, { max: 8, time: 300000, errors: ['time'] })
     .then(collected => {
         const reaction = collected.first();
 
-	if(reaction.emoji.name === '▶') 
+	if (reaction.emoji.name === '▶') 
 	{
-	    return message.delete(embed)
-	    return message.channel.send(rembed);
-	    return message.react('◀');
+	    message.delete(embed)
+	    message.channel.send(rembed);
+	    message.react('◀');
         }
-        if(reaction.emoji.name === '⏩') {
+        if (reaction.emoji.name === '⏩') {
             message.delete(rembed);
 	    message.channel.send(cembed);
 	    message.react('⏪');
 	}
-	if(reaction.emoji.name === '◀') {
+	if (reaction.emoji.name === '◀') {
             message.delete(cembed);
 	    message.channel.send(rembed);
 	}
-	if(reaction.emoji.name === '⏪') {
+	if (reaction.emoji.name === '⏪') {
             message.delete(rembed);
 	    message.channel.send(embed);
 		
