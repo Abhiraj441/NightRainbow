@@ -158,7 +158,7 @@ bot.on('message', message => {
 .addField("I was created on" + bot.user.createdAt + "by" + bot.owner, "With Love :Heart:", true
 .setThumbnail("https://cdn.discordapp.com/attachments/563959615709118503/564383924600438785/giphy.gif")
 .setFooter(bot.user.tag)
-.setTimestamp()
+.setTimestamp(),
 message.channel.send(embed);
 
         let rembed = new Discord.RichEmbed()
@@ -173,6 +173,7 @@ message.channel.send(embed);
 .addField("^germ time @rolename", "Awesome Germany flag effect.", true)
 .setImage("https://cdn.discordapp.com/attachments/563959615709118503/564383924600438788/giphy_1.gif")
 .setFooter("Rainbow roles section")
+.setTimestamp(),
 
         let cembed = new Discord.RichEmbed()
 
@@ -184,7 +185,8 @@ message.channel.send(embed);
 .addField("^topic time topicname1 topicname2 #channel", "Awesome Channel Topic rainbow effect.", true)	
 .setImage("https://cdn.discordapp.com/attachments/563959615709118503/564809023640174592/giphy_2.gif")
 .setFooter("Channel rainbow section")
-    
+.setTimestamp(),
+		
 message.react(':arrow_forward:').then(() => message.react(':track_next:'));
 
 const filter = (reaction, user) => {
