@@ -159,7 +159,7 @@ bot.on('message', message => {
 .setThumbnail("https://cdn.discordapp.com/attachments/563959615709118503/564383924600438785/giphy.gif")
 .setFooter(bot.user.tag)
 .setTimestamp(),
-message.channel.send(embed)
+message.channel.send(embed);
         
 	    let rembed = new Discord.RichEmbed()
 
