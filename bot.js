@@ -210,10 +210,7 @@ message.awaitReactions(filter, { max: 8, time: 300000, errors: ['time'] })
 	}
 	if (reaction.emoji.name === ':track_previous:') {
             message.edit(embed);
-    }
-    .catch(collected => {
-        console.log(`After 5 minutes, only ${collected.size} out of 8 reacted.`);
-	}
+        }
     }
 });
 bot.on('message', message => {
