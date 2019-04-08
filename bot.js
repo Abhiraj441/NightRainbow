@@ -187,13 +187,12 @@ message.channel.send(embed);
 .setFooter("Channel rainbow section")
 .setTimestamp()
 		
-message.react(':arrow_forward:').then(() => message.react(':track_next:'));
+message.react('▶').then(() => message.react('⏩'));
 
 const filter = (reaction, user) => {
-    return ['('▶', '⏩'].includes(reaction) && user.id === message.author.id;
+    return ['('▶', '⏩'].includes(reaction.emoji.name) && user.id === message.author.id;
 };
 
-message.react('▶', '⏩')
 message.awaitReactions(filter, { max: 8, time: 300000, errors: ['time'] })
     .then(collected => {
         const reaction = collected.first();
