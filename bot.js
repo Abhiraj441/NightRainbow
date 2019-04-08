@@ -155,7 +155,7 @@ bot.on('message', message => {
 .setAuthor(bot.user.tag)
 .setColor("#DCA741")
 .setDescription("Hellow , i am" + bot.user.username + " and this is my help page , you can see more commands by reacting !")
-.addField("I was created on" + bot.user.createdAt + "by" + bot.owner, "With Love :Heart:", true)
+.addField("I was created on" + bot.user.createdAt + "by" + bot.owner.id, "With Love ", true)
 .setThumbnail("https://cdn.discordapp.com/attachments/563959615709118503/564383924600438785/giphy.gif")
 .setFooter(bot.user.tag)
 .setTimestamp()
@@ -198,18 +198,22 @@ message.awaitReactions(filter, { max: 8, time: 300000, errors: ['time'] })
         const reaction = collected.first();
 
         if (reaction.emoji.name === '▶') {
-            message.edit(rembed);
+            message.delete(embed);
+	    message.channel.send(rembed);
 	    message.react('◀');
         }
         if (reaction.emoji.name === '⏩') {
-            message.edit(cembed);
+            message.delete(rembed);
+	    message.channel.send(cembed);
 	    message.react('⏪');
 	}
 	if (reaction.emoji.name === '◀') {
-            message.edit(rembed);
+            message.delete(cembed);
+	    message.channel.send(rembed);
 	}
 	if (reaction.emoji.name === '⏪') {
-            message.edit(embed);
+            message.delete(rembed);
+	    message.channel.send(embed);
 		
     }
 	
