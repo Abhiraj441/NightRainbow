@@ -214,7 +214,6 @@ message.awaitReactions(filter, { max: 8, time: 300000, errors: ['time'] })
       }
 	
     }
-	  
 });
 bot.on('message', message => {
     let messageArray = message.content.split(" ");
