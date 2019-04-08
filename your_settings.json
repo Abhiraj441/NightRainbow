@@ -3,7 +3,7 @@
     "prefix": "^",
     "statusdelay": 1000,
     "topiccommand": "topic",
-    "rolenamecommand": "rname"
+    "rolenamecommand": "rname",
     "servercommand": "server",
     "channelcommand": "channel",
     "helpcommand": "help",
