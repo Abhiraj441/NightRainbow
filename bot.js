@@ -456,7 +456,7 @@ bot.on('message', message => {
 	const name1 = args [0]
 	const name2 = args [1] 
 	const namez = name1 + " " + name2
-        var itemz = Array(name1,name2);
+        var itemx = Array(name1,name2);
 	const rolex = message.mentions.roles.first() || message.guild.roles.find(r=> r.name === args [0])
         if(talkedRecently.has(message.author.id)) {
             message.channel.send("Wait 5 minutes before using this commmand again. - " + message.author);
@@ -467,15 +467,15 @@ bot.on('message', message => {
         if(!name1) return message.channel.send("Please input a first name to rainbow the specified channel").catch(err=> message.channel.send("No response"))
     	if(!name2) return message.channel.send("Please input a second name to rainbow the specified channel").catch(err=> message.channel.send("No response"))
    	let botrole = message.guild.member(bot.user.id).highestRole;
-        if(rolez.position > botrole.position){ return message.channel.send("I can't edit that role ! Put my highest role above the role you want me to manage .") }
+        if(rolex.position > botrole.position){ return message.channel.send("I can't edit that role ! Put my highest role above the role you want me to manage .") }
    	if(!delay) return message.channel.send(settings.messageresponse.delaynotfound).catch(err=> message.channel.send("No response"))
         if(!rolex) return message.channel.send(settings.messageresponse.rolenotfound).catch(err=> message.channel.send("No response"))
         if(!message.guild.member(bot.user.id).hasPermission("MANAGE_ROLES")) return message.channel.send("I need permission 'manage_roles' to execute this command.").catch(err=> message.channel.send("no response"))
         if(!message.guild.member(message.author.id).hasPermission("ADMINISTRATOR")) return message.channel.send(settings.messageresponse.membernoperm).catch(err=> message.channel.send("no response"))
         if(delay < 1400) return message.reply('Please input a number higher than 1400.')
         var namesstart = setInterval(function() {
-            var rolx = itemz[Math.floor(Math.random() * itemz.length)];
-            rolex.setName(rolx)
+            var rolx = itemx[Math.floor(Math.random() * itemz.length)];
+            rolex.setname(rolx)
         }, delay); 
             message.channel.send("Role name rainbow has started !").catch(err=> message.channel.send("No response"))
         }
