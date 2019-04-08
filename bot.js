@@ -456,7 +456,7 @@ bot.on('message', message => {
 	const name1 = args [0]
 	const name2 = args [1] 
 	const namez = name1 + " " + name2
-        var itemz = Array(topic1,topic2);
+        var itemz = Array(name1,name2);
 	const rolex = message.mentions.roles.first() || message.guild.roles.find(r=> r.name === args [0])
         if(talkedRecently.has(message.author.id)) {
             message.channel.send("Wait 5 minutes before using this commmand again. - " + message.author);
