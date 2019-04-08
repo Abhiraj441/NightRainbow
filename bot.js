@@ -197,13 +197,11 @@ message.awaitReactions(filter, { max: 8, time: 300000, errors: ['time'] })
     .then(collected => {
         const reaction = collected.first();
 
-        if (reaction.count === 2) {
 	if(reaction.emoji.name === '▶') {
-            message.delete(embed);
+	    message.delete()
 	    message.channel.send(rembed);
 	    message.react('◀');
         }
-	}
         if(reaction.emoji.name === '⏩') {
             message.delete(rembed);
 	    message.channel.send(cembed);
