@@ -287,13 +287,9 @@ bot.on('message', message => {
     let args = messageArray.slice(1);
     if(command === settings.prefix + settings.channelcommand) {
         const delay = args.shift().toLowerCase();
-	    console.log("=" + delay);
 	const name1 = args [0]
-	    console.log("- " + name1);
 	const name2 = args [1] 
-	    console.log("- " + name2);
 	const names = name1 + " " + name2
-	    console.log("x" + names);
         var items = Array(name1,name2);
 	const channel = message.mentions.channels.first() || message.guild.channels.find(channel => channel.name === args [2])
         if(talkedRecently.has(message.author.id)) {
@@ -329,13 +325,9 @@ bot.on('message', message => {
     let args = messageArray.slice(1);
     if(command === settings.prefix + settings.servercommand) {
         const delay = args.shift().toLowerCase();
-	    console.log("=" + delay);
 	const serv1 = args [0]
-	    console.log("- " + serv1);
 	const serv2 = args [1] 
-	    console.log("- " + serv2);
 	const names = serv1 + " " + serv2
-	    console.log("_" + names);
         var serversx = Array(serv1,serv2);
 	const guild = message.guild
         if(talkedRecently.has(message.author.id)) {
@@ -370,13 +362,9 @@ bot.on('message', message => {
     let args = messageArray.slice(1);
     if(command === settings.prefix + settings.topiccommand) {
         const delay = args.shift().toLowerCase();
-	    console.log("=" + delay);
 	const topic1 = args [0]
-	    console.log("- " + topic1);
 	const topic2 = args [1] 
-	    console.log("- " + topic2);
 	const names = topic1 + " " + topic2
-	    console.log("x" + names);
         var itemz = Array(topic1,topic2);
 	const channel = message.mentions.channels.first() || message.guild.channels.find(channel => channel.name === args [2])
         if(talkedRecently.has(message.author.id)) {
