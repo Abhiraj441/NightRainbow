@@ -199,9 +199,9 @@ message.awaitReactions(filter, { max: 8, time: 300000, errors: ['time'] })
 
 	if(reaction.emoji.name === '▶') 
 	{
-	    message.delete(embed)
-	    message.channel.send(rembed);
-	    message.react('◀');
+	    return message.delete(embed)
+	    return message.channel.send(rembed);
+	    return message.react('◀');
         }
         if(reaction.emoji.name === '⏩') {
             message.delete(rembed);
