@@ -154,7 +154,7 @@ bot.on('message', message => {
         
 .setAuthor(bot.user.tag)
 .setColor("#DCA741")
-.setDescription("Hellow , i am" + bot.user.username + "and this is my help page , you can see more commands by reacting !")
+.setDescription("Hellow , i am" + bot.user.username + " and this is my help page , you can see more commands by reacting !")
 .addField("I was created on" + bot.user.createdAt + "by" + bot.owner, "With Love :Heart:", true)
 .setThumbnail("https://cdn.discordapp.com/attachments/563959615709118503/564383924600438785/giphy.gif")
 .setFooter(bot.user.tag)
@@ -190,25 +190,25 @@ message.channel.send(embed);
 message.react(':arrow_forward:').then(() => message.react(':track_next:'));
 
 const filter = (reaction, user) => {
-    return [':arrow_forward:', ':track_next:'].includes(reaction.emoji.name) && user.id === message.author.id;
+    return ['▶', '⏭'].includes(reaction.emoji.name) && user.id === message.author.id;
 };
 
 message.awaitReactions(filter, { max: 8, time: 300000, errors: ['time'] })
     .then(collected => {
         const reaction = collected.first();
 
-        if (reaction.emoji.name === ':arrow_forward:') {
+        if (reaction.emoji.name === '▶') {
             message.edit(rembed);
-			message.react(':arrow_backward:');
+	    message.react('◀');
         }
-        if (reaction.emoji.name === ':track_next:') {
+        if (reaction.emoji.name === '⏭') {
             message.edit(cembed);
-			message.react(':track_previous:');
+	    message.react('⏮');
 	}
-	if (reaction.emoji.name === ':arrow_backward:') {
+	if (reaction.emoji.name === '◀') {
             message.edit(rembed);
 	}
-	if (reaction.emoji.name === ':track_previous:') {
+	if (reaction.emoji.name === '⏮') {
             message.edit(embed);
 		
     }
