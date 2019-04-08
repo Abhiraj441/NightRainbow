@@ -211,7 +211,9 @@ message.awaitReactions(filter, { max: 8, time: 300000, errors: ['time'] })
 	if (reaction.emoji.name === ':track_previous:') {
             message.edit(embed);
 		
-      }
+    }
+	
+    }
 	
     }
 });
