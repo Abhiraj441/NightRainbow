@@ -1,22 +1,8 @@
 const Discord = require("discord.js") 
 const settings = require("./your_settings.json")
 const bot = new Discord.Client()
-const emitter = new EventEmitter();
 const talkedRecently = new Set();
-var EventEmitter = require('events');
-
-class Foo extends EventEmitter {
-    constructor() {
-        super();
-        this.name = 'foo';
-    }
-    print() {
-        console.log(this.name);
-    }
-}
-
-new Foo().print();
-// foo
+require('events').EventEmitter.defaultMaxListeners = 15;
 bot.on('ready', async => {
 	emitter.setMaxListeners()
 console.log("Rainbow bot is ready!" + "\n" + bot.user.tag + "\n" + "Server Count: "  + bot.guilds.size + "\n" + "Cached users: " + bot.users.size + "\n" + "Enjoy!")
