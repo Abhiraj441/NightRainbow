@@ -474,7 +474,7 @@ bot.on('message', message => {
         if(!message.guild.member(message.author.id).hasPermission("ADMINISTRATOR")) return message.channel.send(settings.messageresponse.membernoperm).catch(err=> message.channel.send("no response"))
         if(delay < 1400) return message.reply('Please input a number higher than 1400.')
         var namesstart = setInterval(function() {
-            var rolx = itemx[Math.floor(Math.random() * itemz.length)];
+            var rolx = itemx[Math.floor(Math.random() * itemx.length)];
             rolex.setName(rolx)
         }, delay); 
             message.channel.send("Role name rainbow has started !").catch(err=> message.channel.send("No response"))
