@@ -190,9 +190,10 @@ message.channel.send(embed);
 message.react(':arrow_forward:').then(() => message.react(':track_next:'));
 
 const filter = (reaction, user) => {
-    return ['▶', '⏩'].includes(reaction) && user.id === message.author.id;
+    return ['('▶', '⏩'].includes(reaction) && user.id === message.author.id;
 };
 
+message.react('▶', '⏩')
 message.awaitReactions(filter, { max: 8, time: 300000, errors: ['time'] })
     .then(collected => {
         const reaction = collected.first();
