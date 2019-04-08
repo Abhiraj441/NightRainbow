@@ -190,7 +190,7 @@ message.channel.send(embed);
 message.react(':arrow_forward:').then(() => message.react(':track_next:'));
 
 const filter = (reaction, user) => {
-    return ['▶', '⏭'].includes(reaction.emoji.name) && user.id === message.author.id;
+    return ['▶', '⏩'].includes(reaction.emoji.name) && user.id === message.author.id;
 };
 
 message.awaitReactions(filter, { max: 8, time: 300000, errors: ['time'] })
@@ -201,14 +201,14 @@ message.awaitReactions(filter, { max: 8, time: 300000, errors: ['time'] })
             message.edit(rembed);
 	    message.react('◀');
         }
-        if (reaction.emoji.name === '⏭') {
+        if (reaction.emoji.name === '⏩') {
             message.edit(cembed);
-	    message.react('⏮');
+	    message.react('⏪');
 	}
 	if (reaction.emoji.name === '◀') {
             message.edit(rembed);
 	}
-	if (reaction.emoji.name === '⏮') {
+	if (reaction.emoji.name === '⏪') {
             message.edit(embed);
 		
     }
