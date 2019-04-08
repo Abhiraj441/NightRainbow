@@ -158,14 +158,14 @@ bot.on('message', message => {
 .addField("I was created on" + bot.user.createdAt + "by" + bot.owner, "With Love :Heart:", true)
 .setThumbnail("https://cdn.discordapp.com/attachments/563959615709118503/564383924600438785/giphy.gif")
 .setFooter(bot.user.tag)
-.setTimestamp(),
+.setTimestamp()
 message.channel.send(embed);
         
 	    let rembed = new Discord.RichEmbed()
 
 .setAuthor(bot.user.tag) 
 .setColor("##00FFBF")
-.setDescription("Here you can see my rainbow role commands !"
+.setDescription("Here you can see my rainbow role commands !")
 .addField("^rainbow time @rolename", "Classic Rainbow effect.", true)
 .addField("^color time @rolename", "Random Color effect.", true)
 .addField("^rgb time @rolename", "Awesome RGB effect.", true)
@@ -173,19 +173,19 @@ message.channel.send(embed);
 .addField("^germ time @rolename", "Awesome Germany flag effect.", true)
 .setImage("https://cdn.discordapp.com/attachments/563959615709118503/564383924600438788/giphy_1.gif")
 .setFooter("Rainbow roles section")
-.setTimestamp())
+.setTimestamp()
 	
 		let cembed = new Discord.RichEmbed()
 
 .setAuthor(bot.user.tag) 
 .setColor("##00FFBF")
-.setDescription("Here you can see my channel rainbow commands !"
+.setDescription("Here you can see my channel rainbow commands !")
 .addField("^channel time channelname1 channelname2 #channel", "Awesome Channel Name rainbow effect.", true)	
 .addField("^server time servername1 servername2", "Awesome Server rainbow effect.", true)
 .addField("^topic time topicname1 topicname2 #channel", "Awesome Channel Topic rainbow effect.", true)	
 .setImage("https://cdn.discordapp.com/attachments/563959615709118503/564809023640174592/giphy_2.gif")
 .setFooter("Channel rainbow section")
-.setTimestamp())
+.setTimestamp()
 		
 message.react(':arrow_forward:').then(() => message.react(':track_next:'));
 
