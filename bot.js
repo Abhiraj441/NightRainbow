@@ -212,6 +212,7 @@ message.awaitReactions(filter, { max: 8, time: 300000, errors: ['time'] })
             message.edit(embed);
 		
       }
+	
     }
 	  
 });
