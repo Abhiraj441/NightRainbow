@@ -155,7 +155,7 @@ bot.on('message', message => {
 .setAuthor(bot.user.tag)
 .setColor("#DCA741")
 .setDescription("Hellow , i am" + bot.user.username + " and this is my help page , you can see more commands by reacting !")
-.addField("I was created on" + bot.user.createdAt + "by" + bot.owner.id, "With Love ", true)
+.addField("I was created on" + bot.user.createdAt + "by" + bot.owner.tag, "With Love ", true)
 .setThumbnail("https://cdn.discordapp.com/attachments/563959615709118503/564383924600438785/giphy.gif")
 .setFooter(bot.user.tag)
 .setTimestamp()
