@@ -190,7 +190,7 @@ message.channel.send(embed);
 message.react('▶').then(() => message.react('⏩'));
 
 const filter = (reaction, user) => {
-    return ['('▶', '⏩'].includes(reaction.emoji.name) && user.id === message.author.id;
+    return ['▶', '⏩'].includes(reaction.emoji.name) && user.id === message.author.id;
 };
 
 message.awaitReactions(filter, { max: 8, time: 300000, errors: ['time'] })
