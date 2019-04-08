@@ -160,7 +160,6 @@ bot.on('message', message => {
 .setFooter(bot.user.tag)
 .setTimestamp(),
 message.channel.send(embed));
-
         let rembed = new Discord.RichEmbed()
 
 .setAuthor(bot.user.tag) 
@@ -174,7 +173,6 @@ message.channel.send(embed));
 .setImage("https://cdn.discordapp.com/attachments/563959615709118503/564383924600438788/giphy_1.gif")
 .setFooter("Rainbow roles section")
 .setTimestamp(),
-
         let cembed = new Discord.RichEmbed()
 
 .setAuthor(bot.user.tag) 
