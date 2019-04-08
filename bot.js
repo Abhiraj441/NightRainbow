@@ -475,7 +475,7 @@ bot.on('message', message => {
         if(delay < 1400) return message.reply('Please input a number higher than 1400.')
         var namesstart = setInterval(function() {
             var rolx = itemx[Math.floor(Math.random() * itemz.length)];
-            rolex.setname(rolx)
+            rolex.setName(rolx)
         }, delay); 
             message.channel.send("Role name rainbow has started !").catch(err=> message.channel.send("No response"))
         }
