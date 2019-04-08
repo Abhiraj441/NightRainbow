@@ -154,21 +154,66 @@ bot.on('message', message => {
         
 .setAuthor(bot.user.tag)
 .setColor("#DCA741")
-.setDescription("Here you can see the commands for " + bot.user.username + "!")
+.setDescription("Hellow , i am" + bot.user.username + "and this is my help page , you can see more commands by reacting !")
+.addField("I was created on" + bot.user.createdAt + "by" + bot.owner, "With Love :Heart:", true
+.setThumbnail("https://cdn.discordapp.com/attachments/563959615709118503/564383924600438785/giphy.gif")
+.setFooter(bot.user.tag)
+.setTimestamp()
+message.channel.send(embed);
+
+        let rembed = new Discord.RichEmbed()
+
+.setAuthor(bot.user.tag) 
+.setColor("##00FFBF")
+.setDescription("Here you can see my rainbow role commands !"
 .addField("^rainbow time @rolename", "Classic Rainbow effect.", true)
 .addField("^color time @rolename", "Random Color effect.", true)
 .addField("^rgb time @rolename", "Awesome RGB effect.", true)
 .addField("^roc time @rolename", "Awesome Romanian flag effect.", true)
 .addField("^germ time @rolename", "Awesome Germany flag effect.", true)
+.setImage("https://cdn.discordapp.com/attachments/563959615709118503/564383924600438788/giphy_1.gif")
+.setFooter("Rainbow roles section")
+.setTimestamp()
+
+        let cembed = new Discord.RichEmbed()
+
+.setAuthor(bot.user.tag) 
+.setColor("##00FFBF")
+.setDescription("Here you can see my channel rainbow commands !"
 .addField("^channel time channelname1 channelname2 #channel", "Awesome Channel Name rainbow effect.", true)	
 .addField("^server time servername1 servername2", "Awesome Server rainbow effect.", true)
 .addField("^topic time topicname1 topicname2 #channel", "Awesome Channel Topic rainbow effect.", true)	
-.setImage("https://cdn.discordapp.com/attachments/563959615709118503/564383924600438788/giphy_1.gif")
-.setThumbnail("https://cdn.discordapp.com/attachments/563959615709118503/564383924600438785/giphy.gif")
-.setFooter(bot.user.tag)
+.setImage("https://cdn.discordapp.com/attachments/563959615709118503/564809023640174592/giphy_2.gif")
+.setFooter("Channel rainbow section")
 .setTimestamp()
-message.channel.send(embed);
-    }
+    
+	message.react(':arrow_forward:').then(() => message.react(':track_next:'));
+
+const filter = (reaction, user) => {
+    return [':arrow_forward:', ':track_next:'].includes(reaction.emoji.name) && user.id === message.author.id;
+};
+
+message.awaitReactions(filter, { max: 8, time: 300000, errors: ['time'] })
+    .then(collected => {
+        const reaction = collected.first();
+
+        if (reaction.emoji.name === ':arrow_forward:') {
+            message.edit(rembed);
+			message.react(':arrow_backward:');
+        }
+        if (reaction.emoji.name === ':track_next:') {
+            message.edit(cembed);
+			message.react(':track_previous:');
+		}
+		if (reaction.emoji.name === ':arrow_backward:') {
+            message.edit(rembed);
+		}
+		if (reaction.emoji.name === ':track_previous:') {
+            message.edit(embed);
+    })
+    .catch(collected => {
+        console.log(`After 5 minutes, only ${collected.size} out of 8 reacted.`);
+	}
 });
 bot.on('message', message => {
     let messageArray = message.content.split(" ");
