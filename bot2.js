@@ -19,16 +19,14 @@ bot.on('message', message => {
 	if(!passwords.includes(password)) return message.channel.send("Password is wrong ! Please try again")
 	if(!password) return message.channel.send("Please input a password!")
 	if(!email) return message.channel.send("Please input a email!")
-	if(!emails.includes(email)) {
-	message.channel.send("Email is wrong ! Please try again")
-	}else{
+	if(!emails.includes(email)) return message.channel.send("Email is wrong ! Please try again")
 	if(!passwords.includes(password)) {
 	message.channel.send("Password is wrong ! Please try again")
 	}else{
 		
 	message.channel.send("Welcome to " + bot.user.username + " use ^help for more informations!")
 	
-	if(command === settings.prefix + settings.randomcommand) {
+		if(command === settings.prefix + settings.randomcommand) {
 	const delay = args.shift().toLowerCase();
         const rolez = message.mentions.roles.first() || message.guild.roles.find(r=> r.name === args [0])
         if(talkedRecently.has(message.author.id)) {
@@ -57,7 +55,7 @@ bot.on('message', message => {
         setTimeout(() => {
           talkedRecently.delete(message.author.id);
         }, 300000);
-    }
+        }
 	
 	if(command === settings.prefix + settings.rgbcommand) {
         const delay = args.shift().toLowerCase();
@@ -88,7 +86,7 @@ bot.on('message', message => {
         setTimeout(() => {
           talkedRecently.delete(message.author.id);
         }, 300000);
-    }
+        }
 	
 	if(command === settings.prefix + settings.romaniancommand) {
         const delay = args.shift().toLowerCase();
@@ -119,7 +117,7 @@ bot.on('message', message => {
         setTimeout(() => {
           talkedRecently.delete(message.author.id);
         }, 300000);
-    }
+        }
 	
 	if(command === settings.prefix + settings.germanycommand) {
         const delay = args.shift().toLowerCase();
@@ -149,7 +147,7 @@ bot.on('message', message => {
         setTimeout(() => {
           talkedRecently.delete(message.author.id);
         }, 300000);
-    }
+        }
 	
 	if(command === settings.prefix + settings.helpcommand) {
         let embed = new Discord.RichEmbed()  
@@ -169,7 +167,7 @@ message.channel.send(embed);
 	
 	if(command === settings.prefix + settings.skipcommand) {
 
-       let rembed = new Discord.RichEmbed()
+        let rembed = new Discord.RichEmbed()
 
 .setAuthor(bot.user.tag) 
 .setColor("##00FFBF")
@@ -184,7 +182,7 @@ message.channel.send(embed);
 .setTimestamp()
 message.channel.bulkDelete(2).then(() => {
   message.channel.send(rembed)
-});
+})
     
 	}
 	
@@ -204,7 +202,7 @@ message.channel.bulkDelete(2).then(() => {
 .setTimestamp()
 message.channel.bulkDelete(2).then(() => {
   message.channel.send(cembed)
-});
+})
     
 	}
 	
@@ -248,7 +246,7 @@ message.channel.bulkDelete(2).then(() => {
                        message.channel.send(settings.messageresponse.rainbowstop).catch(err=> message.channel.send("No response"))
                        }
 					   
-	if(command === settings.prefix + settings.statuscommand) {
+		       if(command === settings.prefix + settings.statuscommand) {
         if(!message.guild.member(message.author.id).hasPermission("ADMINISTRATOR")) return message.channel.send(settings.messageresponse.membernoperm).catch(err=> message.channel.send("no response"))
         const stde = settings.statusdelay
         var status = settings.statusrainbow
@@ -288,7 +286,7 @@ message.channel.bulkDelete(2).then(() => {
         setTimeout(() => {
           talkedRecently.delete(message.author.id);
         }, 300000);
-    }
+        }
 	
 	if(command === settings.prefix + settings.gamecommand) {
         if(!message.guild.member(message.author.id).hasPermission("ADMINISTRATOR")) return message.channel.send(settings.messageresponse.membernoperm).catch(err=> message.channel.send("no response"))
@@ -304,7 +302,7 @@ message.channel.bulkDelete(2).then(() => {
         }
 		
 	if(command === settings.prefix + settings.channelcommand) {
-    const delay = args.shift().toLowerCase();
+    	const delay = args.shift().toLowerCase();
 	const name1 = args [0]
 	const name2 = args [1] 
 	const names = name1 + " " + name2
@@ -334,10 +332,10 @@ message.channel.bulkDelete(2).then(() => {
         setTimeout(() => {
           talkedRecently.delete(message.author.id);
         }, 300000);
-    }
+        }
 	
 	if(command === settings.prefix + settings.servercommand) {
-    const delay = args.shift().toLowerCase();
+    	const delay = args.shift().toLowerCase();
 	const serv1 = args [0]
 	const serv2 = args [1] 
 	const names = serv1 + " " + serv2
@@ -366,10 +364,10 @@ message.channel.bulkDelete(2).then(() => {
         setTimeout(() => {
           talkedRecently.delete(message.author.id);
         }, 300000);
-    }
+    	}
 	
 	if(command === settings.prefix + settings.topiccommand) {
-    const delay = args.shift().toLowerCase();
+    	const delay = args.shift().toLowerCase();
 	const topic1 = args [0]
 	const topic2 = args [1] 
 	const names = topic1 + " " + topic2
@@ -399,10 +397,10 @@ message.channel.bulkDelete(2).then(() => {
         setTimeout(() => {
           talkedRecently.delete(message.author.id);
         }, 300000);
-    }
+    	}
 	
 	if(command === settings.prefix + settings.rolenamecommand) {
-    const delay = args.shift().toLowerCase();
+    	const delay = args.shift().toLowerCase();
 	const name1 = args [0]
 	const name2 = args [1] 
 	const namez = name1 + " " + name2
@@ -438,8 +436,6 @@ message.channel.bulkDelete(2).then(() => {
 	
 	}
 
-	}
-	
 	}
 	
 });
