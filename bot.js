@@ -51,11 +51,11 @@ bot.on('message', message => {
         var embedstart = setInterval(function() {
             var embed = colors[Math.floor(Math.random() * colors.length)];
 	})
-        let embedx = new Discord.RichEmbed()  
+	let embedx = new Discord.RichEmbed()  
         
 .setAuthor(bot.user.tag)
 .setColor(embed)
-.addField("Just a test embed, "Just a test", true)
+.addField("Just a test embed", "Just a test", true)
 .setThumbnail("https://cdn.discordapp.com/attachments/563959615709118503/564383924600438785/giphy.gif")
 .setFooter(bot.user.tag)
 .setTimestamp()
