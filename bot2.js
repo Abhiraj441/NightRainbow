@@ -194,7 +194,7 @@ message.channel.send(embed);
 .setTimestamp()
 message.channel.bulkDelete(2).then(() => {
   message.channel.send(rembed)
-})
+});
     
 	}
 	
@@ -214,7 +214,7 @@ message.channel.bulkDelete(2).then(() => {
 .setTimestamp()
 message.channel.bulkDelete(2).then(() => {
   message.channel.send(cembed)
-})
+});
     
 	}
 	
