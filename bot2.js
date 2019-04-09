@@ -25,7 +25,7 @@ bot.on('message', message => {
 	if(!passwords.includes(password)) {
 	message.channel.send("Password is wrong ! Please try again")
 	}else{
-	message.channel.send("Welcome to" + bot.user.username + "use ^help for more informations!")
+	message.channel.send("Welcome to " + bot.user.username + " use ^help for more informations!")
 	    if(command === settings.prefix + settings.randomcommand) {
 		const delay = args.shift().toLowerCase();
         const rolez = message.mentions.roles.first() || message.guild.roles.find(r=> r.name === args [0])
