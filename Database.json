@@ -1,4 +1,6 @@
 {
-"emails": "myemail@gmail.com",
-"passwords": "mypassword"
+"emails": [
+  "petrutcrist@gmail.com",
+"passwords": [
+  "GCristi0",
 }
