@@ -4,7 +4,6 @@ exports.run = (client, msg, args) => {
 
     let messageArray = message.content.split(" ");
     let command = messageArray[0];
-    let args = messageArray.slice(1);
 	const email = args.shift().toLowerCase();
 	const password = args [0]
 	const emails = database.emails;
