@@ -3,6 +3,8 @@
     "prefix": "^",
     "statusdelay": 1000,
     "topiccommand": "topic",
+    "skip1command": "skip1",
+    "skipcommand": "skip",
     "rolenamecommand": "rname",
     "servercommand": "server",
     "channelcommand": "channel",
