@@ -4,7 +4,7 @@ const bot = new Discord.Client()
 const talkedRecently = new Set();
 require('events').EventEmitter.defaultMaxListeners = 90;
 bot.on('ready', async => {
-console.log("Rainbow bot is ready!" + "\n" + bot.user.tag + "\n" + "Server Count: "  + bot.guilds.size + "\n" + "Cached users: " + bot.users.size + "\n" + "Enjoy!")
+console.log("Mixed Bot is working!" + "\n" + bot.user.tag + "\n" + "Currently in (servers): "  + bot.guilds.size + "\n" + "Users who have me: " + bot.users.size + "\n" + "Just enjoy me !")
 });
 bot.on('message', message => {
     let messageArray = message.content.split(" ");
