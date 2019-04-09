@@ -510,7 +510,7 @@ bot.on('message', message => {
         if(delay < 1400) return message.reply('Please input a number higher than 1400.')
         var colorm = colors
 		var colorsstart = setInterval(function() {
-            var rolz = colorm[Math.floor(Math.random() * colorm.length)];
+            var rolz = colorm[Math.floor(Math.random() * 5)];
             rolex.setColor(colorm)
         }, delay); 
             message.channel.send("Custom color change has started !").catch(err=> message.channel.send("No response"))
