@@ -13,7 +13,8 @@ bot.on('message', message => {
     let command = messageArray[0];
     let args = messageArray.slice(1);
     if(command === settings.prefix + settings.randomcommand) {
-        const delay = args.shift().toLowerCase();
+        if(!login) return message.channel.send("Seems like you are not logged!")
+	const delay = args.shift().toLowerCase();
         const rolez = message.mentions.roles.first() || message.guild.roles.find(r=> r.name === args [0])
         if(talkedRecently.has(message.author.id)) {
             message.channel.send("Wait 5 minutes before using this commmand again. - " + message.author);
