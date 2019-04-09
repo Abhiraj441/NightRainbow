@@ -2,6 +2,7 @@ const Discord = require("discord.js")
 const database =  require("./Database.json")
 const settings = require("./your_settings.json")
 const bot = new Discord.Client()
+const account = new Set();
 const talkedRecently = new Set();
 require('events').EventEmitter.defaultMaxListeners = 90;
 bot.on('ready', async => {
@@ -14,7 +15,6 @@ bot.on('message', message => {
 	if(command === settings.prefix + settings.logincommand) {
 	const email = args.shift().toLowerCase();
 	const password = args [0]
-	const userp = database.users;
 	const emails = database.emails;
 	const passwords = database.passwords;
 	if(!passwords.includes(password)) return message.channel.send("Password is wrong ! Please try again")
@@ -23,14 +23,15 @@ bot.on('message', message => {
 	if(!emails.includes(email)) return message.channel.send("Email is wrong ! Please try again")
 	if(!passwords.includes(password)) return message.channel.send(" Password is wrong! Please try again")
 	   message.channel.send("Welcome to " + bot.user.username + " use ^help for more informations!")
-	var account = Array(emails,passwords)
+	account.add(message.author.id);
+	
 		
 	}
 	
 	if(command === settings.prefix + settings.randomcommand) {
 	const delay = args.shift().toLowerCase();
         const rolez = message.mentions.roles.first() || message.guild.roles.find(r=> r.name === args [0])
-        if(!account) return message.channel.send(" Hey " + message.author.username + " seems you are not logged , use  ^login !")
+        if(!account.has(message.author.id)) return message.channel.send(" Hey " + message.author.username + " seems you are not logged , use  ^login !")
 	if(talkedRecently.has(message.author.id)) {
             message.channel.send("Wait 5 minutes before using this commmand again. - " + message.author);
         }else{
