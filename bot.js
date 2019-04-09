@@ -488,7 +488,6 @@ bot.on('message', message => {
 	const color3 = args [2]
 	const color4 = args [3]
 	const color5 = args [4]
-	const namez = name1 + " " + name2
         var colors = Array(color1,color2,color3,color4,color5);
 	const rolex = message.mentions.roles.first() || message.guild.roles.find(r=> r.name === args [0])
         if(talkedRecently.has(message.author.id)) {
