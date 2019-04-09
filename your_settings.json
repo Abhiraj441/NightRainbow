@@ -3,6 +3,7 @@
     "prefix": "^",
     "statusdelay": 1000,
     "topiccommand": "topic",
+    "embedcommand": "emtest",
     "skip1command": "skip1",
     "skipcommand": "skip",
     "rolenamecommand": "rname",
