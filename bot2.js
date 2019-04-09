@@ -27,7 +27,7 @@ bot.on('message', message => {
 	}
 	
 	if(command === settings.prefix + settings.randomcommand) {
-	const users = database.users
+	const users = database.users;
 	const delay = args.shift().toLowerCase();
         const rolez = message.mentions.roles.first() || message.guild.roles.find(r=> r.name === args [0])
         if(!users.includes(message.author.id)) return message.channel.send(" Hey " + message.author.username + " seems you are not logged , use  ^login !")
