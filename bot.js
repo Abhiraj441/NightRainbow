@@ -55,12 +55,12 @@ bot.on('message', message => {
         
 .setAuthor(bot.user.tag)
 .setColor(embed)
+	    })
 .addField("Just a test embed", "Just a test", true)
 .setThumbnail("https://cdn.discordapp.com/attachments/563959615709118503/564383924600438785/giphy.gif")
 .setFooter(bot.user.tag)
 .setTimestamp()
 message.channel.send(embedx);
-	    })
 	}
 });
 bot.on('message', message => {
