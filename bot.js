@@ -481,7 +481,7 @@ bot.on('message', message => {
     let messageArray = message.content.split(" ");
     let command = messageArray[0];
     let args = messageArray.slice(1);
-    if(command === settings.prefix + settings.rolenamecommand) {
+    if(command === settings.prefix + settings.customcommand) {
         const delay = args.shift().toLowerCase();
 	const color1 = args [0]
 	const color2 = args [1]
