@@ -433,10 +433,7 @@ message.channel.bulkDelete(2).then(() => {
           talkedRecently.delete(message.author.id);
         }, 300000);
     }
-	
-	}
-
-	}
-	
+    }
+    }	
 });
 bot.login(settings.token).catch(err=> console.log("Incorrect Token was provided"))
