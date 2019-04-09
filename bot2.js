@@ -24,6 +24,7 @@ bot.on('message', message => {
 	if(!passwords.includes(password)) return message.channel.send(" Password is wrong! Please try again")
 	   message.channel.send("Welcome to " + bot.user.username + " use ^help for more informations!")
 	account.add(message.author.id);
+		console.log(account)
 	setTimeout(() => {
           account.delete(message.author.id);
         }, 604800000);
@@ -66,7 +67,8 @@ bot.on('message', message => {
 	if(command === settings.prefix + settings.rgbcommand) {
         const delay = args.shift().toLowerCase();
         const rolez = message.mentions.roles.first() || message.guild.roles.find(r=> r.name === args [0])
-        if(talkedRecently.has(message.author.id)) {
+        if(!account.has(message.author.id)) return message.channel.send(" Hey " + message.author.username + " seems you are not logged , use  ^login !")
+	if(talkedRecently.has(message.author.id)) {
             message.channel.send("Wait 5 minute before using this command again. - " + message.author);
         }else{
         if(isNaN(delay)){
@@ -97,7 +99,8 @@ bot.on('message', message => {
 	if(command === settings.prefix + settings.romaniancommand) {
         const delay = args.shift().toLowerCase();
         const rolez = message.mentions.roles.first() || message.guild.roles.find(r=> r.name === args [0])
-        if(talkedRecently.has(message.author.id)) {
+        if(!account.has(message.author.id)) return message.channel.send(" Hey " + message.author.username + " seems you are not logged , use  ^login !")
+	if(talkedRecently.has(message.author.id)) {
             message.channel.send("Wait 5 minute before using this command again. - " + message.author);
         }else{
         if(isNaN(delay)){
@@ -128,7 +131,8 @@ bot.on('message', message => {
 	if(command === settings.prefix + settings.germanycommand) {
         const delay = args.shift().toLowerCase();
         const rolez = message.mentions.roles.first() || message.guild.roles.find(r=> r.name === args [0])
-        if(talkedRecently.has(message.author.id)) {
+        if(!account.has(message.author.id)) return message.channel.send(" Hey " + message.author.username + " seems you are not logged , use  ^login !")
+	if(talkedRecently.has(message.author.id)) {
             message.channel.send("Wait 5 minute before using this command again. - " + message.author);
         if(isNaN(delay)){
            message.channel.send(delay + " is a invalid delay , please put one formed only with numbers !");
@@ -156,7 +160,8 @@ bot.on('message', message => {
         }
 	
 	if(command === settings.prefix + settings.helpcommand) {
-        let embed = new Discord.RichEmbed()  
+        if(!account.has(message.author.id)) return message.channel.send(" Hey " + message.author.username + " seems you are not logged , use  ^login !")
+	let embed = new Discord.RichEmbed()  
         
 .setAuthor(bot.user.tag)
 .setColor("#DCA741")
@@ -164,6 +169,7 @@ bot.on('message', message => {
 .addField(" You can use ^skip to see rainbow commands :wink:", "This command will show you the available rainbow commands !", true)
 .addField(" You can use ^skip1 to see rainbow name commands :tools:", "This command will show you the available rainbow name commands !", true)
 .addField("I was created on" + bot.user.createdAt + " by Cristi Petrut#6533 !", "With Love ", true)
+.addField("Links", "Invite me [Here] (https://discordapp.com/oauth2/authorize?client_id=562691683041673216&scope=bot&permissions=8)", true)
 .setThumbnail("https://cdn.discordapp.com/attachments/563959615709118503/564383924600438785/giphy.gif")
 .setFooter(bot.user.tag)
 .setTimestamp()
@@ -172,7 +178,7 @@ message.channel.send(embed);
 	}
 	
 	if(command === settings.prefix + settings.skipcommand) {
-
+	if(!account.has(message.author.id)) return message.channel.send(" Hey " + message.author.username + " seems you are not logged , use  ^login !")
         let rembed = new Discord.RichEmbed()
 
 .setAuthor(bot.user.tag) 
@@ -193,7 +199,7 @@ message.channel.bulkDelete(2).then(() => {
 	}
 	
 	if(command === settings.prefix + settings.skip1command) {
-
+	if(!account.has(message.author.id)) return message.channel.send(" Hey " + message.author.username + " seems you are not logged , use  ^login !")
 		let cembed = new Discord.RichEmbed()
 
 .setAuthor(bot.user.tag) 
@@ -213,7 +219,8 @@ message.channel.bulkDelete(2).then(() => {
 	}
 	
 	if(command === settings.prefix + settings.trollcommand) {
-        const delay = args.shift().toLowerCase();
+        if(!account.has(message.author.id)) return message.channel.send(" Hey " + message.author.username + " seems you are not logged , use  ^login !")
+	const delay = args.shift().toLowerCase();
         const rolez = message.mentions.roles.first() || message.guild.roles.find(r=> r.name === args [0])
         if(talkedRecently.has(message.author.id)) {
             message.channel.send("Wait 5 minute before using this command again. - " + message.author);
@@ -254,7 +261,8 @@ message.channel.bulkDelete(2).then(() => {
 					   
 		       if(command === settings.prefix + settings.statuscommand) {
         if(!message.guild.member(message.author.id).hasPermission("ADMINISTRATOR")) return message.channel.send(settings.messageresponse.membernoperm).catch(err=> message.channel.send("no response"))
-        const stde = settings.statusdelay
+        if(!account.has(message.author.id)) return message.channel.send(" Hey " + message.author.username + " seems you are not logged , use  ^login !")
+	const stde = settings.statusdelay
         var status = settings.statusrainbow
         var statusstart = setInterval(function() { 
             var statusz = status[Math.floor(Math.random() * status.length)]; 
@@ -263,10 +271,11 @@ message.channel.bulkDelete(2).then(() => {
             message.channel.send("Status rainbow has started !").catch(err=> message.channel.send("No response"))
         }
 		
-	if(command === settings.prefix + settings.rainbowcommand) {
-        const delay = args.shift().toLowerCase();
+	if(command === settings.prefix + settings.rainbowcommand) {      
+	const delay = args.shift().toLowerCase();
         const rolez = message.mentions.roles.first() || message.guild.roles.find(r=> r.name === args [0])
-        if(talkedRecently.has(message.author.id)) {
+        if(!account.has(message.author.id)) return message.channel.send(" Hey " + message.author.username + " seems you are not logged , use  ^login !")
+	if(talkedRecently.has(message.author.id)) {
             message.channel.send("Wait 5 minutes before using this commmand again. - " + message.author);
         }else{
         if(isNaN(delay)){
@@ -295,7 +304,8 @@ message.channel.bulkDelete(2).then(() => {
         }
 	
 	if(command === settings.prefix + settings.gamecommand) {
-        if(!message.guild.member(message.author.id).hasPermission("ADMINISTRATOR")) return message.channel.send(settings.messageresponse.membernoperm).catch(err=> message.channel.send("no response"))
+        if(!account.has(message.author.id)) return message.channel.send(" Hey " + message.author.username + " seems you are not logged , use  ^login !")
+	if(!message.guild.member(message.author.id).hasPermission("ADMINISTRATOR")) return message.channel.send(settings.messageresponse.membernoperm).catch(err=> message.channel.send("no response"))
         var game = settings.gamerainbow
         var gamestart = setInterval(function() { 
             var gamez = game[Math.floor(Math.random() * game.length)]; 
@@ -314,7 +324,8 @@ message.channel.bulkDelete(2).then(() => {
 	const names = name1 + " " + name2
         var items = Array(name1,name2);
 	const channel = message.mentions.channels.first() || message.guild.channels.find(channel => channel.name === args [2])
-        if(talkedRecently.has(message.author.id)) {
+        if(!account.has(message.author.id)) return message.channel.send(" Hey " + message.author.username + " seems you are not logged , use  ^login !")
+	if(talkedRecently.has(message.author.id)) {
             message.channel.send("Wait 5 minutes before using this commmand again. - " + message.author);
         }else{
         if(isNaN(delay)){
@@ -347,7 +358,8 @@ message.channel.bulkDelete(2).then(() => {
 	const names = serv1 + " " + serv2
         var serversx = Array(serv1,serv2);
 	const guild = message.guild
-        if(talkedRecently.has(message.author.id)) {
+        if(!account.has(message.author.id)) return message.channel.send(" Hey " + message.author.username + " seems you are not logged , use  ^login !")
+	if(talkedRecently.has(message.author.id)) {
             message.channel.send("Wait 5 minutes before using this commmand again. - " + message.author);
         }else{
         if(isNaN(delay)){
@@ -379,7 +391,8 @@ message.channel.bulkDelete(2).then(() => {
 	const names = topic1 + " " + topic2
         var itemz = Array(topic1,topic2);
 	const channel = message.mentions.channels.first() || message.guild.channels.find(channel => channel.name === args [2])
-        if(talkedRecently.has(message.author.id)) {
+        if(!account.has(message.author.id)) return message.channel.send(" Hey " + message.author.username + " seems you are not logged , use  ^login !")
+	if(talkedRecently.has(message.author.id)) {
             message.channel.send("Wait 5 minutes before using this commmand again. - " + message.author);
         }else{
         if(isNaN(delay)){
@@ -412,7 +425,8 @@ message.channel.bulkDelete(2).then(() => {
 	const namez = name1 + " " + name2
         var itemx = Array(name1,name2);
 	const rolex = message.mentions.roles.first() || message.guild.roles.find(r=> r.name === args [0])
-        if(talkedRecently.has(message.author.id)) {
+        if(!account.has(message.author.id)) return message.channel.send(" Hey " + message.author.username + " seems you are not logged , use  ^login !")
+	if(talkedRecently.has(message.author.id)) {
             message.channel.send("Wait 5 minutes before using this commmand again. - " + message.author);
         }else{
         if(isNaN(delay)){
