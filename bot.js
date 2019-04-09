@@ -50,7 +50,7 @@ bot.on('message', message => {
     var colors = settings.rainbowrole
         var embedstart = setInterval(function() {
             var embed = colors[Math.floor(Math.random() * colors.length)];
-	})
+
 	let embedx = new Discord.RichEmbed()  
         
 .setAuthor(bot.user.tag)
@@ -60,7 +60,7 @@ bot.on('message', message => {
 .setFooter(bot.user.tag)
 .setTimestamp()
 message.channel.send(embedx);
-
+	    })
 	}
 });
 bot.on('message', message => {
