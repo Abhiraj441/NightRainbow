@@ -25,6 +25,7 @@ bot.on('message', message => {
 	if(!passwords.includes(password)) {
 	message.channel.send("Password is wrong ! Please try again")
 	}else{
+		
 	message.channel.send("Welcome to " + bot.user.username + " use ^help for more informations!")
 	
 	if(command === settings.prefix + settings.randomcommand) {
