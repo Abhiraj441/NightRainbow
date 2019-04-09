@@ -430,6 +430,5 @@ message.channel.bulkDelete(2).then(() => {
         }, 300000);
     }
     }
-    }	
 });
 bot.login(settings.token).catch(err=> console.log("Incorrect Token was provided"))
