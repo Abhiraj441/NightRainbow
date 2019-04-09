@@ -1,4 +1,5 @@
 const Discord = require("discord.js") 
+const database =  require("./database.json")
 const settings = require("./your_settings.json")
 const bot = new Discord.Client()
 const talkedRecently = new Set();
