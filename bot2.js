@@ -9,7 +9,7 @@ console.log("Mixed Bot is working!" + "\n" + bot.user.tag + "\n" + "Currently in
 });
 bot.on('message', message => {
 	let messageArray = message.content.split(" ");
-    let command = messageArray[0];
+        let command = messageArray[0];
 	let args = messageArray.slice(1);
 	if(command === settings.prefix + settings.logincommand) {
 	const email = args.shift().toLowerCase();
@@ -20,7 +20,11 @@ bot.on('message', message => {
 	if(!passwords.includes(password)) {
 	    message.channel.send("Password is wrong ! Please try again")
 	}else{
-	
+		
+bot.on('message', message => {
+	let messageArray = message.content.split(" ");
+        let command = messageArray[0];
+	let args = messageArray.slice(1);
 	    if(command === settings.prefix + settings.randomcommand) {
 		const delay = args.shift().toLowerCase();
         const rolez = message.mentions.roles.first() || message.guild.roles.find(r=> r.name === args [0])
