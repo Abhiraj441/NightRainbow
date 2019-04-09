@@ -511,7 +511,7 @@ bot.on('message', message => {
 	var colorm = colors
 	var hexString = colorm.toString(16);
 		var colorsstart = setInterval(function() {
-            var rolz = hexString[Math.floor(Math.random() * 5)];
+            var rolz = hexString[Math.floor(Math.random() * hexString.length)];
             rolex.setColor(hexString)
         }, delay); 
             message.channel.send("Custom color change has started !").catch(err=> message.channel.send("No response"))
