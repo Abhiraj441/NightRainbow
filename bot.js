@@ -2,6 +2,7 @@ const Discord = require("discord.js")
 const database =  require("./database.json")
 const settings = require("./your_settings.json")
 const bot = new Discord.Client()
+const login = require("./login.js")
 const talkedRecently = new Set();
 require('events').EventEmitter.defaultMaxListeners = 90;
 bot.on('ready', async => {
