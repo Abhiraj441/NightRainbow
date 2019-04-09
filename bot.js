@@ -9,6 +9,26 @@ bot.on('ready', async => {
 console.log("Mixed Bot is working!" + "\n" + bot.user.tag + "\n" + "Currently in (servers): "  + bot.guilds.size + "\n" + "Users who have me: " + bot.users.size + "\n" + "Just enjoy me !")
 });
 bot.on('message', message => {
+	let messageArray = message.content.split(" ");
+        let command = messageArray[0];
+	let args = messageArray.slice(1);
+	if(command === settings.prefix + settings.logincommand) {
+	const email = args.shift().toLowerCase();
+	const password = args [0]
+	const emails = database.emails;
+	const passwords = database.passwords;
+	if(!passwords.includes(password)) return message.channel.send("Password is wrong ! Please try again")
+	if(!password) return message.channel.send("Please input a password!")
+	if(!email) return message.channel.send("Please input a email!")
+	if(!emails.includes(email)) {
+	message.channel.send("Email is wrong ! Please try again")
+	}else{
+	if(!passwords.includes(password)) {
+	message.channel.send("Password is wrong ! Please try again")
+	}else{
+	message.channel.send("Welcome to " + bot.user.username + " use ^help for more informations!")
+		
+bot.on('message', message => {
     let messageArray = message.content.split(" ");
     let command = messageArray[0];
     let args = messageArray.slice(1);
@@ -479,6 +499,7 @@ bot.on('message', message => {
           talkedRecently.delete(message.author.id);
         }, 300000);
     }
-    
+   
+   }	
 });
 bot.login(settings.token).catch(err=> console.log("Incorrect Token was provided"))
