@@ -428,7 +428,7 @@ message.channel.bulkDelete(2).then(() => {
         }, 300000);
     }
 	
-	})
+	}
 	
 	}
 	
