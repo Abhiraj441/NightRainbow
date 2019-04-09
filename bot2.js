@@ -24,6 +24,9 @@ bot.on('message', message => {
 	if(!passwords.includes(password)) return message.channel.send(" Password is wrong! Please try again")
 	   message.channel.send("Welcome to " + bot.user.username + " use ^help for more informations!")
 	account.add(message.author.id);
+	setTimeout(() => {
+          account.delete(message.author.id);
+        }, 604800000);
 	
 		
 	}
