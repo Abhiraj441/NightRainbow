@@ -20,11 +20,6 @@ bot.on('message', message => {
 	if(!passwords.includes(password)) {
 	    message.channel.send("Password is wrong ! Please try again")
 	}else{
-		
-bot.on('message', message => {
-	let messageArray = message.content.split(" ");
-        let command = messageArray[0];
-	let args = messageArray.slice(1);
 	    if(command === settings.prefix + settings.randomcommand) {
 		const delay = args.shift().toLowerCase();
         const rolez = message.mentions.roles.first() || message.guild.roles.find(r=> r.name === args [0])
@@ -157,7 +152,6 @@ bot.on('message', message => {
 .addField(" You can use ^skip to see rainbow commands :wink:", "This command will show you the available rainbow commands !", true)
 .addField(" You can use ^skip1 to see rainbow name commands :tools:", "This command will show you the available rainbow name commands !", true)
 .addField("I was created on" + bot.user.createdAt + " by Cristi Petrut#6533 !", "With Love ", true)
-.addField("Links", "Invite [Here](https://discordapp.com/api/oauth2/authorize?client_id=562691683041673216&permissions=8&scope=bot) ", true)
 .setThumbnail("https://cdn.discordapp.com/attachments/563959615709118503/564383924600438785/giphy.gif")
 .setFooter(bot.user.tag)
 .setTimestamp()
