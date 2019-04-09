@@ -154,14 +154,23 @@ bot.on('message', message => {
         
 .setAuthor(bot.user.tag)
 .setColor("#DCA741")
-.setDescription("Hellow , i am " + bot.user.username + " and this is my help page , you can see more commands by reacting !")
+.setDescription("Hellow , i am " + bot.user.username + " and this is my help page , you can see more commands using the commands: ")
+.addField(" You can use ^skip to see rainbow commands :wink:", "This command will show you the available rainbow commands !", true)
+.addField(" You can use ^skip1 to see rainbow name commands :tools:", "This command will show you the available rainbow name commands !", true)
 .addField("I was created on" + bot.user.createdAt + " by Cristi Petrut#6533 !", "With Love ", true)
 .setThumbnail("https://cdn.discordapp.com/attachments/563959615709118503/564383924600438785/giphy.gif")
 .setFooter(bot.user.tag)
 .setTimestamp()
 message.channel.send(embed);
-        
-	    let rembed = new Discord.RichEmbed()
+    
+	}
+});
+bot.on('message', message => {
+    let messageArray = message.content.split(" ");
+    let command = messageArray[0];    
+    if(command === settings.prefix + settings.skipcommand) {
+
+       let rembed = new Discord.RichEmbed()
 
 .setAuthor(bot.user.tag) 
 .setColor("##00FFBF")
@@ -174,7 +183,17 @@ message.channel.send(embed);
 .setImage("https://cdn.discordapp.com/attachments/563959615709118503/564383924600438788/giphy_1.gif")
 .setFooter("Rainbow roles section")
 .setTimestamp()
-	
+message.channel.bulkDelete(2).then(() => {
+  message.channel.send(rembed)
+});
+    
+	}
+});
+bot.on('message', message => {
+    let messageArray = message.content.split(" ");
+    let command = messageArray[0];    
+    if(command === settings.prefix + settings.skip1command) {
+
 		let cembed = new Discord.RichEmbed()
 
 .setAuthor(bot.user.tag) 
@@ -183,44 +202,15 @@ message.channel.send(embed);
 .addField("^channel time channelname1 channelname2 #channel", "Awesome Channel Name rainbow effect.", true)	
 .addField("^server time servername1 servername2", "Awesome Server rainbow effect.", true)
 .addField("^topic time topicname1 topicname2 #channel", "Awesome Channel Topic rainbow effect.", true)	
+.addField("^rname time rolename1 rolename2 @rolename ", "Awesome Role Name rainbow effect.", true)	
 .setImage("https://cdn.discordapp.com/attachments/563959615709118503/564809023640174592/giphy_2.gif")
-.setFooter("Channel rainbow section")
+.setFooter("Rainbow names section")
 .setTimestamp()
-		
-message.react('▶').then(() => message.react('⏩'));
-
-const filter = (reaction, user) => {
-    ['▶', '⏩'].includes(reaction.emoji.name) && user.id === message.author.id;
-};
-
-message.awaitReactions(filter, { max: 8, time: 300000, errors: ['time'] })
-    .then(collected => {
-        const reaction = collected.first();
-
-	if (reaction.emoji.name === '▶') 
-	{
-	    message.delete(embed)
-	    message.channel.send(rembed);
-	    message.react('◀');
-        }
-        if (reaction.emoji.name === '⏩') {
-            message.delete(rembed);
-	    message.channel.send(cembed);
-	    message.react('⏪');
+message.channel.bulkDelete(2).then(() => {
+  message.channel.send(cembed)
+});
+    
 	}
-	if (reaction.emoji.name === '◀') {
-            message.delete(cembed);
-	    message.channel.send(rembed);
-	}
-	if (reaction.emoji.name === '⏪') {
-            message.delete(rembed);
-	    message.channel.send(embed);
-		
-    }
-	
-    })
-	
-    }
 });
 bot.on('message', message => {
     let messageArray = message.content.split(" ");
