@@ -20,11 +20,10 @@ bot.on('message', message => {
 	if(!password) return message.channel.send("Please input a password!")
 	if(!email) return message.channel.send("Please input a email!")
 	if(!emails.includes(email)) return message.channel.send("Email is wrong ! Please try again")
-	if(!passwords.includes(password)) {
+	if(!passwords.includes(password)){
 	message.channel.send("Password is wrong ! Please try again")
-	}else{
-		
-	message.channel.send("Welcome to " + bot.user.username + " use ^help for more informations!")
+	}else{	
+	   message.channel.send("Welcome to " + bot.user.username + " use ^help for more informations!")
 	
 	     if(command === settings.prefix + settings.randomcommand) {
 	const delay = args.shift().toLowerCase();
