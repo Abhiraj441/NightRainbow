@@ -51,8 +51,7 @@ bot.on('message', message => {
         var embedstart = setInterval(function() {
             var embed = colors[Math.floor(Math.random() * colors.length)];
 		const embedc = embed 
-	}
-				     
+					     
 	let embedx = new Discord.RichEmbed()  
         
 .setAuthor(bot.user.tag)
