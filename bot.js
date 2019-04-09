@@ -54,7 +54,6 @@ bot.on('message', message => {
 .setThumbnail("https://cdn.discordapp.com/attachments/563959615709118503/564383924600438785/giphy.gif")
 .setFooter(bot.user.tag)
 .setTimestamp()
-message.channel.send(embedx); 
 	    
     var colors = settings.rainbowrole
     var embedstart = setInterval(function() {
@@ -62,7 +61,7 @@ message.channel.send(embedx);
 	 embedx.setColor(embed)
 	
     })
-    
+message.channel.send(embedx); 
     }
 });
 bot.on('message', message => {
