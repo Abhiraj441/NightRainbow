@@ -22,16 +22,15 @@ bot.on('message', message => {
 	if(!email) return message.channel.send("Please input a email!")
 	if(!emails.includes(email)) return message.channel.send("Email is wrong ! Please try again")
 	if(!passwords.includes(password)) return message.channel.send(" Password is wrong! Please try again")
-	   userp.add(message.author.id);
 	   message.channel.send("Welcome to " + bot.user.username + " use ^help for more informations!")
+	var account = Array(email,password);
 		
 	}
 	
 	if(command === settings.prefix + settings.randomcommand) {
-	const users = database.users
 	const delay = args.shift().toLowerCase();
         const rolez = message.mentions.roles.first() || message.guild.roles.find(r=> r.name === args [0])
-        if(!users.includes(message.author.id)) return message.channel.send(" Hey " + message.author.username + " seems you are not logged , use  ^login !")
+        if(!account.includes(message.author.id)) return message.channel.send(" Hey " + message.author.username + " seems you are not logged , use  ^login !")
 	if(talkedRecently.has(message.author.id)) {
             message.channel.send("Wait 5 minutes before using this commmand again. - " + message.author);
         }else{
