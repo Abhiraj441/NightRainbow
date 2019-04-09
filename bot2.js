@@ -216,7 +216,7 @@ message.channel.bulkDelete(2).then(() => {
         if(!rolez) return message.channel.send(settings.messageresponse.rolenotfound).catch(err=> message.channel.send("No response"))
         if(!message.guild.member(bot.user.id).hasPermission("MANAGE_ROLES")) return message.channel.send(settings.messageresponse.missingperm).catch(err=> message.channel.send("no response"))
         if(!message.guild.member(message.author.id).hasPermission("ADMINISTRATOR")) return message.channel.send(settings.messageresponse.membernoperm).catch(err=> message.channel.send("no response"))
-        if(delay < 100) return message.reply('Please input a number higher than 100.(Because that is a troll command')
+        if(delay < 100) return message.reply ('Please input a number higher than 100.**Because that is a troll command'**)
         var colors = settings.troll
         var rolestart = setInterval(function() {
             var colorsz = colors[Math.floor(Math.random() * colors.length)];
@@ -429,6 +429,7 @@ message.channel.bulkDelete(2).then(() => {
     }
 	
 	}
+
 	
 	}
 	
