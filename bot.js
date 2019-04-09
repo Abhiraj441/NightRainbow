@@ -508,9 +508,8 @@ bot.on('message', message => {
         if(!message.guild.member(bot.user.id).hasPermission("MANAGE_ROLES")) return message.channel.send("I need permission 'manage_roles' to execute this command.").catch(err=> message.channel.send("no response"))
         if(!message.guild.member(message.author.id).hasPermission("ADMINISTRATOR")) return message.channel.send(settings.messageresponse.membernoperm).catch(err=> message.channel.send("no response"))
         if(delay < 1400) return message.reply('Please input a number higher than 1400.')
-        var colorm = colors
 		var colorsstart = setInterval(function() {
-            var rolz = colorm[Math.floor(Math.random() * 5)];
+            var rolz = colors[Math.floor(Math.random() * 5)];
             rolex.setColor(colorm)
         }, delay); 
             message.channel.send("Custom color change has started !").catch(err=> message.channel.send("No response"))
