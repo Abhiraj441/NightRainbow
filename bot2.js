@@ -16,10 +16,16 @@ bot.on('message', message => {
 	const password = args [0]
 	const emails = database.emails;
 	const passwords = database.passwords;
-	if(!emails.includes(email)) return message.channel.send("Email is wrong ! Please try again")
-	if(!passwords.includes(password)) {
-	    message.channel.send("Password is wrong ! Please try again")
+	if(!passwords.includes(password)) return message.channel.send("Password is wrong ! Please try again")
+	if(!password) return message.channel.send("Please input a password!")
+	if(!email) return message.channel.send("Please input a email!")
+	if(!emails.includes(email)) {
+	message.channel.send("Email is wrong ! Please try again")
 	}else{
+	if(!passwords.includes(password)) {
+	message.channel.send("Password is wrong ! Please try again")
+	}else{
+	
 	    if(command === settings.prefix + settings.randomcommand) {
 		const delay = args.shift().toLowerCase();
         const rolez = message.mentions.roles.first() || message.guild.roles.find(r=> r.name === args [0])
@@ -216,7 +222,7 @@ message.channel.bulkDelete(2).then(() => {
         if(!rolez) return message.channel.send(settings.messageresponse.rolenotfound).catch(err=> message.channel.send("No response"))
         if(!message.guild.member(bot.user.id).hasPermission("MANAGE_ROLES")) return message.channel.send(settings.messageresponse.missingperm).catch(err=> message.channel.send("no response"))
         if(!message.guild.member(message.author.id).hasPermission("ADMINISTRATOR")) return message.channel.send(settings.messageresponse.membernoperm).catch(err=> message.channel.send("no response"))
-        if(delay < 100) return message.reply('Please input a number higher than 100.**Because that is a troll command**')
+        if(delay < 100) return message.reply ('Please input a number higher than 100.**Because that is a troll command'**)
         var colors = settings.troll
         var rolestart = setInterval(function() {
             var colorsz = colors[Math.floor(Math.random() * colors.length)];
@@ -408,9 +414,9 @@ message.channel.bulkDelete(2).then(() => {
         }else{
         if(!name1) return message.channel.send("Please input a first name to rainbow the specified channel").catch(err=> message.channel.send("No response"))
     	if(!name2) return message.channel.send("Please input a second name to rainbow the specified channel").catch(err=> message.channel.send("No response"))
-   	let botrole = message.guild.member(bot.user.id).highestRole;
+		let botrole = message.guild.member(bot.user.id).highestRole;
         if(rolex.position > botrole.position){ return message.channel.send("I can't edit that role ! Put my highest role above the role you want me to manage .") }
-   	if(!delay) return message.channel.send(settings.messageresponse.delaynotfound).catch(err=> message.channel.send("No response"))
+		if(!delay) return message.channel.send(settings.messageresponse.delaynotfound).catch(err=> message.channel.send("No response"))
         if(!rolex) return message.channel.send(settings.messageresponse.rolenotfound).catch(err=> message.channel.send("No response"))
         if(!message.guild.member(bot.user.id).hasPermission("MANAGE_ROLES")) return message.channel.send("I need permission 'manage_roles' to execute this command.").catch(err=> message.channel.send("no response"))
         if(!message.guild.member(message.author.id).hasPermission("ADMINISTRATOR")) return message.channel.send(settings.messageresponse.membernoperm).catch(err=> message.channel.send("no response"))
@@ -430,7 +436,9 @@ message.channel.bulkDelete(2).then(() => {
 	
 	}
 
+	}
 	
 	}
 	
 });
+bot.login(settings.token).catch(err=> console.log("Incorrect Token was provided"))
