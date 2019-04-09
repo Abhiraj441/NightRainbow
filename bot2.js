@@ -26,8 +26,9 @@ bot.on('message', message => {
 	message.channel.send("Password is wrong ! Please try again")
 	}else{
 	message.channel.send("Welcome to " + bot.user.username + " use ^help for more informations!")
-	    if(command === settings.prefix + settings.randomcommand) {
-		const delay = args.shift().toLowerCase();
+	
+	if(command === settings.prefix + settings.randomcommand) {
+	const delay = args.shift().toLowerCase();
         const rolez = message.mentions.roles.first() || message.guild.roles.find(r=> r.name === args [0])
         if(talkedRecently.has(message.author.id)) {
             message.channel.send("Wait 5 minutes before using this commmand again. - " + message.author);
