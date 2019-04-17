@@ -407,8 +407,6 @@ async function msg() {
 .setDescription("Hellow , i am " + bot.user.username + " and this is my help page , you can see more commands using the commands: ")
 .addField(" You can use ^owner to see the bot owner", "**  **", true)
 .addField(" You can use ^supp to see the bot supporter", "**  **", true)
-.addField(" To use the bot you have to buy it then use ^login", "**  **", true)
-.addField(" You can logout using ^logout", "**  **", true)
 .addField("If you are a supporter , please use ^suppcommands", "**  **", true)
 .addField(" You can use ^skip to see rainbow commands :wink:", "This command will show you the available rainbow commands !", true)
 .addField(" You can use ^skip1 to see rainbow name commands :tools:", "This command will show you the available rainbow name commands !", true)
