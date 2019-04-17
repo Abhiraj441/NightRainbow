@@ -1,13 +1,32 @@
 {
-  "name": "nvidia",
-  "version": "1.0.0",
-  "main": "bot.js",
+  "//1": "describes your app and its dependencies",
+  "//2": "https://docs.npmjs.com/files/package.json",
+  "//3": "updating this file will download and update your packages",
+  "name": "ncover",
+  "version": "1.0.2",
+  "description": "A discord bot",
+  "main": "server.js",
   "scripts": {
-    "start": "node bot.js"
+    "start": "node server.js"
   },
   "dependencies": {
-    "discord.js": "11.3.0",
-    "request": "2.81.0",
-    "foreach-timeout": "2.0.2"
-  }
+    "express": "^4.16.3",
+    "discord.js": "^11.4.2",
+    "ffmpeg": "^0.0.4",
+    "ms": "^2.1.1",
+    "write-json-file": "^3.2.0",
+    "fs": "^0.0.2"
+  },
+  "engines": {
+    "node": "8.x"
+  },
+  "repository": {
+    "url": "https://glitch.com/edit/#!/hello-express"
+  },
+  "license": "MIT",
+  "keywords": [
+    "node",
+    "github",
+    "ncover"
+  ]
 }
