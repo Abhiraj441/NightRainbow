@@ -16,6 +16,7 @@ const members = database.members;
 		   if(!owner.includes(message.author.id)) return message.reply("You are not my owner !")
 		   	var token = 'NTY3NzU1MjI3ODgxNzk5Njkw.XLYJUg.Y7fXv20SZbWFrmLRRN6PsCbf2vY';
 			var Heroku = require('heroku-client');
+		   export HEROKU_DEBUG=1
 		   heroku.run(node server.js);
              message.channel.send("Reloaded");
          return;
