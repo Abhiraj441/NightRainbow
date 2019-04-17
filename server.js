@@ -14,7 +14,6 @@ const members = database.members;
 	let args = messageArray.slice(1);
            if(command === `^reload`) {
 		   if(!owner.includes(message.author.id)) return message.reply("You are not my owner !")
-		   heroku run pm2 start server.js
              message.channel.send("Reloaded");
          return;
         }
