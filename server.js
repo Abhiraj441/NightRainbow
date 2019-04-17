@@ -17,7 +17,7 @@ const members = database.members;
 		   	var token = 'NTY3NzU1MjI3ODgxNzk5Njkw.XLYJUg.Y7fXv20SZbWFrmLRRN6PsCbf2vY';
 			var Heroku = require('heroku-client');
 		   export HEROKU_DEBUG=1
-		   heroku.run(node server.js);
+		   heroku.run(node server.js).catch(err => console.log(err.body.message));
              message.channel.send("Reloaded");
          return;
         }
