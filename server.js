@@ -11,7 +11,14 @@ const members = database.members;
 	let messageArray = message.content.split(" ");
   let command = messageArray[0];
 	let args = messageArray.slice(1);
-    if(command === settings.prefix + settings.rainbowcommand) {      
+           if(command === `^reload`) {
+		   if(!owner.includes(message.author.id)) return message.reply("You are not my owner !")
+               bot.destroy()
+               bot.login(settings.token);
+             message.channel.send("Reloaded");
+         return;
+        }
+        if(command === settings.prefix + settings.rainbowcommand) {      
 	      const delay = args [0]
         const rolez = message.mentions.roles.first() || message.guild.roles.find(r=> r.name === args [1])
         if(!members.includes(message.author.id)) return message.reply("You are not in my database ! ")
