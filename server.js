@@ -1,4 +1,5 @@
 const Discord = require("discord.js") 
+const pm2 = require("pm2")
 const bot = new Discord.Client()
 const settings = require("./your_settings.json")
 const database = require("./Database.json")
@@ -13,9 +14,7 @@ const members = database.members;
 	let args = messageArray.slice(1);
            if(command === `^reload`) {
 		   if(!owner.includes(message.author.id)) return message.reply("You are not my owner !")
-		   process.exit(1);
-               bot.destroy()
-               bot.login(settings.token);
+		   pm2 restart server.js
              message.channel.send("Reloaded");
          return;
         }
