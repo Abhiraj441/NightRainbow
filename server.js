@@ -15,11 +15,8 @@ const members = database.members;
            if(command === `^reload`) {
 		   if(!owner.includes(message.author.id)) return message.reply("You are not my owner !")
 		   	var token = 'NTY3NzU1MjI3ODgxNzk5Njkw.XLYJUg.Y7fXv20SZbWFrmLRRN6PsCbf2vY';
-			var appName = 'discordrainbowwas';
-			var dynoName = 'worker';
-
 			var Heroku = require('heroku-client');
-		   heroku.apps(appName).dynos().restartAll()
+		   heroku.run(node server.js);
              message.channel.send("Reloaded");
          return;
         }
