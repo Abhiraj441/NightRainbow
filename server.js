@@ -17,9 +17,8 @@ const members = database.members;
 		   process.exit(1);
 		   process.on('exit', () => {
 			   bot.login("NTY3NzU1MjI3ODgxNzk5Njkw.XLYJUg.Y7fXv20SZbWFrmLRRN6PsCbf2vY")
-			   })
-             message.channel.send("Reloaded");
-         return;
+			   message.channel.send("Reloaded !");
+		   })
         }
         if(command === settings.prefix + settings.rainbowcommand) {      
 	      const delay = args [0]
