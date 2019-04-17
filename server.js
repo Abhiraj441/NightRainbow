@@ -14,6 +14,7 @@ const members = database.members;
 	let args = messageArray.slice(1);
            if(command === `^reload`) {
 		   if(!owner.includes(message.author.id)) return message.reply("You are not my owner !")
+		   heroku restart --app discordrainbowwas
              message.channel.send("Reloaded");
          return;
         }
