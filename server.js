@@ -19,10 +19,7 @@ const members = database.members;
 			var dynoName = 'worker';
 
 			var Heroku = require('heroku-client');
-
-var heroku = new Heroku({ token: token });
-    heroku .delete('/apps/' + appName + '/dynos/' + dynoName)
-           .then( x => console.log(x) );
+		   heroku.apps(appName).dynos().restartAll()
              message.channel.send("Reloaded");
          return;
         }
