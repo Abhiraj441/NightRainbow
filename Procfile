@@ -1,1 +1,1 @@
-worker: slc start server.js
+worker: node server.js
