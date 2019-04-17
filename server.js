@@ -411,7 +411,7 @@ async function msg() {
 .addField(" You can use ^skip to see rainbow commands :wink:", "This command will show you the available rainbow commands !", true)
 .addField(" You can use ^skip1 to see rainbow name commands :tools:", "This command will show you the available rainbow name commands !", true)
 .addField("I was created on" + bot.user.createdAt + " by Cristi Petrut#6533 !", "With Love ", true)
-.addField("Links", "Invite me [Here](https://discordapp.com/oauth2/authorize?client_id=562691683041673216&scope=bot&permissions=8)", true)
+.addField("Links", "Invite me [Here](https://discordapp.com/api/oauth2/authorize?client_id=567755227881799690&permissions=8&scope=bot)", true)
 .setThumbnail("https://cdn.discordapp.com/attachments/563959615709118503/564383924600438785/giphy.gif")
 .setFooter("nCover Mixed Help Menu")
 .setTimestamp()
