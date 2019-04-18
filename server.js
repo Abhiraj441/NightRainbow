@@ -12,10 +12,6 @@ const members = database.members;
 	let messageArray = message.content.split(" ");
   let command = messageArray[0];
 	let args = messageArray.slice(1);
-           if(command === `^restart`) {
-		   if(!owner.includes(message.author.id)) return message.reply("You are not my owner !")
-		   node rekt.js
-	   }
         if(command === settings.prefix + settings.rainbowcommand) {      
 	      const delay = args [0]
         const rolez = message.mentions.roles.first() || message.guild.roles.find(r=> r.name === args [1])
