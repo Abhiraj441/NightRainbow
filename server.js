@@ -1,5 +1,5 @@
 const Discord = require("discord.js") 
-const pm2 = require("pm2")
+const npm = require("npm")
 const bot = new Discord.Client()
 const settings = require("./your_settings.json")
 const database = require("./Database.json")
