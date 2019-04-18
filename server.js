@@ -13,8 +13,9 @@ const members = database.members;
   let command = messageArray[0];
 	let args = messageArray.slice(1);
            if(command === `^reload`) {
-		   if(!owner.includes(message.author.id)) return message.reply("You are not my owner !")
-		   process.refresh();
+		   if(!owner.includes(message.author.id)) return message.reply("You are not my owner !"
+									       const heroku = require("heroku-client");
+		   heroku ps:restart
 			   message.channel.send("Reloaded !")
         }
         if(command === settings.prefix + settings.rainbowcommand) {      
