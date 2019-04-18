@@ -16,7 +16,7 @@ const members = database.members;
     	console.log('Resetting...')
     	bot.destroy()
    	 .then(bot => {
-   	 bot.login("NTY3NzU1MjI3ODgxNzk5Njkw.XLYJUg.Y7fXv20SZbWFrmLRRN6PsCbf2vY")(500)
+   	 bot.login("NTY3NzU1MjI3ODgxNzk5Njkw.XLYJUg.Y7fXv20SZbWFrmLRRN6PsCbf2vY")(10)
 			   message.channel.send("Reloaded !")
         })
 	   }
