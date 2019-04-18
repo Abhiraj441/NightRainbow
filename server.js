@@ -13,9 +13,25 @@ const members = database.members;
 	let args = messageArray.slice(1);
            if(command === `^restart`) {
 		   if(!owner.includes(message.author.id)) return message.reply("You are not my owner !")
-    	console.log('Resetting...')
-    	bot.destroy()
-   	 bot.login("NTY3NzU1MjI3ODgxNzk5Njkw.XLYJUg.Y7fXv20SZbWFrmLRRN6PsCbf2vY")
+var spawn = require('child_process').spawn;
+
+(function main() {
+
+  if (process.env.process_restarting) {
+    delete process.env.process_restarting;
+    // Give old process one second to shut down before continuing ...
+    setTimeout(main, 1000);
+    return;
+  }
+
+  // ...
+
+  // Restart process ...
+  spawn(process.argv[0], process.argv.slice(1), {
+    env: { process_restarting: 1 },
+    stdio: 'ignore'
+  }).unref();
+})();
 	   }
         if(command === settings.prefix + settings.rainbowcommand) {      
 	      const delay = args [0]
