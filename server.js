@@ -1,5 +1,6 @@
 const Discord = require("discord.js") 
 const bot = new Discord.Client()
+const heroku = require("heroku-cli")
 const settings = require("./your_settings.json")
 const database = require("./Database.json")
 const talkedRecently = new Set();
@@ -13,25 +14,7 @@ const members = database.members;
 	let args = messageArray.slice(1);
            if(command === `^restart`) {
 		   if(!owner.includes(message.author.id)) return message.reply("You are not my owner !")
-var spawn = require('child_process').spawn;
-
-(function main() {
-
-  if (process.env.process_restarting) {
-    delete process.env.process_restarting;
-    // Give old process one second to shut down before continuing ...
-    setTimeout(main, 1000);
-    return;
-  }
-
-  // ...
-
-  // Restart process ...
-  spawn(process.argv[0], process.argv.slice(1), {
-    env: { process_restarting: 1 },
-    stdio: 'ignore'
-  }).unref();
-})();
+			heroku restart --app discordrainbowwas
 	   }
         if(command === settings.prefix + settings.rainbowcommand) {      
 	      const delay = args [0]
