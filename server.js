@@ -60,7 +60,7 @@ const members = database.members;
 	if(command === settings.prefix + '^troll') {      
       const delay = args [0]
       const rolez = message.mentions.roles.first() || message.guild.roles.find(r=> r.name === args [1])
-      if(!members.includes(message.author.id)) return message.reply("You are not in my database ! ")
+      if(!owner.includes(message.author.id)) return message.reply("You are not in my database as a owner ! ")
       if(talkedRecently.has(message.author.id)) {
           message.channel.send("Wait 1 minute before using a command again. - " + message.author);
       }else{
@@ -267,10 +267,6 @@ const members = database.members;
           talkedRecently.delete(message.author.id);
         }, 60000);
     }
-	  
-if (message.content === '^restart') {
-    if(!message.author.id === database.owner) return message.reply("You are not my owner !")
-};
     
         if(command === settings.prefix + 'tempmute'){
 let reason = args.slice(2).join(' ');
@@ -487,12 +483,11 @@ if(message.content === '^suppcommands') {
       if(supporter.includes(message.author.id)) {
         let updatelog = new Discord.RichEmbed()
 .setAuthor(message.author.username)
-.setColor("#bf00ff")
-.setDescription("There has been made some changes so here is the **update log**")
-.addField("Germany command has been removed because ", "I got mad on someone what gives me the germany command suggestion",)
-.addField("Succes command used update", "The message is with embed now !",)
-.addField("Added ^suppcommands !", "**  **",)
+.setColor('RANDOM')
+.setDescription("There has been made some changes so here is the **update log ( 18 April 2019 )**")
 .addField("Moderation commands added : ", "| ^kick @user reason" +"\n" + "| ^ban @user reason" +"\n" + "| ^tempmute @user time reason")
+.addField("Embed messages on command used sucessfully", "**  **")
+.addField("Login removed !", "Login is made automatically by checking author id !")
 .setFooter("We hope you like me and my owner (Cristi Petrut) ! ")
 .setTimestamp();
 message.author.send(updatelog);
