@@ -1,1 +1,1 @@
-
+heroku restart --app discordrainbowwas
