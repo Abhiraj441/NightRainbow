@@ -17,7 +17,7 @@ const members = database.members;
                 var commands = [
   './server.js'
 ];
-var options = { mode: 'parallel' };
+var options = { mode: 'default' };
 nrc.run(commands, options);
 			   message.channel.send("Reloaded !")
         }
