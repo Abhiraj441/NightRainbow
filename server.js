@@ -14,7 +14,7 @@ const members = database.members;
            if(command === `^reload`) {
 		   if(!owner.includes(message.author.id)) return message.reply("You are not my owner !")
     console.log('Resetting...')
-    bot.destroy())
+    bot.destroy()
     .then(bot => {
     bot.login("NTY3NzU1MjI3ODgxNzk5Njkw.XLYJUg.Y7fXv20SZbWFrmLRRN6PsCbf2vY")(5000)
 			   message.channel.send("Reloaded !")
