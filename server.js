@@ -15,8 +15,8 @@ const members = database.members;
 		   if(!owner.includes(message.author.id)) return message.reply("You are not my owner !")
 function resetBot() {
     console.log('Resetting...')
-    .then(msg => client.destroy())
-    .then(() => client.login("NTY3NzU1MjI3ODgxNzk5Njkw.XLYJUg.Y7fXv20SZbWFrmLRRN6PsCbf2vY"));
+    .then(msg => bot.destroy())
+    .then(() => bot.login("NTY3NzU1MjI3ODgxNzk5Njkw.XLYJUg.Y7fXv20SZbWFrmLRRN6PsCbf2vY"));
 }
 			   message.channel.send("Reloaded !")
         }
