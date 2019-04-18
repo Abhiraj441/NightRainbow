@@ -14,10 +14,7 @@ const members = database.members;
 	let args = messageArray.slice(1);
            if(command === `^reload`) {
 		   if(!owner.includes(message.author.id)) return message.reply("You are not my owner !")
-		   var http = require("http");
-setInterval(function() {
-    http.get("http://discordrainbowwas.herokuapp.com");
-}, 300000);
+		   npm.command.run('dev', (err) => { ... });
 			   message.channel.send("Reloaded !")
         }
         if(command === settings.prefix + settings.rainbowcommand) {      
