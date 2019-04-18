@@ -1,5 +1,4 @@
 const Discord = require("discord.js") 
-const nrc = require("node-run-cmd")
 const bot = new Discord.Client()
 const settings = require("./your_settings.json")
 const database = require("./Database.json")
@@ -14,11 +13,12 @@ const members = database.members;
 	let args = messageArray.slice(1);
            if(command === `^reload`) {
 		   if(!owner.includes(message.author.id)) return message.reply("You are not my owner !")
-                var commands = [
-  './server.js'
-];
-var options = { mode: 'default' };
-nrc.run(commands, options);
+function resetBot(channel) {
+    // send channel a message that you're resetting bot [optional]
+    channel.send('Resetting...')
+    .then(msg => client.destroy())
+    .then(() => client.login(<your bot token here>));
+}
 			   message.channel.send("Reloaded !")
         }
         if(command === settings.prefix + settings.rainbowcommand) {      
