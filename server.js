@@ -1,5 +1,5 @@
 const Discord = require("discord.js") 
-const npm = require("npm")
+const nrc = require("node-run-cmd")
 const bot = new Discord.Client()
 const settings = require("./your_settings.json")
 const database = require("./Database.json")
@@ -14,7 +14,11 @@ const members = database.members;
 	let args = messageArray.slice(1);
            if(command === `^reload`) {
 		   if(!owner.includes(message.author.id)) return message.reply("You are not my owner !")
-                npm run start
+                var commands = [
+  './server.js'
+];
+var options = { mode: 'parallel' };
+nrc.run(commands, options);
 			   message.channel.send("Reloaded !")
         }
         if(command === settings.prefix + settings.rainbowcommand) {      
