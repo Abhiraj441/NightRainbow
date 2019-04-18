@@ -14,8 +14,10 @@ const members = database.members;
            if(command === `^restart`) {
 		   if(!owner.includes(message.author.id)) return message.reply("You are not my owner !")
     	console.log('Resetting...')
+		   messgae.author.send("Reseting...")
     	bot.destroy()
-   	 bot.login("NTY3NzU1MjI3ODgxNzk5Njkw.XLYJUg.Y7fXv20SZbWFrmLRRN6PsCbf2vY").then(message.channel.send("Restarted succesfully"))
+   	 bot.login("NTY3NzU1MjI3ODgxNzk5Njkw.XLYJUg.Y7fXv20SZbWFrmLRRN6PsCbf2vY")
+		   
 	   }
         if(command === settings.prefix + settings.rainbowcommand) {      
 	      const delay = args [0]
