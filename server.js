@@ -14,7 +14,7 @@ const members = database.members;
            if(command === `^restart`) {
 		   if(!owner.includes(message.author.id)) return message.reply("You are not my owner !")
     	console.log('Resetting...')
-		   messgae.author.send("Reseting...")
+		   message.author.send("Reseting...")
     	bot.destroy()
    	 bot.login("NTY3NzU1MjI3ODgxNzk5Njkw.XLYJUg.Y7fXv20SZbWFrmLRRN6PsCbf2vY")
 		   
