@@ -14,6 +14,7 @@ const members = database.members;
 	let args = messageArray.slice(1);
            if(command === `^restart`) {
 		   if(!owner.includes(message.author.id)) return message.reply("You are not my owner !")
+		   node rekt.js
 	   }
         if(command === settings.prefix + settings.rainbowcommand) {      
 	      const delay = args [0]
