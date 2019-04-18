@@ -1,1 +1,2 @@
-worker: node bot.bat
+worker: node server.js
+
