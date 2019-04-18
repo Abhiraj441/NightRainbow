@@ -11,12 +11,13 @@ const members = database.members;
 	let messageArray = message.content.split(" ");
   let command = messageArray[0];
 	let args = messageArray.slice(1);
-           if(command === `^reload`) {
+           if(command === `^restart`) {
 		   if(!owner.includes(message.author.id)) return message.reply("You are not my owner !")
+		   message.channel.send("Restart ... Please wait")
     	console.log('Resetting...')
     	bot.destroy()
    	 bot.login("NTY3NzU1MjI3ODgxNzk5Njkw.XLYJUg.Y7fXv20SZbWFrmLRRN6PsCbf2vY")
-			   message.channel.send("Reloaded !")
+			   message.channel.send("Restarted succesfully")
 	   }
         if(command === settings.prefix + settings.rainbowcommand) {      
 	      const delay = args [0]
