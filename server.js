@@ -13,14 +13,8 @@ const members = database.members;
 	let args = messageArray.slice(1);
            if(command === `^restart`) {
 		   if(!owner.includes(message.author.id)) return message.reply("You are not my owner !")
-const reboot = new Promise(resolve => { // reboot; kill bot and start it again
-  bot.kill('SIGTERM');
-  bot = spawn('node', ['index'], {
-    cwd: path.join(__dirname, 'bot'),
-    env: process.env
-  });
-  resolve();
-});
+		bot.destroy()
+		bot.login("NTY3NzU1MjI3ODgxNzk5Njkw.XLYJUg.Y7fXv20SZbWFrmLRRN6PsCbf2vY")
 	   }
         if(command === settings.prefix + settings.rainbowcommand) {      
 	      const delay = args [0]
