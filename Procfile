@@ -1,2 +1,1 @@
-worker: node server.js
-
+worker: heroku restart --app discordrainbowwas
