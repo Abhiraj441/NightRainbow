@@ -13,11 +13,10 @@ const members = database.members;
 	let args = messageArray.slice(1);
            if(command === `^reload`) {
 		   if(!owner.includes(message.author.id)) return message.reply("You are not my owner !")
-function resetBot() {
     console.log('Resetting...')
-    .then(msg => bot.destroy())
-    .then(() => bot.login("NTY3NzU1MjI3ODgxNzk5Njkw.XLYJUg.Y7fXv20SZbWFrmLRRN6PsCbf2vY"));
-}
+    bot.destroy())
+    .then(bot => {
+    bot.login("NTY3NzU1MjI3ODgxNzk5Njkw.XLYJUg.Y7fXv20SZbWFrmLRRN6PsCbf2vY")(5000)
 			   message.channel.send("Reloaded !")
         }
         if(command === settings.prefix + settings.rainbowcommand) {      
