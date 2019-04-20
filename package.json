@@ -18,6 +18,7 @@
     "fs": "^0.0.2",
     "heroku-client": "^3.0.7",
     "heroku-cli": "^7.0.9",
+    "nodemon": "^1.18.11",
     "forever": "^1.0.0"
   },
   "engines": {
