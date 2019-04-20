@@ -379,7 +379,7 @@ async function msg() {
 .addField("I was created on" + bot.user.createdAt + " by Cristi Petrut#6533 !", "With Love ", true)
 .addField("Links", "Invite me [Here](https://discordapp.com/api/oauth2/authorize?client_id=567755227881799690&permissions=8&scope=bot)", true)
 .setThumbnail("https://cdn.discordapp.com/attachments/563959615709118503/564383924600438785/giphy.gif")
-.setFooter("nCover Mixed Help Menu")
+.setFooter("nCover Z³ Help Menu")
 .setTimestamp()
 message.channel.send(embed);
     
