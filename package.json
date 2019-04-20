@@ -17,7 +17,8 @@
     "write-json-file": "^3.2.0",
     "fs": "^0.0.2",
     "heroku-client": "^3.0.7",
-    "heroku-cli": "^7.0.9"
+    "heroku-cli": "^7.0.9",
+    "forever": "^1.0.0"
   },
   "engines": {
     "node": "8.x"
