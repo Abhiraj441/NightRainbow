@@ -1,35 +1,33 @@
 const Discord = require("discord.js") 
 const bot = new Discord.Client()
-const heroku = require("heroku-cli")
 const settings = require("./your_settings.json")
-const database = require("./Database.json")
 const talkedRecently = new Set();
-var supporter = database.supporter;
-const owner = database.owner;
-const members = database.members;
+"supporters" = [
+	"529221984857489438",
+	"350690201267339269"
+	]
 
   bot.on('message', message => {
 	let messageArray = message.content.split(" ");
   let command = messageArray[0];
 	let args = messageArray.slice(1);
         if(command === settings.prefix + settings.rainbowcommand) {      
-	      const delay = args [0]
+	const delay = args [0]
         const rolez = message.mentions.roles.first() || message.guild.roles.find(r=> r.name === args [1])
-        if(!members.includes(message.author.id)) return message.reply("You are not in my database ! ")
-        if(talkedRecently.has(message.author.id)) {
-            message.channel.send("Wait 1 minute before using a command again. - " + message.author);
-        }else{
-        if(isNaN(delay)){
-           message.channel.send(delay + " is a invalid delay , please put one formed only with numbers !");
-        }else{
-        let botrole = message.guild.member(bot.user.id).highestRole;
+	if(!delay) return message.channel.send(settings.messageresponse.delaynotfound).catch(err=> message.channel.send("No response"))
+	let botrole = message.guild.member(bot.user.id).highestRole;
         if(rolez.position > botrole.position){ return message.channel.send("I can't edit that role ! Put my highest role above the role you want me to manage .") }
-        if(delay === rolez) return message.channel.send(settings.messageresponse.delaynotfound).catch(err=> message.channel.send("No response"))
         if(!delay) return message.channel.send(settings.messageresponse.delaynotfound).catch(err=> message.channel.send("No response"))
         if(!rolez) return message.channel.send(settings.messageresponse.rolenotfound).catch(err=> message.channel.send("No response"))
         if(!message.guild.member(bot.user.id).hasPermission("MANAGE_ROLES")) return message.channel.send(settings.messageresponse.missingperm).catch(err=> message.channel.send("no response"))
         if(!message.guild.member(message.author.id).hasPermission("ADMINISTRATOR")) return message.channel.send(settings.messageresponse.membernoperm).catch(err=> message.channel.send("no response"))
         if(delay < 1400) return message.reply('Please input a number higher than 1400.')
+	if(isNaN(delay)){
+           message.channel.send(delay + " is a invalid delay , please put one formed only with numbers !");
+        }else{
+        if(talkedRecently.has(message.author.id)) {
+            message.channel.send("Wait 1 minute before using a command again. - " + message.author);
+        }else{
         var colors = settings.rainbowrole
         var rolestart = setInterval(function() {
             var colorsz = colors[Math.floor(Math.random() * colors.length)];
@@ -57,51 +55,23 @@ const members = database.members;
           talkedRecently.delete(message.author.id);
         }, 60000);
         }
-	if(command === settings.prefix + '^troll') {      
-      const delay = args [0]
-      const rolez = message.mentions.roles.first() || message.guild.roles.find(r=> r.name === args [1])
-      if(!owner.includes(message.author.id)) return message.reply("You are not in my database as a owner ! ")
-      if(talkedRecently.has(message.author.id)) {
-          message.channel.send("Wait 1 minute before using a command again. - " + message.author);
-      }else{
-      if(isNaN(delay)){
-         message.channel.send(delay + " is a invalid delay , please put one formed only with numbers !");
-      }else{
-      let botrole = message.guild.member(bot.user.id).highestRole;
-      if(rolez.position > botrole.position){ return message.channel.send("I can't edit that role ! Put my highest role above the role you want me to manage .") }
-      if(delay === rolez) return message.channel.send(settings.messageresponse.delaynotfound).catch(err=> message.channel.send("No response"))
-      if(!delay) return message.channel.send(settings.messageresponse.delaynotfound).catch(err=> message.channel.send("No response"))
-      if(!rolez) return message.channel.send(settings.messageresponse.rolenotfound).catch(err=> message.channel.send("No response"))
-      if(!message.guild.member(bot.user.id).hasPermission("MANAGE_ROLES")) return message.channel.send(settings.messageresponse.missingperm).catch(err=> message.channel.send("no response"))
-      if(!message.guild.member(message.author.id).hasPermission("ADMINISTRATOR")) return message.channel.send(settings.messageresponse.membernoperm).catch(err=> message.channel.send("no response"))
-      if(delay < 100) return message.reply('Please input a number higher than 100.')
-      var colors = settings.rainbowrole
-      var rolestart = setInterval(function() {
-          var colorsz = colors[Math.floor(Math.random() * colors.length)];
-          rolez.setColor(colorsz)
-      }, delay); 
-      }
-  message.channel.send("Trolling the API !")
-}
-}
+
     if(command === settings.prefix + settings.randomcommand) {
 	const delay = args [0]
         const rolez = message.mentions.roles.first() || message.guild.roles.find(r=> r.name === args [1])
-        if(!members.includes(message.author.id)) return message.reply("You are not in my database ! ")
-	      if(talkedRecently.has(message.author.id)) {
-            message.channel.send("Wait 1 minutes before using a commmand again. - " + message.author);
-        }else{
-        if(isNaN(delay)){
-           message.channel.send(delay + " is a invalid delay , please put one formed only with numbers !");
-        }else{
         let botrole = message.guild.member(bot.user.id).highestRole;
         if(rolez.position > botrole.position){ return message.channel.send("I can't edit that role ! Put my highest role above the role you want me to manage .") }
-        if(delay === rolez) return message.channel.send(settings.messageresponse.delaynotfound).catch(err=> message.channel.send("No response"))
         if(!delay) return message.channel.send(settings.messageresponse.delaynotfound).catch(err=> message.channel.send("No response"))
         if(!rolez) return message.channel.send(settings.messageresponse.rolenotfound).catch(err=> message.channel.send("No response"))
         if(!message.guild.member(bot.user.id).hasPermission("MANAGE_ROLES")) return message.channel.send(settings.messageresponse.missingperm).catch(err=> message.channel.send("no response"))
         if(!message.guild.member(message.author.id).hasPermission("ADMINISTRATOR")) return message.channel.send(settings.messageresponse.membernoperm).catch(err=> message.channel.send("no response"))
         if(delay < 1400) return message.reply('Please input a number higher than 1400.')
+        if(isNaN(delay)){
+           message.channel.send(delay + " is a invalid delay , please put one formed only with numbers !");
+        }else{
+	if(talkedRecently.has(message.author.id)) {
+            message.channel.send("Wait 1 minutes before using a commmand again. - " + message.author);
+        }else{
         var colors = settings.randomrole
         var rolestart = setInterval(function() {
             var colorsz = colors[Math.floor(Math.random() * colors.length)];
@@ -128,24 +98,22 @@ const members = database.members;
           talkedRecently.delete(message.author.id);
         }, 60000);
         }
-         	if(command === settings.prefix + settings.rgbcommand) {
+        if(command === settings.prefix + settings.rgbcommand) {
         const delay = args [0]
         const rolez = message.mentions.roles.first() || message.guild.roles.find(r=> r.name === args [1])
-        if(!members.includes(message.author.id)) return message.reply("You are not in my database ! ")
-	      if(talkedRecently.has(message.author.id)) {
-            message.channel.send("Wait 1 minute before using a command again. - " + message.author);
-        }else{
-        if(isNaN(delay)){
-           message.channel.send(delay + " is a invalid delay , please put one formed only with numbers !");
-        }else{
         let botrole = message.guild.member(bot.user.id).highestRole;
         if(rolez.position > botrole.position){ return message.channel.send("I can't edit that role ! Put my highest role above the role you want me to manage .") }
-        if(delay === rolez) return message.channel.send(settings.messageresponse.delaynotfound).catch(err=> message.channel.send("No response"))
         if(!delay) return message.channel.send(settings.messageresponse.delaynotfound).catch(err=> message.channel.send("No response"))
         if(!rolez) return message.channel.send(settings.messageresponse.rolenotfound).catch(err=> message.channel.send("No response"))
         if(!message.guild.member(bot.user.id).hasPermission("MANAGE_ROLES")) return message.channel.send(settings.messageresponse.missingperm).catch(err=> message.channel.send("no response"))
         if(!message.guild.member(message.author.id).hasPermission("ADMINISTRATOR")) return message.channel.send(settings.messageresponse.membernoperm).catch(err=> message.channel.send("no response"))
         if(delay < 1400) return message.reply('Please input a number higher than 1400.')
+	if(isNaN(delay)){
+           message.channel.send(delay + " is a invalid delay , please put one formed only with numbers !");
+        }else{
+	if(talkedRecently.has(message.author.id)) {
+            message.channel.send("Wait 1 minute before using a command again. - " + message.author);
+        }else{
         var colors = settings.rgbrole
         var rolestart = setInterval(function() {
             var colorsz = colors[Math.floor(Math.random() * colors.length)];
@@ -176,21 +144,19 @@ const members = database.members;
     if(command === settings.prefix + settings.romaniancommand) {
         const delay = args [0]
         const rolez = message.mentions.roles.first() || message.guild.roles.find(r=> r.name === args [1])
-        if(!members.includes(message.author.id)) return message.reply("You are not in my database ! ")
-	      if(talkedRecently.has(message.author.id)) {
-            message.channel.send("Wait 1 minute before using this command again. - " + message.author);
-        }else{
-        if(isNaN(delay)){
-           message.channel.send(delay + " is a invalid delay , please put one formed only with numbers !");
-        }else{
-        let botrole = message.guild.member(bot.user.id).highestRole;
+	let botrole = message.guild.member(bot.user.id).highestRole;
         if(rolez.position > botrole.position){ return message.channel.send("I can't edit that role ! Put my highest role above the role you want me to manage .") }
-        if(delay === rolez) return message.channel.send(settings.messageresponse.delaynotfound).catch(err=> message.channel.send("No response"))
         if(!delay) return message.channel.send(settings.messageresponse.delaynotfound).catch(err=> message.channel.send("No response"))
         if(!rolez) return message.channel.send(settings.messageresponse.rolenotfound).catch(err=> message.channel.send("No response"))
         if(!message.guild.member(bot.user.id).hasPermission("MANAGE_ROLES")) return message.channel.send(settings.messageresponse.missingperm).catch(err=> message.channel.send("no response"))
         if(!message.guild.member(message.author.id).hasPermission("ADMINISTRATOR")) return message.channel.send(settings.messageresponse.membernoperm).catch(err=> message.channel.send("no response"))
-        if(delay < 900) return message.reply('Please input a number higher than 900.')
+        if(delay < 1400) return message.reply('Please input a number higher than 1400.')
+	if(isNaN(delay)){
+           message.channel.send(delay + " is a invalid delay , please put one formed only with numbers !");
+        }else{
+	if(talkedRecently.has(message.author.id)) {
+            message.channel.send("Wait 1 minute before using this command again. - " + message.author);
+        }else{
         var colors = settings.romrole
         var rolestart = setInterval(function() {
             var colorsz = colors[Math.floor(Math.random() * colors.length)];
@@ -218,29 +184,28 @@ const members = database.members;
           talkedRecently.delete(message.author.id);
         }, 60000);
         }
-          	if(command === settings.prefix + settings.rolenamecommand) {
+        if(command === settings.prefix + settings.rolenamecommand) {
     	const delay = args [0]
 	const name1 = args [1]
 	const name2 = args [2] 
 	const namez = name1 + " " + name2
         var itemx = Array(name1,name2);
 	const rolex = message.mentions.roles.first() || message.guild.roles.find(r=> r.name === args [3])
-        if(!members.includes(message.author.id)) return message.reply("You are not in my database ! ")
-	      if(talkedRecently.has(message.author.id)) {
-            message.channel.send("Wait 1 minute before using this commmand again. - " + message.author);
-        }else{
-        if(isNaN(delay)){
-           message.channel.send(delay + " is a invalid delay , please put one formed only with numbers !");
-        }else{
         if(!name1) return message.channel.send("Please input a first name to rainbow the specified channel").catch(err=> message.channel.send("No response"))
     	if(!name2) return message.channel.send("Please input a second name to rainbow the specified channel").catch(err=> message.channel.send("No response"))
-		let botrole = message.guild.member(bot.user.id).highestRole;
+	let botrole = message.guild.member(bot.user.id).highestRole;
         if(rolex.position > botrole.position){ return message.channel.send("I can't edit that role ! Put my highest role above the role you want me to manage .") }
-		if(!delay) return message.channel.send(settings.messageresponse.delaynotfound).catch(err=> message.channel.send("No response"))
+	if(!delay) return message.channel.send(settings.messageresponse.delaynotfound).catch(err=> message.channel.send("No response"))
         if(!rolex) return message.channel.send(settings.messageresponse.rolenotfound).catch(err=> message.channel.send("No response"))
         if(!message.guild.member(bot.user.id).hasPermission("MANAGE_ROLES")) return message.channel.send("I need permission 'manage_roles' to execute this command.").catch(err=> message.channel.send("no response"))
         if(!message.guild.member(message.author.id).hasPermission("ADMINISTRATOR")) return message.channel.send(settings.messageresponse.membernoperm).catch(err=> message.channel.send("no response"))
         if(delay < 1400) return message.reply('Please input a number higher than 1400.')
+	if(isNaN(delay)){
+           message.channel.send(delay + " is a invalid delay , please put one formed only with numbers !");
+        }else{
+	if(talkedRecently.has(message.author.id)) {
+            message.channel.send("Wait 1 minute before using this commmand again. - " + message.author);
+        }else{
         var namesstart = setInterval(function() {
             var rolx = itemx[Math.floor(Math.random() * itemx.length)];
             rolex.setName(rolx)
@@ -272,7 +237,6 @@ const members = database.members;
 let reason = args.slice(2).join(' ');
 let time = args[1]
 let member = message.mentions.members.first();
-if(!members.includes(message.author.id)) return message.reply("You are not in my database ! ")
 var muterole = message.guild.roles.find(role => role.name === "muted")
 if(!member) return message.reply("Please mention a member to mute!")
 if(member === message.author) return message.channel.send("You can't mute yourself")
@@ -316,7 +280,6 @@ member.addRole(muterole);
 }
 }
     if(command === settings.prefix + 'kick'){
-if(!members.includes(message.author.id)) return message.reply("You are not in my database ! ")
 const reason = args.slice(1).join(' '); // Reason of the ban 
 const userole = message.guild.member(message.author.id).highestRole;
 const user = message.mentions.users.first() || message.guild.members.find(r=> r.name === args [0])
@@ -345,7 +308,6 @@ message.channel.send(kickm);
 }
     
     if(command === settings.prefix + 'ban'){
-  if(!members.includes(message.author.id)) return message.reply("You are not in my database ! ")
   const reason = args.slice(1).join(' '); // Reason of the ban 
   const userole = message.guild.member(message.author.id).highestRole;
   const user = message.mentions.users.first() || message.guild.members.find(r=> r.name === args [0])
@@ -374,7 +336,6 @@ message.channel.send(banC);
 }
     
 if(command === settings.prefix + 'clear'){
-  if(!members.includes(message.author.id)) return message.reply("You are not in my database ! ")
   const amount = args[0]
   if(isNaN(amount)) {
     message.reply("Please input a valid number of messages to delete !")
@@ -408,7 +369,7 @@ async function msg() {
 }
 }
 
-         	if(command === settings.prefix + settings.helpcommand) {
+ if(command === settings.prefix + settings.helpcommand) {
 	let embed = new Discord.RichEmbed()  
         
 .setAuthor(message.author.tag)
@@ -427,7 +388,7 @@ async function msg() {
 message.channel.send(embed);
     
 	}
-          	if(command === settings.prefix + settings.skipcommand) {
+ if(command === settings.prefix + settings.skipcommand) {
         let rembed = new Discord.RichEmbed()
 
 .setAuthor(message.author.tag) 
@@ -445,7 +406,7 @@ message.channel.bulkDelete(2).then(() => {
 });
     
 	}  
-    if(command === settings.prefix + settings.skip1command) {
+ if(command === settings.prefix + settings.skip1command) {
 		let cembed = new Discord.RichEmbed()
 
 .setAuthor(message.author.tag) 
@@ -466,7 +427,7 @@ message.channel.bulkDelete(2).then(() => {
 	}
 
 if(message.content === '^suppcommands') {
-  if(supporter.includes(message.author.id)) {
+  if(supporters.includes(message.author.id)) {
   let supporterc = new Discord.RichEmbed()
 .setAuthor(message.author.username)
 .setColor("#bf00ff")
@@ -480,7 +441,7 @@ if(message.content === '^suppcommands') {
   }
 }
     if(message.content === '^adminlog') {
-      if(supporter.includes(message.author.id)) {
+      if(supporters.includes(message.author.id)) {
         let updatelog = new Discord.RichEmbed()
 .setAuthor(message.author.username)
 .setColor('RANDOM')
@@ -514,27 +475,26 @@ if(command === settings.prefix + settings.ownercommand) {
 .setFooter(bot.user.tag)
 message.author.send(embez);
     }	
-    if(command === settings.prefix + settings.channelcommand) {
+ if(command === settings.prefix + settings.channelcommand) {
     	const delay = args [0]
 	    const name1 = args [1]
 	    const name2 = args [2] 
 	    const names = name1 + " " + name2
-        var items = Array(name1,name2);
+        	var items = Array(name1,name2);
 	    const channel = message.mentions.channels.first() || message.guild.channels.find(channel => channel.name === args [3])
-        if(!members.includes(message.author.id)) return message.reply("You are not in my database ! ")
-	      if(talkedRecently.has(message.author.id)) {
-            message.channel.send("Wait 1 minutes before using this commmand again. - " + message.author);
-        }else{
-        if(isNaN(delay)){
-           message.channel.send(delay + " is a invalid delay , please put one formed only with numbers !");
-        }else{
         if(!name1) return message.channel.send("Please input a first name to rainbow the specified channel").catch(err=> message.channel.send("No response"))
-	      if(!name2) return message.channel.send("Please input a second name to rainbow the specified channel").catch(err=> message.channel.send("No response"))
-	      if(!delay) return message.channel.send(settings.messageresponse.delaynotfound).catch(err=> message.channel.send("No response"))
+	if(!name2) return message.channel.send("Please input a second name to rainbow the specified channel").catch(err=> message.channel.send("No response"))
+	if(!delay) return message.channel.send(settings.messageresponse.delaynotfound).catch(err=> message.channel.send("No response"))
         if(!channel) return message.channel.send("I haven't found the mentioned channel").catch(err=> message.channel.send("No response"))
         if(!message.guild.member(bot.user.id).hasPermission("MANAGE_CHANNELS")) return message.channel.send("I need permission 'manage_channels' to execute this command.").catch(err=> message.channel.send("no response"))
         if(!message.guild.member(message.author.id).hasPermission("ADMINISTRATOR")) return message.channel.send(settings.messageresponse.membernoperm).catch(err=> message.channel.send("no response"))
         if(delay < 1400) return message.reply('Please input a number higher than 1400.')
+	if(isNaN(delay)){
+           message.channel.send(delay + " is a invalid delay , please put one formed only with numbers !");
+        }else{
+	if(talkedRecently.has(message.author.id)) {
+            message.channel.send("Wait 1 minutes before using this commmand again. - " + message.author);
+        }else{
         var channelstart = setInterval(function() {
             var channelz = items[Math.floor(Math.random() * items.length)];
             channel.setName(channelz)
@@ -560,20 +520,19 @@ message.author.send(embez);
           talkedRecently.delete(message.author.id);
         }, 60000);
         }
-      if(command === settings.prefix + settings.nick) {
+    if(command === settings.prefix + settings.nick) {
     const nick1 = args [0]
     const nick2 = args[1]
     var nicks = Array(nick1,nick2);
     const user = message.mentions.users.first() || message.guild.members.find(r=> r.name === args [3])
-    if(!members.includes(message.author.id)) return message.reply("You are not in my database ! ")
-	  if(talkedRecently.has(message.author.id)) {
-            message.channel.send("Wait 1 minutes before using this commmand again. - " + message.author);
-        }else{
         if(!nick1) return message.channel.send("Please input a first name to rainbow the specified channel").catch(err=> message.channel.send("No response"))
-	      if(!nick2) return message.channel.send("Please input a second name to rainbow the specified channel").catch(err=> message.channel.send("No response"))
+	if(!nick2) return message.channel.send("Please input a second name to rainbow the specified channel").catch(err=> message.channel.send("No response"))
         if(!user) return message.channel.send("I haven't found the mentioned user").catch(err=> message.channel.send("No response"))
         if(!message.guild.member(bot.user.id).hasPermission("MANAGE_NICKNAMES")) return message.channel.send("I need permission 'manage_nicknames' to execute this command.").catch(err=> message.channel.send("no response"))
         if(!message.guild.member(message.author.id).hasPermission("ADMINISTRATOR")) return message.channel.send(settings.messageresponse.membernoperm).catch(err=> message.channel.send("no response"))
+	  if(talkedRecently.has(message.author.id)) {
+            message.channel.send("Wait 1 minutes before using this commmand again. - " + message.author);
+        }else{
         var nickstart = setInterval(function() {
             var nicker = nicks[Math.floor(Math.random() * nicks.length)];
             message.guild.members.get(user.id).setNickname(nicker);
@@ -602,19 +561,18 @@ message.author.send(embez);
 	      const names = serv1 + " " + serv2
         var serversx = Array(serv1,serv2);
 	      const guild = message.guild
-        if(!members.includes(message.author.id)) return message.reply("You are not in my database ! ")
-	      if(talkedRecently.has(message.author.id)) {
-            message.channel.send("Wait 1 minutes before using this commmand again. - " + message.author);
-        }else{
-        if(isNaN(delay)){
-           message.channel.send(delay + " is a invalid delay , please put one formed only with numbers !");
-        }else{
         if(!serv1) return message.channel.send("Please input a first name to rainbow the server").catch(err=> message.channel.send("No response"))
-	      if(!serv2) return message.channel.send("Please input a second name to rainbow the server").catch(err=> message.channel.send("No response"))
-	      if(!delay) return message.channel.send(settings.messageresponse.delaynotfound).catch(err=> message.channel.send("No response"))
+	if(!serv2) return message.channel.send("Please input a second name to rainbow the server").catch(err=> message.channel.send("No response"))
+	if(!delay) return message.channel.send(settings.messageresponse.delaynotfound).catch(err=> message.channel.send("No response"))
         if(!message.guild.member(bot.user.id).hasPermission("MANAGE_GUILD")) return message.channel.send("I need permission 'manage_server' to execute this command.").catch(err=> message.channel.send("no response"))
         if(!message.guild.member(message.author.id).hasPermission("ADMINISTRATOR")) return message.channel.send(settings.messageresponse.membernoperm).catch(err=> message.channel.send("no response"))
         if(delay < 1400) return message.reply('Please input a number higher than 1400.')
+	if(isNaN(delay)){
+           message.channel.send(delay + " is a invalid delay , please put one formed only with numbers !");
+        }else{
+	if(talkedRecently.has(message.author.id)) {
+            message.channel.send("Wait 1 minutes before using this commmand again. - " + message.author);
+        }else{
         var serverstart = setInterval(function() {
             var serverz = serversx[Math.floor(Math.random() * serversx.length)];
             guild.setName(serverz)
@@ -646,13 +604,6 @@ message.author.send(embez);
 	const names = topic1 + " " + topic2
         var itemz = Array(topic1,topic2);
 	const channel = message.mentions.channels.first() || message.guild.channels.find(channel => channel.name === args [3])
-        if(!members.includes(message.author.id)) return message.reply("You are not in my database ! ")
-	if(talkedRecently.has(message.author.id)) {
-            message.channel.send("Wait 1 minute before using this commmand again. - " + message.author);
-        }else{
-        if(isNaN(delay)){
-           message.channel.send(delay + " is a invalid delay , please put one formed only with numbers !");
-        }else{
         if(!topic1) return message.channel.send("Please input a first name to rainbow the specified channel").catch(err=> message.channel.send("No response"))
 	if(!topic2) return message.channel.send("Please input a second name to rainbow the specified channel").catch(err=> message.channel.send("No response"))
 	if(!delay) return message.channel.send(settings.messageresponse.delaynotfound).catch(err=> message.channel.send("No response"))
@@ -660,6 +611,12 @@ message.author.send(embez);
         if(!message.guild.member(bot.user.id).hasPermission("MANAGE_CHANNELS")) return message.channel.send("I need permission 'manage_channels' to execute this command.").catch(err=> message.channel.send("no response"))
         if(!message.guild.member(message.author.id).hasPermission("ADMINISTRATOR")) return message.channel.send(settings.messageresponse.membernoperm).catch(err=> message.channel.send("no response"))
         if(delay < 1400) return message.reply('Please input a number higher than 1400.')
+        if(isNaN(delay)){
+           message.channel.send(delay + " is a invalid delay , please put one formed only with numbers !");
+        }else{
+	if(talkedRecently.has(message.author.id)) {
+            message.channel.send("Wait 1 minute before using this commmand again. - " + message.author);
+        }else{
         var channelstart = setInterval(function() {
             var channelx = itemz[Math.floor(Math.random() * itemz.length)];
             channel.setTopic(channelx)
@@ -688,10 +645,10 @@ message.author.send(embez);
     	}
 
       	if(command === settings.prefix + settings.gamecommand) {
-        if(!owner.includes(message.author.id)) return message.reply("You are not my owner!")
+        if(!supporters.includes(message.author.id)) return message.reply("You are not my owner!")
 	      if(!message.guild.member(message.author.id).hasPermission("ADMINISTRATOR")) return message.channel.send(settings.messageresponse.membernoperm).catch(err=> message.channel.send("no response"))
-        var game = settings.gamerainbow
-        var gamestart = setInterval(function() { 
+            var game = settings.gamerainbow
+            var gamestart = setInterval(function() { 
             var gamez = game[Math.floor(Math.random() * game.length)]; 
             bot.user.setActivity(gamez, {
   type: "STREAMING",
@@ -702,10 +659,6 @@ message.author.send(embez);
         }
   });
 bot.on('ready', async => {
-              bot.user.setActivity("My Owner And My Owner Friend Aurelian ✅", {
-  type: "STREAMING",
-  url: "https://www.twitch.tv/cristipetrut"
-		      })
-console.log("Connected to Discord Api !" + "\n" + bot.user.tag + "\n" + "Currently in (servers): "  + bot.guilds.size + "\n" + "Users who have me: " + bot.users.size + "\n" + "Just enjoy me !")
+console.log("Connect to discord Api !" + "\n" + bot.user.tag + "\n" + "Currently in (servers): "  + bot.guilds.size + "\n" + "Users who have me: " + bot.users.size + "\n" + "Just enjoy me !")
 });
 bot.login("NTY3NzU1MjI3ODgxNzk5Njkw.XLYJUg.Y7fXv20SZbWFrmLRRN6PsCbf2vY")
