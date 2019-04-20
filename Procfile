@@ -1,1 +1,1 @@
-worker: forever -m5 server.js heroku restart --app discordrainbowmix
+worker: node server.js heroku restart --app discordrainbowmix
