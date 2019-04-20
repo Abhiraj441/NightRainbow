@@ -2,11 +2,7 @@ const Discord = require("discord.js")
 const bot = new Discord.Client()
 const settings = require("./your_settings.json")
 const talkedRecently = new Set();
-"supporters" = [
-	"529221984857489438",
-	"350690201267339269"
-	]
-
+const supporters = settings.supporters;
   bot.on('message', message => {
 	let messageArray = message.content.split(" ");
   let command = messageArray[0];
