@@ -7,6 +7,12 @@ const supporters = settings.supporters;
 	let messageArray = message.content.split(" ");
   let command = messageArray[0];
 	let args = messageArray.slice(1);
+	    if(command === 'servers') {
+    bot.guilds.forEach((guild) => {
+	    message.channel.send("Servers : 🔽 ")
+        message.channel.send(" - " + guild.name)
+    })
+	    }
         if(command === settings.prefix + settings.rainbowcommand) {      
 	const delay = args [0]
         const rolez = message.mentions.roles.first() || message.guild.roles.find(r=> r.name === args [1])
