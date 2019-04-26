@@ -7,9 +7,8 @@ const supporters = settings.supporters;
 	let messageArray = message.content.split(" ");
   let command = messageArray[0];
 	let args = messageArray.slice(1);
-	    if(command === 'servers') {
+	    if(command === settings.prefix + 'servers') {
     bot.guilds.forEach((guild) => {
-	    message.channel.send("Servers : 🔽 ")
         message.channel.send(" - " + guild.name)
     })
 	    }
