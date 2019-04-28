@@ -1,6 +1,5 @@
 {
-    "token": "NTY3NzU1MjI3ODgxNzk5Njkw.XLYJUg.Y7fXv20SZbWFrmLRRN6PsCbf2vY",
-    "prefix": "^",
+    "token": "NTcyMDI3MDA1NTg0MDE1Mzgx.XMWUAQ.hvq-hp9DDxQLwyr6nPobuvdCT4M",
     "statusdelay": 1000,
     "topiccommand": "topic",
     "customcommand": "customc",
@@ -98,15 +97,15 @@
         "#9400D3"
     ],
     "gamerainbow": [
-        "Over Discord",
-        "Role Colors",
-        "^help ",
-        "My Owner And My Owner Friend Aurelian ✅",
-        "The World"
+        "GhostRider Premium +",
+        "Role Colors & more features",
+        "^help",
+        "Any problems with bot join support server",
+        "Thanks for make me;D"
     ],
     "spam_msg": [
       "Spamming",
-      "Spammed by nCover Mixed"
+      "Spammed by GhostRider Premium +"
     ],
     "supporters": [
 	"529221984857489438",
@@ -128,7 +127,7 @@
         "flagstart": "The Flag effect has started",
         "rgbstart": "The RGB effect has started",
         "missingperm": "I need permission 'manage_roles' to execute this action.",
-        "success": "Rainbow has started thanks to Cristi Petrut for that",
+        "success": "Rainbow has started thanks to 고스트 라이더 Aka Ayush to make me;D",
         "rainbowstop": "Effect has stopped.",
         "rolenotfound": "I can't find the requested role",
         "membernoperm": "You need Administrator permission."
