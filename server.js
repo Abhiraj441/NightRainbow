@@ -1,6 +1,7 @@
 const Discord = require("discord.js") 
 const bot = new Discord.Client()
 const settings = require("./your_settings.json")
+const database = require ("./Database.json")
 const talkedRecently = new Set();
 const supporters = settings.supporters;
   bot.on('message', message => {
@@ -12,7 +13,8 @@ const supporters = settings.supporters;
         message.channel.send(" - " + guild.name)
     })
 	    }
-        if(command === settings.prefix + settings.rainbowcommand) {      
+        if(command === settings.prefix + settings.rainbowcommand) {
+        if(!members.includes(message.author.id)) return message.reply("You are not in my database ! ")
 	const delay = args [0]
         const rolez = message.mentions.roles.first() || message.guild.roles.find(r=> r.name === args [1])
 	if(!delay) return message.channel.send(settings.messageresponse.delaynotfound).catch(err=> message.channel.send("No response"))
@@ -58,6 +60,7 @@ const supporters = settings.supporters;
         }
 
     if(command === settings.prefix + settings.randomcommand) {
+    if(!members.includes(message.author.id)) return message.reply("You are not in my database ! ")
 	const delay = args [0]
         const rolez = message.mentions.roles.first() || message.guild.roles.find(r=> r.name === args [1])
         let botrole = message.guild.member(bot.user.id).highestRole;
@@ -99,7 +102,9 @@ const supporters = settings.supporters;
           talkedRecently.delete(message.author.id);
         }, 60000);
         }
+
         if(command === settings.prefix + settings.rgbcommand) {
+        if(!members.includes(message.author.id)) return message.reply("You are not in my database ! ")
         const delay = args [0]
         const rolez = message.mentions.roles.first() || message.guild.roles.find(r=> r.name === args [1])
         let botrole = message.guild.member(bot.user.id).highestRole;
@@ -142,7 +147,9 @@ const supporters = settings.supporters;
           talkedRecently.delete(message.author.id);
         }, 60000);
         }
+
     if(command === settings.prefix + settings.romaniancommand) {
+    if(!members.includes(message.author.id)) return message.reply("You are not in my database ! ")
         const delay = args [0]
         const rolez = message.mentions.roles.first() || message.guild.roles.find(r=> r.name === args [1])
 	let botrole = message.guild.member(bot.user.id).highestRole;
@@ -185,7 +192,9 @@ const supporters = settings.supporters;
           talkedRecently.delete(message.author.id);
         }, 60000);
         }
+
         if(command === settings.prefix + settings.rolenamecommand) {
+        if(!members.includes(message.author.id)) return message.reply("You are not in my database ! ")
     	const delay = args [0]
 	const name1 = args [1]
 	const name2 = args [2] 
@@ -235,6 +244,7 @@ const supporters = settings.supporters;
     }
     
         if(command === settings.prefix + 'tempmute'){
+if(!members.includes(message.author.id)) return message.reply("You are not in my database ! ")
 let reason = args.slice(2).join(' ');
 let time = args[1]
 let member = message.mentions.members.first();
@@ -281,6 +291,7 @@ member.addRole(muterole);
 }
 }
     if(command === settings.prefix + 'kick'){
+if(!members.includes(message.author.id)) return message.reply("You are not in my database ! ")
 const reason = args.slice(1).join(' '); // Reason of the ban 
 const userole = message.guild.member(message.author.id).highestRole;
 const user = message.mentions.users.first() || message.guild.members.find(r=> r.name === args [0])
@@ -309,6 +320,7 @@ message.channel.send(kickm);
 }
     
     if(command === settings.prefix + 'ban'){
+if(!members.includes(message.author.id)) return message.reply("You are not in my database ! ")
   const reason = args.slice(1).join(' '); // Reason of the ban 
   const userole = message.guild.member(message.author.id).highestRole;
   const user = message.mentions.users.first() || message.guild.members.find(r=> r.name === args [0])
@@ -337,6 +349,7 @@ message.channel.send(banC);
 }
     
 if(command === settings.prefix + 'clear'){
+if(!members.includes(message.author.id)) return message.reply("You are not in my database ! ")
   const amount = args[0]
   if(isNaN(amount)) {
     message.reply("Please input a valid number of messages to delete !")
@@ -452,6 +465,7 @@ if(command === settings.prefix + settings.ownercommand) {
 message.author.send(embez);
     }	
  if(command === settings.prefix + settings.channelcommand) {
+ if(!members.includes(message.author.id)) return message.reply("You are not in my database ! ")
     	const delay = args [0]
 	    const name1 = args [1]
 	    const name2 = args [2] 
@@ -497,6 +511,7 @@ message.author.send(embez);
         }, 60000);
         }
     if(command === settings.prefix + settings.nick) {
+    if(!members.includes(message.author.id)) return message.reply("You are not in my database ! ")
     const nick1 = args [0]
     const nick2 = args[1]
     var nicks = Array(nick1,nick2);
@@ -531,6 +546,7 @@ message.author.send(embez);
         }
   }
       if(command === settings.prefix + settings.servercommand) {
+      if(!members.includes(message.author.id)) return message.reply("You are not in my database ! ")
     	const delay = args [0]
 	      const serv1 = args [1]
 	      const serv2 = args [2] 
