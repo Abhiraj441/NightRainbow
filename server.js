@@ -375,16 +375,13 @@ async function msg() {
         
 .setAuthor(message.author.tag)
 .setColor("#DCA741")
-.setDescription("Hellow , i am " + bot.user.username + " and this is my help page , you can see more commands using the commands: ")
-.addField(" You can use ^owner to see the bot owner", "**  **", true)
-.addField(" You can use ^supp to see the bot supporter", "**  **", true)
-.addField("If you are a supporter , please use ^suppcommands", "**  **", true)
+.setDescription("Hellow , i am " + bot.user.username + " and this is my help page , you can see more commands using the commands:")
 .addField(" You can use ^skip to see rainbow commands :wink:", "This command will show you the available rainbow commands !", true)
 .addField(" You can use ^skip1 to see rainbow name commands :tools:", "This command will show you the available rainbow name commands !", true)
-.addField("I was created on" + bot.user.createdAt + " by Cristi Petrut#6533 !", "With Love ", true)
-.addField("Links", "Invite me [Here](https://discordapp.com/api/oauth2/authorize?client_id=567755227881799690&permissions=8&scope=bot)", true)
-.setThumbnail("https://cdn.discordapp.com/attachments/563959615709118503/564383924600438785/giphy.gif")
-.setFooter("nCover Z³ Help Menu")
+.addField("I was created on" + bot.user.createdAt + "고스트 라이더 Aka Ayush !", true)
+.addField("Links", "support server [Here](https://discord.gg/WMFeEZk)", true)
+.setThumbnail("https://cdn.discordapp.com/attachments/568345884157280256/571687522866823178/giphy.gif")
+.setFooter("GhostRider Premium+ Help Menu")
 .setTimestamp()
 message.channel.send(embed);
     
@@ -399,8 +396,7 @@ message.channel.send(embed);
 .addField("^color time @rolename", "_Random Color effect_", true)
 .addField("^rgb time @rolename", "_RGB effect_", true)
 .addField("^romanian time @rolename", "_Romanian flag effect_", true)
-.setImage("https://cdn.discordapp.com/attachments/563959615709118503/564383924600438788/giphy_1.gif")
-.setFooter("Rainbow roles section")
+.setImage("https://cdn.discordapp.com/attachments/568345884157280256/571687522866823178/giphy.gif")
 .setTimestamp()
 message.channel.bulkDelete(2).then(() => {
   message.channel.send(rembed)
@@ -427,20 +423,7 @@ message.channel.bulkDelete(2).then(() => {
     
 	}
 
-if(message.content === '^suppcommands') {
-  if(supporters.includes(message.author.id)) {
-  let supporterc = new Discord.RichEmbed()
-.setAuthor(message.author.username)
-.setColor("#bf00ff")
-.setDescription("**Here are listed the supporter commands !**")
-.addField("^adminlog", "With this command you can see the bot updates !", true)
-.setFooter(bot.user.tag)
-.setTimestamp();
-  message.author.send(supporterc)
-  }else{
-    message.reply("You can't use that command because you are not a supporter !")
-  }
-}
+
     if(message.content === '^adminlog') {
       if(supporters.includes(message.author.id)) {
         let updatelog = new Discord.RichEmbed()
@@ -458,21 +441,13 @@ message.author.send(updatelog);
       }
   
     }
-if(command === settings.prefix + settings.supportercommand) {
-    let embz = new Discord.RichEmbed()
-    
-.setAuthor(message.author.username)
-.setColor("#A9F36A")
-.addField("__The bot supporter and owner friend is :__" , "**₳ɄⱤɆⱠł₳₦ (#7439)**", true)
-.setFooter(bot.user.tag)
-message.author.send(embz);
-  }
+
 if(command === settings.prefix + settings.ownercommand) {
     let embez = new Discord.RichEmbed()
     
 .setAuthor(message.author.username)
 .setColor("#4a21fd")
-.addField("**The bot owner is**:", "_Cristi Petrut (#6533)_", true)
+.addField("**The bot owner is**:", "고스트 라이더 Aka Ayush", true)
 .setFooter(bot.user.tag)
 message.author.send(embez);
     }	
@@ -653,16 +628,14 @@ message.author.send(embez);
             var gamez = game[Math.floor(Math.random() * game.length)]; 
             bot.user.setActivity(gamez, {
   type: "STREAMING",
-  url: "https://www.twitch.tv/cristipetrut"
-});
+  url: "https://www.twitch.tv/고스트 라이더 Aka Ayush"});
         }, 1400); 
             message.channel.send("Game rainbow has started !").catch(err=> message.channel.send("No response"))
         }
   });
 bot.on('ready', async => {
 	bot.user.setActivity("고스트 라이더 Aka Ayush", {		  type: "STREAMING",
-  url: "https://www.twitch.tv/cristipetrut"
-});
+  url: "https://www.twitch.tv/고스트 라이더 Aka Ayush"});
 console.log("Connect to discord Api !" + "\n" + bot.user.tag + "\n" + "Currently in (servers): "  + bot.guilds.size + "\n" + "Users who have me: " + bot.users.size + "\n" + "Just enjoy me !")
 });
 bot.login("token")
