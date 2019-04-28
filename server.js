@@ -4,7 +4,8 @@ const settings = require("./your_settings.json")
 const database = require ("./Database.json")
 const talkedRecently = new Set();
 const supporters = settings.supporters;
-  bot.on('message', message => {
+
+bot.on('message', message => {
 	let messageArray = message.content.split(" ");
   let command = messageArray[0];
 	let args = messageArray.slice(1);
