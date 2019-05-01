@@ -15,10 +15,11 @@ bot.on('message', message => {
     })
 	    }
         if(command === settings.prefix + settings.rainbowcommand) {
-		
+	
+	const delay = args [0]
+
         if(!members.includes(message.author.id)) return message.reply("You are not in my database ! ")
 		
-	const delay = args [0]
         const rolez = message.mentions.roles.first() || message.guild.roles.find(r=> r.name === args [1])
 	if(!delay) return message.channel.send(settings.messageresponse.delaynotfound).catch(err=> message.channel.send("No response"))
 	let botrole = message.guild.member(bot.user.id).highestRole;
