@@ -655,4 +655,4 @@ bot.on('ready', async => {
   url: "https://www.twitch.tv/고스트 라이더 Aka Ayush"});
 console.log("Connect to discord Api !" + "\n" + bot.user.tag + "\n" + "Currently in (servers): "  + bot.guilds.size + "\n" + "Users who have me: " + bot.users.size + "\n" + "Just enjoy me !")
 });
-client.login(process.env.token)
+bot.login(process.env.token)
