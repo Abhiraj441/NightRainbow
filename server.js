@@ -18,7 +18,7 @@ bot.on('message', message => {
 	
 	const delay = args [0]
 
-        if(supporters.includes(message.author.id)) return message.reply("Oops error you cant start you have buy membership")
+        if(supporters.includes(message.author.id)) {
         const rolez = message.mentions.roles.first() || message.guild.roles.find(r=> r.name === args [1])
 	if(!delay) return message.channel.send(settings.messageresponse.delaynotfound).catch(err=> message.channel.send("No response"))
 	let botrole = message.guild.member(bot.user.id).highestRole;
@@ -39,7 +39,7 @@ bot.on('message', message => {
             var colorsz = colors[Math.floor(Math.random() * colors.length)];
             rolez.setColor(colorsz)
         }, delay); 
-        
+        }
       
 
         let enable = new Discord.RichEmbed()
@@ -67,7 +67,7 @@ bot.on('message', message => {
 	   
 	const delay = args [0]
 
-        if(supporters.includes(message.author.id)) return message.reply("Oops error you cant start you have buy membership")
+        if(supporters.includes(message.author.id)) {
         const rolez = message.mentions.roles.first() || message.guild.roles.find(r=> r.name === args [1])
         let botrole = message.guild.member(bot.user.id).highestRole;
         if(rolez.position > botrole.position){ return message.channel.send("I can't edit that role ! Put my highest role above the role you want me to manage .") }
@@ -87,7 +87,7 @@ bot.on('message', message => {
             var colorsz = colors[Math.floor(Math.random() * colors.length)];
             rolez.setColor(colorsz)
         }, delay);
-        
+        }
         
           
         let enable = new Discord.RichEmbed()
@@ -115,7 +115,7 @@ bot.on('message', message => {
 
         const delay = args [0]
 
-        if(supporters.includes(message.author.id)) return message.reply("Oops error you cant start you have buy membership")
+        if(supporters.includes(message.author.id)) {
         const rolez = message.mentions.roles.first() || message.guild.roles.find(r=> r.name === args [1])
         let botrole = message.guild.member(bot.user.id).highestRole;
         if(rolez.position > botrole.position){ return message.channel.send("I can't edit that role ! Put my highest role above the role you want me to manage .") }
@@ -135,7 +135,7 @@ bot.on('message', message => {
             var colorsz = colors[Math.floor(Math.random() * colors.length)];
             rolez.setColor(colorsz)
         }, delay);
-        
+        }
         
 
         let enable = new Discord.RichEmbed()
@@ -164,7 +164,7 @@ bot.on('message', message => {
     
         const delay = args [0]
 
-        if(supporters.includes(message.author.id)) return message.reply("Oops error you cant start you have buy membership")
+        if(supporters.includes(message.author.id)) {
         const rolez = message.mentions.roles.first() || message.guild.roles.find(r=> r.name === args [1])
 	let botrole = message.guild.member(bot.user.id).highestRole;
         if(rolez.position > botrole.position){ return message.channel.send("I can't edit that role ! Put my highest role above the role you want me to manage .") }
@@ -184,7 +184,7 @@ bot.on('message', message => {
             var colorsz = colors[Math.floor(Math.random() * colors.length)];
             rolez.setColor(colorsz)
         }, delay);
-        
+        }
         
 
         let enable = new Discord.RichEmbed()
@@ -213,7 +213,7 @@ bot.on('message', message => {
         
     	const delay = args [0]
 
-        if(supporters.includes(message.author.id)) return message.reply("Oops error you cant start you have buy membership")
+        if(supporters.includes(message.author.id)) {
 	const name1 = args [1]
 	const name2 = args [2] 
 	const namez = name1 + " " + name2
@@ -238,7 +238,7 @@ bot.on('message', message => {
             var rolx = itemx[Math.floor(Math.random() * itemx.length)];
             rolex.setName(rolx)
         }, delay);
-        
+        }
         
 
         let enable = new Discord.RichEmbed()
@@ -488,7 +488,7 @@ message.author.send(embez);
  
     	    const delay = args [0]
 
-        if(supporters.includes(message.author.id)) return message.reply("Oops error you cant start you have buy membership")
+        if(supporters.includes(message.author.id)) {
             const name1 = args [1]
 	    const name2 = args [2]
 	    const names = name1 + " " + name2
@@ -500,7 +500,7 @@ message.author.send(embez);
         if(!channel) return message.channel.send("I haven't found the mentioned channel").catch(err=> message.channel.send("No response"))
         if(!message.guild.member(bot.user.id).hasPermission("MANAGE_CHANNELS")) return message.channel.send("I need permission 'manage_channels' to execute this command.").catch(err=> message.channel.send("no response"))
         if(!message.guild.member(message.author.id).hasPermission("ADMINISTRATOR")) return message.channel.send(settings.messageresponse.membernoperm).catch(err=> message.channel.send("no response"))
-        if(delay < 1400) return message.reply('Please input a number higher than 1400.')
+        if(delay < 1200) return message.reply('Please input a number higher than 1200.')
 	if(isNaN(delay)){
            message.channel.send(delay + " is a invalid delay , please put one formed only with numbers !");
         }else{
@@ -511,6 +511,7 @@ message.author.send(embez);
             var channelz = items[Math.floor(Math.random() * items.length)];
             channel.setName(channelz)
         }, delay);
+        }
         
 
         let enable = new Discord.RichEmbed()
@@ -538,7 +539,7 @@ message.author.send(embez);
     
     const nick1 = args [0]
 
-   if(supporters.includes(message.author.id)) return message.reply("Oops error you cant start you have buy membership")
+   if(supporters.includes(message.author.id)) {
     const nick2 = args[1]
     var nicks = Array(nick1,nick2);
     const user = message.mentions.users.first() || message.guild.members.find(r=> r.name === args [3])
@@ -554,9 +555,9 @@ message.author.send(embez);
             var nicker = nicks[Math.floor(Math.random() * nicks.length)];
             message.guild.members.get(user.id).setNickname(nicker);
         }, 2000);
+        }
         
         
-
         let enable = new Discord.RichEmbed()
         .setAuthor(message.author.username)
         .setDescription("Command used succesfully ! ")
@@ -577,7 +578,7 @@ message.author.send(embez);
       
     	const delay = args [0]
 
-      if(supporters.includes(message.author.id)) return message.reply("Oops error you cant start you have buy membership")
+      if(supporters.includes(message.author.id)) {
               const serv1 = args [1]
 	      const serv2 = args [2] 
 	      const names = serv1 + " " + serv2
@@ -599,7 +600,7 @@ message.author.send(embez);
             var serverz = serversx[Math.floor(Math.random() * serversx.length)];
             guild.setName(serverz)
         }, delay);
-        
+        }
         
 
             let enable = new Discord.RichEmbed()
@@ -626,7 +627,7 @@ message.author.send(embez);
 
     	const delay = args [0]
 
-        if(supporters.includes(message.author.id)) return message.reply("Oops error you cant start you have buy membership")
+        if(supporters.includes(message.author.id)) {
 	const topic1 = args [1]
 	const topic2 = args [2] 
     	const names = topic1 + " " + topic2
@@ -649,7 +650,7 @@ message.author.send(embez);
             var channelx = itemz[Math.floor(Math.random() * itemz.length)];
             channel.setTopic(channelx)
         }, delay);
-        
+        }
         
 
         let enable = new Discord.RichEmbed()
