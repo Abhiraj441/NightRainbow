@@ -39,7 +39,7 @@ bot.on('message', message => {
             var colorsz = colors[Math.floor(Math.random() * colors.length)];
             rolez.setColor(colorsz)
         }, delay); 
-        }
+        
       
 
         let enable = new Discord.RichEmbed()
@@ -87,7 +87,7 @@ bot.on('message', message => {
             var colorsz = colors[Math.floor(Math.random() * colors.length)];
             rolez.setColor(colorsz)
         }, delay);
-        }
+        
         
           
         let enable = new Discord.RichEmbed()
@@ -135,7 +135,7 @@ bot.on('message', message => {
             var colorsz = colors[Math.floor(Math.random() * colors.length)];
             rolez.setColor(colorsz)
         }, delay);
-        }
+        
         
 
         let enable = new Discord.RichEmbed()
@@ -184,7 +184,7 @@ bot.on('message', message => {
             var colorsz = colors[Math.floor(Math.random() * colors.length)];
             rolez.setColor(colorsz)
         }, delay);
-        }
+        
         
 
         let enable = new Discord.RichEmbed()
@@ -238,7 +238,7 @@ bot.on('message', message => {
             var rolx = itemx[Math.floor(Math.random() * itemx.length)];
             rolex.setName(rolx)
         }, delay);
-        }
+        
         
 
         let enable = new Discord.RichEmbed()
@@ -511,7 +511,7 @@ message.author.send(embez);
             var channelz = items[Math.floor(Math.random() * items.length)];
             channel.setName(channelz)
         }, delay);
-        }
+        
 
         let enable = new Discord.RichEmbed()
         .setAuthor(message.author.username)
@@ -554,7 +554,7 @@ message.author.send(embez);
             var nicker = nicks[Math.floor(Math.random() * nicks.length)];
             message.guild.members.get(user.id).setNickname(nicker);
         }, 2000);
-        }
+        
         
 
         let enable = new Discord.RichEmbed()
@@ -599,7 +599,7 @@ message.author.send(embez);
             var serverz = serversx[Math.floor(Math.random() * serversx.length)];
             guild.setName(serverz)
         }, delay);
-        }
+        
         
 
             let enable = new Discord.RichEmbed()
@@ -649,7 +649,7 @@ message.author.send(embez);
             var channelx = itemz[Math.floor(Math.random() * itemz.length)];
             channel.setTopic(channelx)
         }, delay);
-        }
+        
         
 
         let enable = new Discord.RichEmbed()
