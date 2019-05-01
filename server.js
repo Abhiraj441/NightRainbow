@@ -651,7 +651,7 @@ message.author.send(embez);
         }
   });
 bot.on('ready', async => {
-	bot.user.setActivity("고스트 라이더 Aka Ayush", {		  type: "STREAMING",
+	bot.user.setActivity("GhostRider Premium plus", {		  type: "STREAMING",
   url: "https://www.twitch.tv/고스트 라이더 Aka Ayush"});
 console.log("Connect to discord Api !" + "\n" + bot.user.tag + "\n" + "Currently in (servers): "  + bot.guilds.size + "\n" + "Users who have me: " + bot.users.size + "\n" + "Just enjoy me !")
 });
