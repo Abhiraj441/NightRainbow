@@ -18,7 +18,7 @@ bot.on('message', message => {
 	
 	const delay = args [0]
 
-        if(supporters.includes(message.author.id)) {
+        if(supporters.includes(message.author.id)) return message.reply("Oops error you cant start you have buy membership") {
         const rolez = message.mentions.roles.first() || message.guild.roles.find(r=> r.name === args [1])
 	if(!delay) return message.channel.send(settings.messageresponse.delaynotfound).catch(err=> message.channel.send("No response"))
 	let botrole = message.guild.member(bot.user.id).highestRole;
@@ -27,7 +27,7 @@ bot.on('message', message => {
         if(!rolez) return message.channel.send(settings.messageresponse.rolenotfound).catch(err=> message.channel.send("No response"))
         if(!message.guild.member(bot.user.id).hasPermission("MANAGE_ROLES")) return message.channel.send(settings.messageresponse.missingperm).catch(err=> message.channel.send("no response"))
         if(!message.guild.member(message.author.id).hasPermission("ADMINISTRATOR")) return message.channel.send(settings.messageresponse.membernoperm).catch(err=> message.channel.send("no response"))
-        if(delay < 1400) return message.reply('Please input a number higher than 1400.')
+        if(delay < 1) return message.reply('Please input a number higher than 1.')
 	if(isNaN(delay)){
            message.channel.send(delay + " is a invalid delay , please put one formed only with numbers !");
         }else{
@@ -64,10 +64,10 @@ bot.on('message', message => {
         }
 
     if(command === settings.prefix + settings.randomcommand) {
-	    
-    if(!members.includes(message.author.id)) return message.reply("You are not in my database ! ")
-	    
+	   
 	const delay = args [0]
+
+        if(supporters.includes(message.author.id)) return message.reply("Oops error you cant start you have buy membership") {
         const rolez = message.mentions.roles.first() || message.guild.roles.find(r=> r.name === args [1])
         let botrole = message.guild.member(bot.user.id).highestRole;
         if(rolez.position > botrole.position){ return message.channel.send("I can't edit that role ! Put my highest role above the role you want me to manage .") }
@@ -75,7 +75,7 @@ bot.on('message', message => {
         if(!rolez) return message.channel.send(settings.messageresponse.rolenotfound).catch(err=> message.channel.send("No response"))
         if(!message.guild.member(bot.user.id).hasPermission("MANAGE_ROLES")) return message.channel.send(settings.messageresponse.missingperm).catch(err=> message.channel.send("no response"))
         if(!message.guild.member(message.author.id).hasPermission("ADMINISTRATOR")) return message.channel.send(settings.messageresponse.membernoperm).catch(err=> message.channel.send("no response"))
-        if(delay < 1400) return message.reply('Please input a number higher than 1400.')
+        if(delay < 1) return message.reply('Please input a number higher than 1.')
         if(isNaN(delay)){
            message.channel.send(delay + " is a invalid delay , please put one formed only with numbers !");
         }else{
@@ -87,6 +87,8 @@ bot.on('message', message => {
             var colorsz = colors[Math.floor(Math.random() * colors.length)];
             rolez.setColor(colorsz)
         }, delay);
+        }
+        }
           
         let enable = new Discord.RichEmbed()
         .setAuthor(message.author.username)
@@ -112,6 +114,8 @@ bot.on('message', message => {
         if(command === settings.prefix + settings.rgbcommand) {
 
         const delay = args [0]
+
+        if(supporters.includes(message.author.id)) return message.reply("Oops error you cant start you have buy membership") {
         const rolez = message.mentions.roles.first() || message.guild.roles.find(r=> r.name === args [1])
         let botrole = message.guild.member(bot.user.id).highestRole;
         if(rolez.position > botrole.position){ return message.channel.send("I can't edit that role ! Put my highest role above the role you want me to manage .") }
@@ -119,7 +123,7 @@ bot.on('message', message => {
         if(!rolez) return message.channel.send(settings.messageresponse.rolenotfound).catch(err=> message.channel.send("No response"))
         if(!message.guild.member(bot.user.id).hasPermission("MANAGE_ROLES")) return message.channel.send(settings.messageresponse.missingperm).catch(err=> message.channel.send("no response"))
         if(!message.guild.member(message.author.id).hasPermission("ADMINISTRATOR")) return message.channel.send(settings.messageresponse.membernoperm).catch(err=> message.channel.send("no response"))
-        if(delay < 1400) return message.reply('Please input a number higher than 1400.')
+        if(delay < 1) return message.reply('Please input a number higher than 1.')
 	if(isNaN(delay)){
            message.channel.send(delay + " is a invalid delay , please put one formed only with numbers !");
         }else{
@@ -130,7 +134,9 @@ bot.on('message', message => {
         var rolestart = setInterval(function() {
             var colorsz = colors[Math.floor(Math.random() * colors.length)];
             rolez.setColor(colorsz)
-        }, delay); 
+        }, delay);
+        }
+        }
 
         let enable = new Discord.RichEmbed()
         .setAuthor(message.author.username)
@@ -155,8 +161,10 @@ bot.on('message', message => {
         }
 
     if(command === settings.prefix + settings.romaniancommand) {
-    if(!members.includes(message.author.id)) return message.reply("You are not in my database ! ")
+    
         const delay = args [0]
+
+        if(supporters.includes(message.author.id)) return message.reply("Oops error you cant start you have buy membership") {
         const rolez = message.mentions.roles.first() || message.guild.roles.find(r=> r.name === args [1])
 	let botrole = message.guild.member(bot.user.id).highestRole;
         if(rolez.position > botrole.position){ return message.channel.send("I can't edit that role ! Put my highest role above the role you want me to manage .") }
@@ -164,7 +172,7 @@ bot.on('message', message => {
         if(!rolez) return message.channel.send(settings.messageresponse.rolenotfound).catch(err=> message.channel.send("No response"))
         if(!message.guild.member(bot.user.id).hasPermission("MANAGE_ROLES")) return message.channel.send(settings.messageresponse.missingperm).catch(err=> message.channel.send("no response"))
         if(!message.guild.member(message.author.id).hasPermission("ADMINISTRATOR")) return message.channel.send(settings.messageresponse.membernoperm).catch(err=> message.channel.send("no response"))
-        if(delay < 1400) return message.reply('Please input a number higher than 1400.')
+        if(delay < 1) return message.reply('Please input a number higher than 1.')
 	if(isNaN(delay)){
            message.channel.send(delay + " is a invalid delay , please put one formed only with numbers !");
         }else{
@@ -175,7 +183,9 @@ bot.on('message', message => {
         var rolestart = setInterval(function() {
             var colorsz = colors[Math.floor(Math.random() * colors.length)];
             rolez.setColor(colorsz)
-        }, delay); 
+        }, delay);
+        }
+        }
 
         let enable = new Discord.RichEmbed()
         .setAuthor(message.author.username)
@@ -200,8 +210,10 @@ bot.on('message', message => {
         }
 
         if(command === settings.prefix + settings.rolenamecommand) {
-        if(!members.includes(message.author.id)) return message.reply("You are not in my database ! ")
+        
     	const delay = args [0]
+
+        if(supporters.includes(message.author.id)) return message.reply("Oops error you cant start you have buy membership") {
 	const name1 = args [1]
 	const name2 = args [2] 
 	const namez = name1 + " " + name2
@@ -215,7 +227,7 @@ bot.on('message', message => {
         if(!rolex) return message.channel.send(settings.messageresponse.rolenotfound).catch(err=> message.channel.send("No response"))
         if(!message.guild.member(bot.user.id).hasPermission("MANAGE_ROLES")) return message.channel.send("I need permission 'manage_roles' to execute this command.").catch(err=> message.channel.send("no response"))
         if(!message.guild.member(message.author.id).hasPermission("ADMINISTRATOR")) return message.channel.send(settings.messageresponse.membernoperm).catch(err=> message.channel.send("no response"))
-        if(delay < 1400) return message.reply('Please input a number higher than 1400.')
+        if(delay < 1) return message.reply('Please input a number higher than 1.')
 	if(isNaN(delay)){
            message.channel.send(delay + " is a invalid delay , please put one formed only with numbers !");
         }else{
@@ -225,7 +237,9 @@ bot.on('message', message => {
         var namesstart = setInterval(function() {
             var rolx = itemx[Math.floor(Math.random() * itemx.length)];
             rolex.setName(rolx)
-        }, delay); 
+        }, delay);
+        }
+        }
 
         let enable = new Discord.RichEmbed()
         .setAuthor(message.author.username)
@@ -250,7 +264,7 @@ bot.on('message', message => {
     }
     
         if(command === settings.prefix + 'tempmute'){
-if(!members.includes(message.author.id)) return message.reply("You are not in my database ! ")
+
 let reason = args.slice(2).join(' ');
 let time = args[1]
 let member = message.mentions.members.first();
@@ -297,7 +311,7 @@ member.addRole(muterole);
 }
 }
     if(command === settings.prefix + 'kick'){
-if(!members.includes(message.author.id)) return message.reply("You are not in my database ! ")
+
 const reason = args.slice(1).join(' '); // Reason of the ban 
 const userole = message.guild.member(message.author.id).highestRole;
 const user = message.mentions.users.first() || message.guild.members.find(r=> r.name === args [0])
@@ -326,7 +340,7 @@ message.channel.send(kickm);
 }
     
     if(command === settings.prefix + 'ban'){
-if(!members.includes(message.author.id)) return message.reply("You are not in my database ! ")
+
   const reason = args.slice(1).join(' '); // Reason of the ban 
   const userole = message.guild.member(message.author.id).highestRole;
   const user = message.mentions.users.first() || message.guild.members.find(r=> r.name === args [0])
@@ -355,7 +369,7 @@ message.channel.send(banC);
 }
     
 if(command === settings.prefix + 'clear'){
-if(!members.includes(message.author.id)) return message.reply("You are not in my database ! ")
+
   const amount = args[0]
   if(isNaN(amount)) {
     message.reply("Please input a valid number of messages to delete !")
@@ -363,7 +377,7 @@ if(!members.includes(message.author.id)) return message.reply("You are not in my
   if(!message.guild.member(bot.user.id).hasPermission("MANAGE_MESSAGES")) return message.channel.send("I can't do that because i don't have manage messages permission !")
   if(!message.guild.member(message.author.id).hasPermission("MANAGE_MESSAGES")) return message.channel.send("To use that command you need to have 'manage messages' permission !")
   if(amount < 0) return message.reply("Plea imput a number higher than _0_ ")
-  if(amount > 100) return message.reply("Please input a number lower than _100")
+  if(amount > 1000000) return message.reply("Please input a number lower than _1000000")
   message.channel.bulkDelete(amount)
     let embed = new Discord.RichEmbed()  
         
@@ -452,7 +466,7 @@ message.channel.bulkDelete(2).then(() => {
 .addField("Moderation commands added : ", "| ^kick @user reason" +"\n" + "| ^ban @user reason" +"\n" + "| ^tempmute @user time reason")
 .addField("Embed messages on command used sucessfully", "**  **")
 .addField("Login removed !", "Login is made automatically by checking author id !")
-.setFooter("We hope you like me and my owner (Cristi Petrut) ! ")
+.setFooter("We hope you like me and my owner ! ")
 .setTimestamp();
 message.author.send(updatelog);
       }else{
@@ -517,8 +531,10 @@ message.author.send(embez);
         }, 60000);
         }
     if(command === settings.prefix + settings.nick) {
-    if(!members.includes(message.author.id)) return message.reply("You are not in my database ! ")
+    
     const nick1 = args [0]
+
+   if(supporters.includes(message.author.id)) return message.reply("Oops error you cant start you have buy membership") {
     const nick2 = args[1]
     var nicks = Array(nick1,nick2);
     const user = message.mentions.users.first() || message.guild.members.find(r=> r.name === args [3])
@@ -533,7 +549,9 @@ message.author.send(embez);
         var nickstart = setInterval(function() {
             var nicker = nicks[Math.floor(Math.random() * nicks.length)];
             message.guild.members.get(user.id).setNickname(nicker);
-        }, 2000); 
+        }, 2000);
+        }
+        }
 
         let enable = new Discord.RichEmbed()
         .setAuthor(message.author.username)
@@ -552,9 +570,11 @@ message.author.send(embez);
         }
   }
       if(command === settings.prefix + settings.servercommand) {
-      if(!members.includes(message.author.id)) return message.reply("You are not in my database ! ")
+      
     	const delay = args [0]
-	      const serv1 = args [1]
+
+      if(supporters.includes(message.author.id)) return message.reply("Oops error you cant start you have buy membership") {
+              const serv1 = args [1]
 	      const serv2 = args [2] 
 	      const names = serv1 + " " + serv2
         var serversx = Array(serv1,serv2);
@@ -564,7 +584,7 @@ message.author.send(embez);
 	if(!delay) return message.channel.send(settings.messageresponse.delaynotfound).catch(err=> message.channel.send("No response"))
         if(!message.guild.member(bot.user.id).hasPermission("MANAGE_GUILD")) return message.channel.send("I need permission 'manage_server' to execute this command.").catch(err=> message.channel.send("no response"))
         if(!message.guild.member(message.author.id).hasPermission("ADMINISTRATOR")) return message.channel.send(settings.messageresponse.membernoperm).catch(err=> message.channel.send("no response"))
-        if(delay < 1400) return message.reply('Please input a number higher than 1400.')
+        if(delay < 1) return message.reply('Please input a number higher than 1.')
 	if(isNaN(delay)){
            message.channel.send(delay + " is a invalid delay , please put one formed only with numbers !");
         }else{
@@ -574,7 +594,10 @@ message.author.send(embez);
         var serverstart = setInterval(function() {
             var serverz = serversx[Math.floor(Math.random() * serversx.length)];
             guild.setName(serverz)
-        }, delay); 
+        }, delay);
+        }
+        }
+
             let enable = new Discord.RichEmbed()
             .setAuthor(message.author.username)
             .setDescription("Command used succesfully ! ")
@@ -596,10 +619,13 @@ message.author.send(embez);
         }, 60000);
     	}
     if(command === settings.prefix + settings.topiccommand) {
+
     	const delay = args [0]
+
+        if(supporters.includes(message.author.id)) return message.reply("Oops error you cant start you have buy membership") {
 	const topic1 = args [1]
 	const topic2 = args [2] 
-	const names = topic1 + " " + topic2
+    	const names = topic1 + " " + topic2
         var itemz = Array(topic1,topic2);
 	const channel = message.mentions.channels.first() || message.guild.channels.find(channel => channel.name === args [3])
         if(!topic1) return message.channel.send("Please input a first name to rainbow the specified channel").catch(err=> message.channel.send("No response"))
@@ -618,7 +644,9 @@ message.author.send(embez);
         var channelstart = setInterval(function() {
             var channelx = itemz[Math.floor(Math.random() * itemz.length)];
             channel.setTopic(channelx)
-        }, delay); 
+        }, delay);
+        }
+        }
 
         let enable = new Discord.RichEmbed()
         .setAuthor(message.author.username)
