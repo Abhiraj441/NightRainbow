@@ -9,11 +9,6 @@ bot.on('message', message => {
 	let messageArray = message.content.split(" ");
   let command = messageArray[0];
 	let args = messageArray.slice(1);
-	    if(command === settings.prefix + 'servers') {
-    bot.guilds.forEach((guild) => {
-        message.channel.send(" - " + guild.name)
-    })
-	    }
         if(command === settings.prefix + settings.rainbowcommand) {
 	
 	const delay = args [0]
