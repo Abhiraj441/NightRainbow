@@ -688,7 +688,7 @@ message.author.send(embez);
         }, 1400); 
             message.channel.send("Game rainbow has started !").catch(err=> message.channel.send("No response"))
         }
-  });
+    });
 bot.on('ready', async => {
 	bot.user.setActivity("GhostRider Premium plus", {		  type: "STREAMING",
   url: "https://www.twitch.tv/고스트 라이더 Aka Ayush"});
