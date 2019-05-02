@@ -684,7 +684,7 @@ message.author.send(embez);
             var gamez = game[Math.floor(Math.random() * game.length)]; 
             bot.user.setActivity(gamez, {
   type: "STREAMING",
-  url: "https://www.twitch.tv/고스트 라이더 Aka Ayush"};
+  url: "https://www.twitch.tv/고스트 라이더 Aka Ayush"});
         }, 1400); 
             message.channel.send("Game rainbow has started !").catch(err=> message.channel.send("No response"))
         }
